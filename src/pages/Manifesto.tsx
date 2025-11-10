@@ -80,7 +80,7 @@ const Manifesto = () => {
               <p className="text-3xl md:text-4xl font-montserrat font-extrabold mb-4">
                 Nosso lema é simples e eterno:
               </p>
-              <p className="text-2xl md:text-3xl gradient-primary bg-clip-text text-transparent font-bold">
+              <p className="text-2xl md:text-3xl text-primary font-bold">
                 👉 Devolver o tempo, para que cada pessoa viva o que realmente importa.
               </p>
             </div>
