@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, FileText } from "lucide-react";
+import { FileText } from "lucide-react";
 
 const Header = () => {
   const navigation = [
@@ -14,13 +14,6 @@ const Header = () => {
     { name: "Contato", href: "/contato" },
   ];
 
-  const handleBiaClick = () => {
-    window.open(
-      "https://wa.me/5511918560216?text=Oi%20Bia!%20Quero%20tirar%20d%C3%BAvidas%3A%20%5BPre%C3%A7o%5D%20%5BComo%20funciona%5D%20%5BPrazo%5D%20%5BIntegrar%20IA%20no%20meu%20site%5D",
-      "_blank"
-    );
-  };
-
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <nav className="container mx-auto flex h-16 items-center justify-between px-4">
@@ -30,7 +23,7 @@ const Header = () => {
           </span>
         </Link>
 
-        <div className="hidden lg:flex items-center space-x-6">
+        <div className="flex items-center space-x-6">
           {navigation.map((item) => (
             <Link
               key={item.name}
@@ -42,28 +35,17 @@ const Header = () => {
           ))}
         </div>
 
-        <div className="flex items-center gap-3">
-          <Button
-            onClick={handleBiaClick}
-            variant="default"
-            size="sm"
-            className="gradient-primary hover:opacity-90 transition-smooth"
-          >
-            <MessageCircle className="mr-2 h-4 w-4" />
-            Falar com a Bia (IA)
-          </Button>
-          <Button
-            asChild
-            variant="outline"
-            size="sm"
-            className="hidden sm:flex"
-          >
-            <Link to="/contato">
-              <FileText className="mr-2 h-4 w-4" />
-              Orçamento de site
-            </Link>
-          </Button>
-        </div>
+        <Button
+          asChild
+          variant="default"
+          size="sm"
+          className="gradient-primary hover:opacity-90 transition-smooth"
+        >
+          <Link to="/contato">
+            <FileText className="mr-2 h-4 w-4" />
+            Orçamento de site
+          </Link>
+        </Button>
       </nav>
     </header>
   );
