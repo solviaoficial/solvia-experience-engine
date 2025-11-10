@@ -55,10 +55,10 @@ const Contato = () => {
               </CardHeader>
               <CardContent>
                 <a
-                  href="mailto:contato@solvia.com.br"
+                  href="mailto:contato@solviaoficial.com"
                   className="text-sm text-primary hover:underline"
                 >
-                  contato@solvia.com.br
+                  contato@solviaoficial.com
                 </a>
               </CardContent>
             </Card>
