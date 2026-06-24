@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Agentes de IA 24/7 que respondem, qualificam e agendam leads enquanto você descansa. Sites rápidos com IA integrada. Protótipo em 48h."/>
+<title>Solvia — Agentes de IA que não deixam lead escapar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --blue:#0099FF;--blue-dark:#0070CC;--blue-light:#E6F4FF;
+  --green:#00DB88;--green-dark:#009960;--green-light:#E0FFF4;
+  --red:#E84040;--red-light:#FEF0F0;
+  --dark:#08101F;--surface:#F7F9FC;
+  --text:#0A0F1E;--muted:#6B7280;--border:#E5E9F0;
+  --radius:12px;--radius-lg:20px;
+  --font-display:'Montserrat',sans-serif;
+  --font-body:'Inter',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--text);background:#fff;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{max-width:100%}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:200;
+  background:rgba(255,255,255,.96);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+  padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;
+}
+.nav-logo{
+  font-family:var(--font-display);font-weight:900;font-size:1.5rem;
+  background:linear-gradient(135deg,var(--blue),var(--green));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.nav-links{display:flex;gap:1.75rem;align-items:center}
+.nav-links a{font-size:.875rem;font-weight:500;color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{
+  background:linear-gradient(135deg,var(--blue),var(--green));
+  color:#fff;border:none;padding:.5rem 1.25rem;
+  border-radius:8px;font-weight:600;font-size:.875rem;
+  cursor:pointer;font-family:var(--font-body);transition:opacity .2s;
+}
+.nav-cta:hover{opacity:.85}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;padding:.25rem}
+.nav-burger span{display:block;width:22px;height:2px;background:var(--text);margin:4px 0;border-radius:2px;transition:all .3s}
+
+/* ── UTILS ── */
+.container{max-width:1100px;margin:0 auto;padding:0 1.5rem}
+section{padding:5.5rem 1.5rem}
+.section-head{max-width:680px;margin:0 auto 3.5rem;text-align:center}
+.section-head p{font-size:1.05rem;color:var(--muted);margin-top:.75rem;line-height:1.7}
+h1,h2,h3{font-family:var(--font-display)}
+h1{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:900;line-height:1.1;letter-spacing:-.03em}
+h2{font-size:clamp(1.7rem,3.5vw,2.6rem);font-weight:800;line-height:1.15;letter-spacing:-.02em}
+h3{font-size:1.05rem;font-weight:700;color:var(--text)}
+p{color:var(--muted);line-height:1.7}
+.accent{background:linear-gradient(135deg,var(--blue),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.text-center{text-align:center}
+
+.eyebrow{
+  display:inline-flex;align-items:center;gap:.4rem;
+  font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;
+  padding:.35rem .9rem;border-radius:999px;margin-bottom:1.25rem;
+}
+.eyebrow-red{background:var(--red-light);color:var(--red)}
+.eyebrow-blue{background:var(--blue-light);color:var(--blue-dark)}
+.eyebrow-green{background:var(--green-light);color:var(--green-dark)}
+.eyebrow-white{background:rgba(255,255,255,.15);color:#fff}
+
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.875rem 1.75rem;border-radius:10px;
+  font-weight:600;font-size:.95rem;cursor:pointer;
+  transition:all .2s;border:none;font-family:var(--font-body);
+  white-space:nowrap;
+}
+.btn-primary{background:linear-gradient(135deg,var(--blue),var(--green));color:#fff}
+.btn-primary:hover{opacity:.88;transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--text);border:1.5px solid var(--border)}
+.btn-outline:hover{border-color:var(--blue);color:var(--blue)}
+.btn-white{background:#fff;color:var(--blue-dark);font-weight:700}
+.btn-white:hover{opacity:.92;transform:translateY(-1px)}
+.btn-outline-white{background:transparent;border:1.5px solid rgba(255,255,255,.45);color:#fff}
+.btn-outline-white:hover{background:rgba(255,255,255,.1)}
+.btn-group{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+
+/* ── HERO ── */
+#hero{
+  padding:7rem 1.5rem 5rem;
+  background:#fff;position:relative;overflow:hidden;text-align:center;
+}
+#hero::before{
+  content:'';position:absolute;top:-250px;right:-250px;
+  width:700px;height:700px;
+  background:radial-gradient(circle,rgba(0,153,255,.06) 0%,transparent 70%);
+  pointer-events:none;
+}
+#hero::after{
+  content:'';position:absolute;bottom:-150px;left:-150px;
+  width:500px;height:500px;
+  background:radial-gradient(circle,rgba(0,219,136,.06) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:var(--red-light);border:1px solid rgba(232,64,64,.2);
+  color:var(--red);font-size:.8rem;font-weight:700;
+  padding:.4rem 1rem;border-radius:999px;margin-bottom:1.5rem;
+  animation:badge-pulse 2.5s ease-in-out infinite;
+}
+@keyframes badge-pulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(232,64,64,.2)}
+  50%{box-shadow:0 0 0 7px rgba(232,64,64,0)}
+}
+.hero-sub{
+  font-size:1.15rem;color:var(--muted);margin:1.25rem auto .5rem;
+  max-width:580px;line-height:1.65;
+}
+.hero-micro{font-size:.82rem;color:var(--muted);margin-top:.9rem}
+.hero-micro span{margin:0 .6rem}
+.stats-row{
+  display:flex;gap:2.5rem;justify-content:center;
+  margin-top:4rem;flex-wrap:wrap;
+}
+.stat{text-align:center}
+.stat strong{
+  display:block;font-family:var(--font-display);font-size:2rem;font-weight:900;
+  background:linear-gradient(135deg,var(--blue),var(--green));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.stat span{font-size:.78rem;color:var(--muted);font-weight:500;display:block;margin-top:.15rem}
+
+/* ── DOR ── */
+#pain{background:var(--surface)}
+.pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.5rem}
+.pain-card{
+  background:#fff;border:1px solid var(--border);
+  border-radius:var(--radius-lg);padding:1.5rem;
+  border-top:3px solid var(--red);
+}
+.pain-icon{
+  width:42px;height:42px;background:var(--red-light);
+  border-radius:10px;display:flex;align-items:center;
+  justify-content:center;margin-bottom:1rem;font-size:1.2rem;
+}
+.pain-card h3{margin-bottom:.4rem;font-size:.95rem}
+.pain-card p{font-size:.875rem}
+.pain-cta{margin-top:3rem;text-align:center}
+.pain-cta p{margin-bottom:1.25rem;font-size:1rem;color:var(--muted)}
+
+/* ── SOLUÇÕES ── */
+#solucoes{background:#fff}
+.sol-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
+.sol-card{
+  border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:2rem;transition:border-color .2s,transform .2s;
+}
+.sol-card:hover{border-color:var(--blue);transform:translateY(-3px)}
+.sol-icon{
+  width:50px;height:50px;
+  background:linear-gradient(135deg,var(--blue),var(--green));
+  border-radius:12px;display:flex;align-items:center;
+  justify-content:center;margin-bottom:1.25rem;font-size:1.4rem;
+}
+.sol-card h3{font-size:1.1rem;margin-bottom:.5rem}
+.sol-card>p{font-size:.9rem;margin-bottom:1.25rem}
+.features{list-style:none;display:flex;flex-direction:column;gap:.45rem}
+.features li{
+  display:flex;align-items:flex-start;gap:.5rem;
+  font-size:.85rem;color:var(--muted);
+}
+.features li::before{
+  content:'✓';color:var(--green-dark);font-weight:700;
+  margin-top:.05rem;flex-shrink:0;
+}
+
+/* ── APPS ── */
+#apps{background:var(--surface)}
+.app-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.app-list{display:flex;flex-direction:column;gap:1.5rem}
+.app-item{display:flex;gap:1rem;align-items:flex-start}
+.app-bullet{
+  width:38px;height:38px;flex-shrink:0;
+  background:linear-gradient(135deg,var(--blue),var(--green));
+  border-radius:9px;display:flex;align-items:center;
+  justify-content:center;font-size:1rem;margin-top:.1rem;
+}
+.app-item h4{font-size:.95rem;font-weight:600;color:var(--text);margin-bottom:.25rem}
+.app-item p{font-size:.85rem}
+.app-mockup{
+  background:#fff;border:1px solid var(--border);
+  border-radius:var(--radius-lg);padding:1.5rem;
+  box-shadow:0 4px 24px rgba(0,0,0,.06);
+}
+.mockup-header{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:1rem;padding-bottom:.75rem;border-bottom:1px solid var(--border);
+}
+.mockup-header strong{font-size:.95rem;color:var(--text);font-weight:700}
+.badge-live{
+  background:var(--green-light);color:var(--green-dark);
+  font-size:.68rem;font-weight:700;padding:.2rem .6rem;border-radius:999px;
+}
+.mockup-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:.5rem 0;border-bottom:1px solid var(--border);font-size:.85rem;
+}
+.mockup-row:last-of-type{border-bottom:none}
+.mockup-label{color:var(--muted)}
+.mockup-val{font-weight:600;color:var(--text)}
+.mockup-val.up{color:var(--green-dark)}
+.mockup-val.warn{color:var(--red)}
+.mockup-ai{
+  margin-top:1rem;padding:.75rem 1rem;
+  background:var(--blue-light);border-radius:8px;
+  font-size:.8rem;color:var(--blue-dark);line-height:1.5;
+}
+
+/* ── CASES ── */
+#cases{background:#fff}
+.cases-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
+.case-card{
+  border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:2rem;background:var(--surface);
+}
+.case-tag{
+  font-size:.72rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:.05em;color:var(--muted);margin-bottom:.6rem;
+}
+.case-card h3{font-size:1rem;color:var(--text);margin-bottom:1.25rem;line-height:1.4}
+.case-block{margin-bottom:.85rem}
+.case-label{
+  font-size:.72rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:.05em;display:flex;align-items:center;gap:.35rem;margin-bottom:.3rem;
+}
+.case-label.bad{color:var(--red)}
+.case-label.sol{color:var(--blue-dark)}
+.case-block p{font-size:.875rem}
+.result-box{
+  background:var(--blue-light);border-radius:8px;
+  padding:.75rem 1rem;margin-top:1rem;
+}
+.result-box p{color:var(--blue-dark);font-weight:600;font-size:.85rem}
+
+/* ── COMO FUNCIONA ── */
+#como{background:var(--surface)}
+.timeline{max-width:660px;margin:0 auto;display:flex;flex-direction:column}
+.tl-item{display:flex;gap:1.5rem;position:relative}
+.tl-item:not(:last-child)::after{
+  content:'';position:absolute;left:21px;top:50px;
+  width:2px;height:calc(100% - 24px);
+  background:linear-gradient(to bottom,var(--blue),var(--green));opacity:.25;
+}
+.tl-step{
+  width:44px;height:44px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,var(--blue),var(--green));
+  color:#fff;font-family:var(--font-display);font-weight:800;font-size:.82rem;
+  display:flex;align-items:center;justify-content:center;position:relative;z-index:1;
+}
+.tl-body{padding-bottom:2.75rem}
+.tl-body h3{margin-bottom:.35rem}
+.tl-body p{font-size:.9rem}
+
+/* ── FAQ ── */
+#faq{background:#fff}
+.faq-list{max-width:700px;margin:0 auto;display:flex;flex-direction:column;gap:1rem}
+.faq-item{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.faq-q{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:1.2rem 1.5rem;cursor:pointer;
+  font-weight:600;font-size:.92rem;color:var(--text);
+  background:#fff;transition:background .15s;gap:1rem;
+  border:none;width:100%;text-align:left;font-family:var(--font-body);
+}
+.faq-q:hover{background:var(--surface)}
+.faq-icon{
+  width:26px;height:26px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:50%;background:var(--blue-light);
+  color:var(--blue);font-size:1.1rem;font-weight:700;
+  transition:transform .25s;line-height:1;
+}
+.faq-a{
+  display:none;padding:0 1.5rem 1.2rem;
+  font-size:.875rem;line-height:1.7;color:var(--muted);
+}
+.faq-item.open .faq-a{display:block}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+
+/* ── MANIFESTO ── */
+#manifesto{background:var(--dark);color:#fff;padding:6rem 1.5rem}
+.manifesto-inner{max-width:700px;margin:0 auto}
+.manifesto-inner>p{color:rgba(255,255,255,.72);font-size:1rem;line-height:1.8;margin-bottom:1.25rem}
+.manifesto-quote{
+  border-left:3px solid var(--green);padding:1.25rem 1.5rem;
+  margin:2rem 0;background:rgba(0,219,136,.07);border-radius:0 12px 12px 0;
+}
+.manifesto-quote p{color:#fff;font-size:1.1rem;font-style:italic;line-height:1.65}
+.manifesto-beliefs{list-style:none;display:flex;flex-direction:column;gap:.75rem;margin:1.25rem 0}
+.manifesto-beliefs li{
+  display:flex;gap:.75rem;align-items:flex-start;
+  color:rgba(255,255,255,.72);font-size:.95rem;line-height:1.6;
+}
+.manifesto-beliefs li::before{
+  content:'·';color:var(--blue);font-size:1.5rem;
+  line-height:1.1;flex-shrink:0;
+}
+.manifesto-lema{
+  color:#fff;font-family:var(--font-display);
+  font-size:1.1rem;font-weight:700;margin-top:1.75rem;line-height:1.5;
+}
+.manifesto-author{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.1)}
+.manifesto-author strong{color:rgba(255,255,255,.9);display:block;font-size:.95rem}
+.manifesto-author span{color:rgba(255,255,255,.4);font-size:.85rem}
+
+/* ── CTA FINAL ── */
+#cta-final{
+  background:linear-gradient(135deg,var(--blue),var(--green));
+  color:#fff;padding:5.5rem 1.5rem;text-align:center;
+}
+#cta-final h2{color:#fff;margin-bottom:.75rem}
+#cta-final>div>p{color:rgba(255,255,255,.85);font-size:1.05rem;margin-bottom:2rem}
+.cta-micro{font-size:.78rem;color:rgba(255,255,255,.55);margin-top:1.25rem}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--dark);color:rgba(255,255,255,.45);
+  text-align:center;padding:2rem 1.5rem;font-size:.82rem;line-height:1.8;
+}
+footer strong{color:rgba(255,255,255,.8);font-family:var(--font-display)}
+footer a{color:rgba(255,255,255,.45);transition:color .2s}
+footer a:hover{color:rgba(255,255,255,.8)}
+
+/* ── CHAT WIDGET ── */
+#chat-widget{position:fixed;bottom:24px;right:24px;z-index:9999}
+.chat-toggle{
+  width:58px;height:58px;border-radius:50%;
+  background:linear-gradient(135deg,var(--blue),var(--green));
+  border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(0,153,255,.4);transition:transform .2s;
+}
+.chat-toggle:hover{transform:scale(1.08)}
+.chat-toggle svg{width:26px;height:26px;fill:#fff}
+.chat-badge{
+  position:absolute;top:-3px;right:-3px;
+  width:18px;height:18px;background:var(--red);color:#fff;
+  border-radius:50%;font-size:.62rem;font-weight:700;
+  display:none;align-items:center;justify-content:center;
+  border:2px solid #fff;
+}
+.chat-box{
+  position:absolute;bottom:70px;right:0;width:360px;
+  background:#fff;border-radius:var(--radius-lg);
+  box-shadow:0 8px 48px rgba(0,0,0,.15);
+  border:1px solid var(--border);
+  display:none;flex-direction:column;overflow:hidden;
+  max-height:520px;
+}
+.chat-box.open{display:flex}
+.chat-header{
+  padding:.9rem 1.25rem;
+  background:linear-gradient(135deg,var(--blue),var(--green));
+  color:#fff;display:flex;justify-content:space-between;align-items:center;
+  flex-shrink:0;
+}
+.chat-header-info{display:flex;align-items:center;gap:.75rem}
+.chat-avatar{
+  width:36px;height:36px;border-radius:50%;
+  background:rgba(255,255,255,.25);
+  display:flex;align-items:center;justify-content:center;font-size:1.1rem;
+}
+.chat-header-info div strong{display:block;font-size:.9rem;font-weight:700}
+.chat-header-info div span{font-size:.72rem;opacity:.85}
+.chat-close{
+  background:none;border:none;color:#fff;cursor:pointer;
+  font-size:1.4rem;line-height:1;opacity:.75;padding:.25rem;
+}
+.chat-close:hover{opacity:1}
+.chat-msgs{
+  flex:1;overflow-y:auto;padding:1rem;
+  display:flex;flex-direction:column;gap:.65rem;min-height:260px;
+}
+.msg{
+  max-width:87%;padding:.6rem .9rem;border-radius:14px;
+  font-size:.85rem;line-height:1.55;
+}
+.msg.bot{
+  background:var(--surface);color:var(--text);
+  border-bottom-left-radius:4px;align-self:flex-start;
+}
+.msg.user{
+  background:linear-gradient(135deg,var(--blue),var(--green));color:#fff;
+  border-bottom-right-radius:4px;align-self:flex-end;
+}
+.msg.typing{background:var(--surface);color:var(--muted);font-style:italic;align-self:flex-start}
+.chat-input-row{
+  display:flex;gap:.5rem;padding:.75rem 1rem;
+  border-top:1px solid var(--border);flex-shrink:0;
+}
+.chat-input-row input{
+  flex:1;border:1px solid var(--border);border-radius:8px;
+  padding:.5rem .75rem;font-size:.85rem;font-family:var(--font-body);
+  outline:none;transition:border-color .2s;
+}
+.chat-input-row input:focus{border-color:var(--blue)}
+.chat-send{
+  background:linear-gradient(135deg,var(--blue),var(--green));
+  color:#fff;border:none;border-radius:8px;
+  width:36px;height:36px;cursor:pointer;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+}
+.chat-send:hover{opacity:.88}
+.chat-send svg{width:15px;height:15px;fill:#fff}
+
+/* ── MOBILE ── */
+@media(max-width:900px){
+  .app-grid{grid-template-columns:1fr}
+  .app-mockup{order:-1}
+}
+@media(max-width:700px){
+  nav .nav-links{display:none}
+  .nav-burger{display:block}
+  .stats-row{gap:1.5rem}
+  .hero-sub{font-size:1rem}
+  .btn-group{flex-direction:column;align-items:stretch}
+  .btn-group .btn{justify-content:center}
+  .chat-box{width:calc(100vw - 32px);right:-8px}
+  section{padding:4rem 1.25rem}
+}
+.mobile-menu{
+  display:none;flex-direction:column;gap:0;
+  position:absolute;top:64px;left:0;right:0;
+  background:#fff;border-bottom:1px solid var(--border);
+  box-shadow:0 8px 24px rgba(0,0,0,.08);z-index:199;
+}
+.mobile-menu.open{display:flex}
+.mobile-menu a{
+  padding:1rem 1.5rem;font-size:.95rem;font-weight:500;
+  color:var(--text);border-bottom:1px solid var(--border);
+  transition:background .15s;
+}
+.mobile-menu a:hover{background:var(--surface)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Solvia</div>
+  <div class="nav-links">
+    <a href="#solucoes">Soluções</a>
+    <a href="#apps">Apps com IA</a>
+    <a href="#cases">Cases</a>
+    <a href="#como">Como funciona</a>
+    <a href="#manifesto">Manifesto</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <button class="nav-cta" onclick="openChat()">Falar com a Bia ↗</button>
+  <button class="nav-burger" onclick="toggleMobileMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#solucoes" onclick="closeMobileMenu()">Soluções</a>
+  <a href="#apps" onclick="closeMobileMenu()">Apps com IA</a>
+  <a href="#cases" onclick="closeMobileMenu()">Cases</a>
+  <a href="#como" onclick="closeMobileMenu()">Como funciona</a>
+  <a href="#manifesto" onclick="closeMobileMenu()">Manifesto</a>
+  <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
+  <a href="https://wa.me/5511918560216" target="_blank">WhatsApp ↗</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-badge">⚠ Seu concorrente já usa IA. Você ainda não.</div>
+    <h1>Pare de perder leads<br>toda noite e todo <span class="accent">fim de semana</span></h1>
+    <p class="hero-sub">Agentes de IA que respondem em segundos, qualificam e agendam — enquanto você dorme, viaja ou descansa.</p>
+    <p style="font-size:.88rem;color:var(--muted);margin-bottom:2rem">Sem contratar mais gente. Sem plantão. Sem cliente esperando.</p>
+    <div class="btn-group" style="justify-content:center">
+      <button class="btn btn-primary" onclick="openChat()">Testar agente agora — grátis ↗</button>
+      <a href="#como" class="btn btn-outline">Ver como funciona</a>
+    </div>
+    <p class="hero-micro">
+      <span>✓ Protótipo em 48h</span>
+      <span>✓ Sem fidelidade</span>
+      <span>✓ LGPD compliant</span>
+    </p>
+    <div class="stats-row">
+      <div class="stat"><strong>&lt;5s</strong><span>Tempo de resposta</span></div>
+      <div class="stat"><strong>24/7</strong><span>Sem pausas ou atestado</span></div>
+      <div class="stat"><strong>+47%</strong><span>Leads qualificados</span></div>
+      <div class="stat"><strong>48h</strong><span>Protótipo no ar</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- DOR -->
+<section id="pain">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow eyebrow-red">Isso está acontecendo agora</div>
+      <h2>Quanto dinheiro está <span style="color:var(--red)">escapando pelo vão?</span></h2>
+      <p>Cada lead não respondido é uma venda que foi direto pro concorrente.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-icon">📵</div>
+        <h3>Lead entra. Ninguém atende.</h3>
+        <p>Você investe em anúncio, o cliente manda mensagem às 22h — e vai embora pra concorrência que respondeu primeiro.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🙅</div>
+        <h3>Vendedor perde tempo com curioso</h3>
+        <p>Seu time para de vender para responder "quanto custa?" e "vocês atendem minha cidade?". Todo. Dia.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">💸</div>
+        <h3>Follow-up esquecido = dinheiro perdido</h3>
+        <p>Lead quente fica frio porque ninguém lembrou de ligar. O pipeline vira cemitério de oportunidades.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🌙</div>
+        <h3>Atendimento 24/7 custa caro demais</h3>
+        <p>Contratar plantão noturno é inviável. Mas deixar o cliente esperando até segunda-feira também custa.</p>
+      </div>
+    </div>
+    <div class="pain-cta">
+      <p>A Solvia resolve cada um desses pontos com IA que nunca dorme.</p>
+      <button class="btn btn-primary" onclick="openChat()">Quero resolver isso agora ↗</button>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUÇÕES -->
+<section id="solucoes">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow eyebrow-blue">O que entregamos</div>
+      <h2>Três soluções que fecham os <span class="accent">buracos do seu funil</span></h2>
+      <p>Juntas ou separadas, dependendo do que você precisa agora.</p>
+    </div>
+    <div class="sol-grid">
+      <div class="sol-card">
+        <div class="sol-icon">🤖</div>
+        <h3>Agente de IA 24/7</h3>
+        <p>Responde, qualifica e agenda em segundos. A qualquer hora. Sem folga, sem atestado, sem salário.</p>
+        <ul class="features">
+          <li>Responde em menos de 5 segundos</li>
+          <li>Qualifica e filtra leads automaticamente</li>
+          <li>Agenda reuniões na sua agenda em tempo real</li>
+          <li>Handoff para humano com contexto salvo</li>
+        </ul>
+      </div>
+      <div class="sol-card">
+        <div class="sol-icon">🌐</div>
+        <h3>Site que converte, não só aparece</h3>
+        <p>Design rápido, SEO técnico e IA integrada. Seu site vira vendedor ativo, não vitrine parada.</p>
+        <ul class="features">
+          <li>Carregamento abaixo de 2s (Core Web Vitals)</li>
+          <li>SEO que traz leads orgânicos</li>
+          <li>IA integrada para capturar visitante na hora</li>
+          <li>Design exclusivo e responsivo</li>
+        </ul>
+      </div>
+      <div class="sol-card">
+        <div class="sol-icon">⚡</div>
+        <h3>Automações inteligentes</h3>
+        <p>WhatsApp, CRM, agenda e pagamentos conectados. Informação certa, na hora certa, sem intervenção manual.</p>
+        <ul class="features">
+          <li>Zero retrabalho manual</li>
+          <li>Notificações e follow-ups automáticos</li>
+          <li>Integração com ferramentas que você já usa</li>
+          <li>Relatórios automáticos por WhatsApp</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPS COM IA -->
+<section id="apps">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow eyebrow-green">Novo</div>
+      <h2>Apps sob medida <span class="accent">com IA dentro</span></h2>
+      <p>Sistemas que pensam pelo seu negócio — do estoque ao relatório, tudo automático.</p>
+    </div>
+    <div class="app-grid">
+      <div class="app-list">
+        <div class="app-item">
+          <div class="app-bullet">📊</div>
+          <div>
+            <h4>Resumo inteligente do que mais saiu</h4>
+            <p>A IA analisa suas vendas e entrega um resumo diário: produtos campeões, horários de pico, ticket médio — sem você abrir planilha.</p>
+          </div>
+        </div>
+        <div class="app-item">
+          <div class="app-bullet">📦</div>
+          <div>
+            <h4>Integração com estoque em tempo real</h4>
+            <p>Alerta automático quando produto está acabando. A IA sugere quantidade ideal de reposição baseada no histórico de vendas.</p>
+          </div>
+        </div>
+        <div class="app-item">
+          <div class="app-bullet">💬</div>
+          <div>
+            <h4>Relatório por WhatsApp todo dia</h4>
+            <p>Você recebe uma mensagem toda manhã com o resumo do dia anterior: faturamento, itens vendidos, status do estoque.</p>
+          </div>
+        </div>
+        <div class="app-item">
+          <div class="app-bullet">🔗</div>
+          <div>
+            <h4>Conecta com o que você já usa</h4>
+            <p>Shopee, Mercado Livre, sistemas de gestão, Google Sheets — a IA centraliza tudo sem migração de dados.</p>
+          </div>
+        </div>
+      </div>
+      <div class="app-mockup">
+        <div class="mockup-header">
+          <strong>📈 Painel — hoje</strong>
+          <span class="badge-live">● Ao vivo</span>
+        </div>
+        <div class="mockup-row"><span class="mockup-label">Faturamento</span><span class="mockup-val up">R$ 4.820</span></div>
+        <div class="mockup-row"><span class="mockup-label">Pedidos</span><span class="mockup-val">37</span></div>
+        <div class="mockup-row"><span class="mockup-label">Ticket médio</span><span class="mockup-val">R$ 130</span></div>
+        <div class="mockup-row"><span class="mockup-label">Produto #1</span><span class="mockup-val">Keycap Dragão</span></div>
+        <div class="mockup-row"><span class="mockup-label">Estoque crítico</span><span class="mockup-val warn">⚠ PLA Branco</span></div>
+        <div class="mockup-row"><span class="mockup-label">Leads respondidos</span><span class="mockup-val up">100% ✓</span></div>
+        <div class="mockup-ai">
+          <strong>IA:</strong> Reposição sugerida — 2kg PLA Branco com base nos últimos 14 dias de vendas.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section id="cases">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow eyebrow-blue">Resultados reais</div>
+      <h2>Antes e depois <span class="accent">com a Solvia</span></h2>
+      <p>Clientes que pararam de perder leads e começaram a fechar mais.</p>
+    </div>
+    <div class="cases-grid">
+      <div class="case-card">
+        <div class="case-tag">E-commerce Fashion</div>
+        <h3>Lead entrava, mas sumia fora do horário comercial</h3>
+        <div class="case-block">
+          <div class="case-label bad">✕ Antes</div>
+          <p>Sem resposta após as 18h. Cliente ia embora e comprava do concorrente que atendia 24h.</p>
+        </div>
+        <div class="case-block">
+          <div class="case-label sol">→ Solução</div>
+          <p>Agente de IA atendendo 24/7 com qualificação automática e handoff para o vendedor de manhã.</p>
+        </div>
+        <div class="result-box"><p>+47% leads qualificados · Resposta: de horas para 5 segundos</p></div>
+      </div>
+      <div class="case-card">
+        <div class="case-tag">Clínica Médica</div>
+        <h3>Agenda cheia de "talvez" e site que espantava pacientes</h3>
+        <div class="case-block">
+          <div class="case-label bad">✕ Antes</div>
+          <p>Site lento (LCP 6s), sem agendamento online, recepcionista perdendo horas abrindo agenda manualmente.</p>
+        </div>
+        <div class="case-block">
+          <div class="case-label sol">→ Solução</div>
+          <p>Novo site com IA integrada e agendamento automático com confirmação via WhatsApp.</p>
+        </div>
+        <div class="result-box"><p>LCP 1.9s · +38% agendamentos · Recepcionista libera 3h/dia</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section id="como">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow eyebrow-green">Do zero ao ar</div>
+      <h2>Você vê funcionando <span class="accent">antes de pagar</span></h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-step">01</div>
+        <div class="tl-body">
+          <h3>Diagnóstico do funil</h3>
+          <p>Mapeamos onde seus leads somem e quanto isso custa por mês em receita não capturada.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-step">02</div>
+        <div class="tl-body">
+          <h3>Protótipo em 48h</h3>
+          <p>Você vê o agente funcionando — respondendo de verdade — antes de assinar qualquer coisa.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-step">03</div>
+        <div class="tl-body">
+          <h3>Integração & testes</h3>
+          <p>Conectamos com seu CRM, WhatsApp e agenda. LGPD em dia, tudo testado antes do go-live.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-step">04</div>
+        <div class="tl-body">
+          <h3>Go live + evolução contínua</h3>
+          <p>Agente no ar e melhorando com cada conversa. Você acompanha tudo num painel simples.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-head">
+      <h2>Dúvidas frequentes</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Meu negócio é pequeno. Vale a pena?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Especialmente para pequenos negócios — porque cada lead perdido dói mais. Um agente custa menos que um atendente part-time e trabalha sem parar. A maioria dos clientes paga o investimento com os leads que antes simplesmente sumiam.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Quanto tempo até estar no ar?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Agentes simples de atendimento entram no ar em 3 a 5 dias úteis. O protótipo você vê em 48h. Projetos completos com site + integrações levam de 2 a 4 semanas.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          E se o cliente perguntar algo que o agente não sabe?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">O agente reconhece o limite e faz o handoff para um humano — com todo o contexto da conversa já salvo. Sem constrangimento, sem cliente repetindo tudo de novo.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Funciona no WhatsApp e no site ao mesmo tempo?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Sim. Podemos integrar WhatsApp Business API, chat no site, Instagram e Messenger — tudo centralizado. Você escolhe os canais onde seu cliente já está.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          E a LGPD?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Todos os projetos são LGPD-ready desde o início. Implementamos políticas de privacidade, consentimento e segurança de dados desde o primeiro dia — não é checklist, é parte do processo.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<section id="manifesto">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow eyebrow-white">Manifesto</div>
+      <h2 style="color:#fff">O tempo é a única moeda<br>que <span style="color:var(--green)">não se multiplica</span></h2>
+    </div>
+    <div class="manifesto-inner">
+      <p>Tudo o que fazemos — trabalhar, aprender, criar, lutar — se resume a como gastamos os instantes que nunca mais voltarão. A vida não deve ser vivida em processos, mas em experiências.</p>
+      <div class="manifesto-quote">
+        <p>A Solvia nasceu com um propósito maior que a tecnologia: libertar pessoas do peso do repetitivo, para que possam viver o essencial.</p>
+      </div>
+      <p>Cada agente criado, cada automação entregue, não é apenas um sistema funcionando. É um pedaço de vida devolvido. É tempo que retorna para ser vivido com a família, com os sonhos, com a paz de ser humano.</p>
+      <h3 style="color:#fff;margin:1.75rem 0 .75rem">A Solvia acredita que:</h3>
+      <ul class="manifesto-beliefs">
+        <li>A vida não se mede em tarefas concluídas, mas em instantes vividos.</li>
+        <li>A tecnologia deve ser invisível e libertadora, nunca uma prisão.</li>
+        <li>Cada pessoa merece mais do que sobreviver em processos — merece existir em plenitude.</li>
+      </ul>
+      <p class="manifesto-lema">👉 Devolver o tempo, para que cada pessoa viva o que realmente importa.</p>
+      <div class="manifesto-author">
+        <strong>Kevyn Freo</strong>
+        <span>Fundador — Solvia</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="cta-final">
+  <div class="container">
+    <div class="eyebrow eyebrow-white">Cada dia sem isso é dinheiro perdido</div>
+    <h2>Quanto vale um lead que não some mais?</h2>
+    <p>Converse com a Bia agora e veja ao vivo o que ela faz pelo seu negócio.</p>
+    <div class="btn-group" style="justify-content:center">
+      <button class="btn btn-white" onclick="openChat()">Testar a Bia agora — grátis</button>
+      <a href="https://wa.me/5511918560216" target="_blank" class="btn btn-outline-white">Falar pelo WhatsApp ↗</a>
+    </div>
+    <p class="cta-micro">Protótipo em 48h · Sem contrato de fidelidade · LGPD compliant</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>Solvia</strong> — Agentes de IA para negócios que não param de crescer.</p>
+  <p>© 2026 SolvIA · <a href="https://wa.me/5511918560216">WhatsApp (11) 91856-0216</a> · LGPD compliant</p>
+</footer>
+
+<!-- CHAT WIDGET -->
+<div id="chat-widget">
+  <div class="chat-box" id="chatBox">
+    <div class="chat-header">
+      <div class="chat-header-info">
+        <div class="chat-avatar">🤖</div>
+        <div>
+          <strong>Bia — Agente Solvia</strong>
+          <span>IA · Responde em segundos</span>
+        </div>
+      </div>
+      <button class="chat-close" onclick="closeChat()" aria-label="Fechar">×</button>
+    </div>
+    <div class="chat-msgs" id="chatMsgs">
+      <div class="msg bot">Oi! Sou a Bia, agente de IA da Solvia 👋<br><br>Posso te mostrar como parar de perder leads agora mesmo. Qual é o maior problema do seu atendimento hoje?</div>
+    </div>
+    <div class="chat-input-row">
+      <input type="text" id="chatInput" placeholder="Digite sua dúvida..." autocomplete="off"
+        onkeydown="if(event.key==='Enter')sendChat()"/>
+      <button class="chat-send" onclick="sendChat()" aria-label="Enviar">
+        <svg viewBox="0 0 24 24"><path d="M2 12L22 2L14 22L11 13L2 12Z"/></svg>
+      </button>
+    </div>
+  </div>
+  <button class="chat-toggle" onclick="toggleChat()" aria-label="Abrir chat">
+    <svg viewBox="0 0 24 24"><path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H5.17L4 17.17V4H20V16Z"/></svg>
+  </button>
+  <div class="chat-badge" id="chatBadge">1</div>
+</div>
+
+<script>
+/* ── MOBILE MENU ── */
+function toggleMobileMenu(){
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+function closeMobileMenu(){
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+
+/* ── FAQ ── */
+function toggleFaq(btn){
+  const item = btn.closest('.faq-item');
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if(!wasOpen) item.classList.add('open');
+}
+
+/* ── CHAT ── */
+let chatOpen = false;
+
+function openChat(){
+  chatOpen = true;
+  document.getElementById('chatBox').classList.add('open');
+  document.getElementById('chatBadge').style.display = 'none';
+  document.getElementById('chatInput').focus();
+}
+function closeChat(){
+  chatOpen = false;
+  document.getElementById('chatBox').classList.remove('open');
+}
+function toggleChat(){ chatOpen ? closeChat() : openChat(); }
+
+/* Mostra badge após 4s */
+setTimeout(function(){
+  if(!chatOpen){
+    var b = document.getElementById('chatBadge');
+    b.style.display = 'flex';
+  }
+}, 4000);
+
+/* ──────────────────────────────────────────────────────────────
+   WEBHOOK N8N
+   Substitua a URL abaixo pela URL real do seu webhook n8n
+   quando o agente da Bia estiver pronto.
+
+   O site envia um POST com:
+     { "message": "texto do usuário", "sessionId": "id-da-sessão" }
+
+   E espera receber de volta:
+     { "reply": "resposta do agente" }
+   ou
+     { "output": "resposta do agente" }
+   ou qualquer campo de texto que o n8n devolver.
+────────────────────────────────────────────────────────────── */
+var N8N_WEBHOOK_URL = 'https://SEU_N8N_AQUI/webhook/solvia-bia';
+
+/* Gera um sessionId único por visita para manter contexto no n8n */
+var SESSION_ID = 'sess_' + Math.random().toString(36).substr(2, 9) + '_' + Date.now();
+
+async function sendChat(){
+  var input = document.getElementById('chatInput');
+  var text = input.value.trim();
+  if(!text) return;
+  input.value = '';
+
+  appendMsg(text, 'user');
+
+  var typing = appendMsg('Digitando...', 'typing');
+
+  try {
+    var res = await fetch(N8N_WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: text, sessionId: SESSION_ID })
+    });
+
+    var data = await res.json();
+
+    /* Aceita qualquer campo que o n8n devolver com a resposta */
+    var reply = data.reply || data.output || data.text || data.message ||
+                data.response || (Array.isArray(data) && data[0] && (data[0].reply || data[0].output || data[0].text)) ||
+                'Desculpa, tive um problema técnico. Pode tentar de novo?';
+
+    typing.remove();
+    appendMsg(reply, 'bot');
+
+  } catch(e) {
+    typing.remove();
+    appendMsg('Ops, erro de conexão. Tenta de novo em instantes!', 'bot');
+  }
+}
+
+function appendMsg(text, type){
+  var msgs = document.getElementById('chatMsgs');
+  var div = document.createElement('div');
+  div.className = 'msg ' + type;
+  div.innerHTML = String(text).replace(/\n/g, '<br>');
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+  return div;
+}
+</script>
+</body>
+</html>
