@@ -589,57 +589,174 @@ footer a:hover{color:rgba(255,255,255,.8)}
 <section id="apps">
   <div class="container">
     <div class="section-head">
-      <div class="eyebrow eyebrow-green">Novo</div>
-      <h2>Apps sob medida <span class="accent">com IA dentro</span></h2>
-      <p>Sistemas que pensam pelo seu negócio — do estoque ao relatório, tudo automático.</p>
+      <div class="eyebrow eyebrow-green">Plataformas sob medida</div>
+      <h2>Um app completo <span class="accent">para cada nicho</span></h2>
+      <p>Não é template. É uma plataforma construída do zero para o seu segmento — com painel admin, IA integrada e tudo que o seu cliente precisa no dia a dia.</p>
     </div>
-    <div class="app-grid">
+
+    <!-- Tabs de nicho -->
+    <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem" id="appTabs">
+      <button class="app-tab active" onclick="switchTab('restaurante')" style="padding:.5rem 1.25rem;border-radius:999px;border:1.5px solid var(--blue);background:var(--blue);color:#fff;font-weight:600;font-size:.85rem;cursor:pointer;font-family:var(--font-body);transition:all .2s">🍽️ Restaurante</button>
+      <button class="app-tab" onclick="switchTab('academia')" style="padding:.5rem 1.25rem;border-radius:999px;border:1.5px solid var(--border);background:#fff;color:var(--muted);font-weight:600;font-size:.85rem;cursor:pointer;font-family:var(--font-body);transition:all .2s">🏋️ Academia</button>
+      <button class="app-tab" onclick="switchTab('clinica')" style="padding:.5rem 1.25rem;border-radius:999px;border:1.5px solid var(--border);background:#fff;color:var(--muted);font-weight:600;font-size:.85rem;cursor:pointer;font-family:var(--font-body);transition:all .2s">🏥 Clínica</button>
+      <button class="app-tab" onclick="switchTab('outro')" style="padding:.5rem 1.25rem;border-radius:999px;border:1.5px solid var(--border);background:#fff;color:var(--muted);font-weight:600;font-size:.85rem;cursor:pointer;font-family:var(--font-body);transition:all .2s">⚡ Seu nicho</button>
+    </div>
+
+    <!-- RESTAURANTE -->
+    <div class="app-grid app-tab-content" id="tab-restaurante">
       <div class="app-list">
+        <div class="app-item">
+          <div class="app-bullet">🍕</div>
+          <div>
+            <h4>Cardápio digital + pedidos pelo app</h4>
+            <p>Cliente escaneia QR, monta o pedido e paga na tela. Pedido cai direto na cozinha sem garçom no meio.</p>
+          </div>
+        </div>
         <div class="app-item">
           <div class="app-bullet">📊</div>
           <div>
-            <h4>Resumo inteligente do que mais saiu</h4>
-            <p>A IA analisa suas vendas e entrega um resumo diário: produtos campeões, horários de pico, ticket médio — sem você abrir planilha.</p>
+            <h4>Painel admin com visão completa do dia</h4>
+            <p>Faturamento em tempo real, pratos mais vendidos, mesas abertas, tempo médio de entrega — tudo numa tela só.</p>
           </div>
         </div>
         <div class="app-item">
           <div class="app-bullet">📦</div>
           <div>
-            <h4>Integração com estoque em tempo real</h4>
-            <p>Alerta automático quando produto está acabando. A IA sugere quantidade ideal de reposição baseada no histórico de vendas.</p>
+            <h4>Estoque e CMV automático</h4>
+            <p>Cada prato vendido desconta os insumos do estoque. A IA alerta quando está acabando e calcula o custo por prato.</p>
           </div>
         </div>
         <div class="app-item">
           <div class="app-bullet">💬</div>
           <div>
-            <h4>Relatório por WhatsApp todo dia</h4>
-            <p>Você recebe uma mensagem toda manhã com o resumo do dia anterior: faturamento, itens vendidos, status do estoque.</p>
-          </div>
-        </div>
-        <div class="app-item">
-          <div class="app-bullet">🔗</div>
-          <div>
-            <h4>Conecta com o que você já usa</h4>
-            <p>Shopee, Mercado Livre, sistemas de gestão, Google Sheets — a IA centraliza tudo sem migração de dados.</p>
+            <h4>Relatório diário no WhatsApp do dono</h4>
+            <p>Todo dia às 23h você recebe: faturamento, ticket médio, pratos campeões e o que precisa de atenção amanhã.</p>
           </div>
         </div>
       </div>
       <div class="app-mockup">
         <div class="mockup-header">
-          <strong>📈 Painel — hoje</strong>
+          <strong>🍽️ Admin — Restaurante</strong>
           <span class="badge-live">● Ao vivo</span>
         </div>
-        <div class="mockup-row"><span class="mockup-label">Faturamento</span><span class="mockup-val up">R$ 4.820</span></div>
-        <div class="mockup-row"><span class="mockup-label">Pedidos</span><span class="mockup-val">37</span></div>
-        <div class="mockup-row"><span class="mockup-label">Ticket médio</span><span class="mockup-val">R$ 130</span></div>
-        <div class="mockup-row"><span class="mockup-label">Produto #1</span><span class="mockup-val">Keycap Dragão</span></div>
-        <div class="mockup-row"><span class="mockup-label">Estoque crítico</span><span class="mockup-val warn">⚠ PLA Branco</span></div>
-        <div class="mockup-row"><span class="mockup-label">Leads respondidos</span><span class="mockup-val up">100% ✓</span></div>
+        <div class="mockup-row"><span class="mockup-label">Faturamento hoje</span><span class="mockup-val up">R$ 3.240</span></div>
+        <div class="mockup-row"><span class="mockup-label">Pedidos abertos</span><span class="mockup-val">8 mesas</span></div>
+        <div class="mockup-row"><span class="mockup-label">Prato #1</span><span class="mockup-val">Picanha 300g</span></div>
+        <div class="mockup-row"><span class="mockup-label">Tempo médio</span><span class="mockup-val">18 min</span></div>
+        <div class="mockup-row"><span class="mockup-label">Estoque crítico</span><span class="mockup-val warn">⚠ Alcatra</span></div>
+        <div class="mockup-row"><span class="mockup-label">CMV do dia</span><span class="mockup-val up">28% ✓</span></div>
         <div class="mockup-ai">
-          <strong>IA:</strong> Reposição sugerida — 2kg PLA Branco com base nos últimos 14 dias de vendas.
+          <strong>IA:</strong> Alcatra para menos de 2 porções. Com base na sexta passada, sugiro pedir 5kg hoje.
         </div>
       </div>
     </div>
+
+    <!-- ACADEMIA -->
+    <div class="app-grid app-tab-content" id="tab-academia" style="display:none">
+      <div class="app-list">
+        <div class="app-item">
+          <div class="app-bullet">🏋️</div>
+          <div>
+            <h4>Controle de alunos e mensalidades</h4>
+            <p>Cadastro, plano, vencimento e histórico de pagamento de cada aluno — sem planilha, sem post-it.</p>
+          </div>
+        </div>
+        <div class="app-item">
+          <div class="app-bullet">📅</div>
+          <div>
+            <h4>Agendamento de aulas e personal</h4>
+            <p>Aluno agenda a aula pelo app, professor vê a turma, dono vê a ocupação — tudo sincronizado.</p>
+          </div>
+        </div>
+        <div class="app-item">
+          <div class="app-bullet">📊</div>
+          <div>
+            <h4>Painel de inadimplência e churn</h4>
+            <p>A IA lista quem está para cancelar, quem atrasou e manda cobrança automática pelo WhatsApp antes de virar problema.</p>
+          </div>
+        </div>
+        <div class="app-item">
+          <div class="app-bullet">🎯</div>
+          <div>
+            <h4>Plano de treino digital por aluno</h4>
+            <p>Professor monta o treino no sistema e o aluno acessa pelo celular. IA sugere progressão com base na evolução.</p>
+          </div>
+        </div>
+      </div>
+      <div class="app-mockup">
+        <div class="mockup-header">
+          <strong>🏋️ Admin — Academia</strong>
+          <span class="badge-live">● Ao vivo</span>
+        </div>
+        <div class="mockup-row"><span class="mockup-label">Alunos ativos</span><span class="mockup-val up">214</span></div>
+        <div class="mockup-row"><span class="mockup-label">Aulas hoje</span><span class="mockup-val">9 turmas</span></div>
+        <div class="mockup-row"><span class="mockup-label">Mensalidades em dia</span><span class="mockup-val up">91% ✓</span></div>
+        <div class="mockup-row"><span class="mockup-label">Inadimplentes</span><span class="mockup-val warn">⚠ 19 alunos</span></div>
+        <div class="mockup-row"><span class="mockup-label">Cancelamentos/mês</span><span class="mockup-val">3</span></div>
+        <div class="mockup-row"><span class="mockup-label">Receita mensal</span><span class="mockup-val up">R$ 32.100</span></div>
+        <div class="mockup-ai">
+          <strong>IA:</strong> 7 alunos sem check-in há 10+ dias. Cobrança de reengajamento enviada automaticamente.
+        </div>
+      </div>
+    </div>
+
+    <!-- CLÍNICA -->
+    <div class="app-grid app-tab-content" id="tab-clinica" style="display:none">
+      <div class="app-list">
+        <div class="app-item">
+          <div class="app-bullet">📋</div>
+          <div>
+            <h4>Prontuário digital por paciente</h4>
+            <p>Histórico, exames, prescrições e evolução em um único lugar — acessível pelo médico na hora da consulta.</p>
+          </div>
+        </div>
+        <div class="app-item">
+          <div class="app-bullet">📅</div>
+          <div>
+            <h4>Agendamento online com confirmação automática</h4>
+            <p>Paciente agenda pelo site ou WhatsApp. Sistema confirma, manda lembrete 24h antes e cancela automaticamente se não confirmar.</p>
+          </div>
+        </div>
+        <div class="app-item">
+          <div class="app-bullet">💰</div>
+          <div>
+            <h4>Gestão financeira e repasse de convênios</h4>
+            <p>Controle de particulares e convênios separados. Relatório de produção por médico e repasse calculado automaticamente.</p>
+          </div>
+        </div>
+        <div class="app-item">
+          <div class="app-bullet">📊</div>
+          <div>
+            <h4>Painel da recepção em tempo real</h4>
+            <p>Fila de espera, status de cada consultório e tempo médio de atendimento — sem papel, sem confusão.</p>
+          </div>
+        </div>
+      </div>
+      <div class="app-mockup">
+        <div class="mockup-header">
+          <strong>🏥 Admin — Clínica</strong>
+          <span class="badge-live">● Ao vivo</span>
+        </div>
+        <div class="mockup-row"><span class="mockup-label">Consultas hoje</span><span class="mockup-val">23 / 26</span></div>
+        <div class="mockup-row"><span class="mockup-label">Em espera</span><span class="mockup-val warn">⚠ 4 pacientes</span></div>
+        <div class="mockup-row"><span class="mockup-label">Confirmados amanhã</span><span class="mockup-val up">18 ✓</span></div>
+        <div class="mockup-row"><span class="mockup-label">Faturamento/mês</span><span class="mockup-val up">R$ 58.400</span></div>
+        <div class="mockup-row"><span class="mockup-label">Taxa de no-show</span><span class="mockup-val up">4% ✓</span></div>
+        <div class="mockup-row"><span class="mockup-label">NPS pacientes</span><span class="mockup-val up">9.2 ✓</span></div>
+        <div class="mockup-ai">
+          <strong>IA:</strong> 3 pacientes sem retorno há 90 dias. Mensagem de reativação enviada via WhatsApp.
+        </div>
+      </div>
+    </div>
+
+    <!-- SEU NICHO -->
+    <div class="app-tab-content" id="tab-outro" style="display:none;text-align:center;padding:3rem 1.5rem;background:var(--surface);border-radius:var(--radius-lg);border:2px dashed var(--border)">
+      <div style="font-size:3rem;margin-bottom:1rem">⚡</div>
+      <h3 style="font-size:1.3rem;margin-bottom:.75rem">Seu nicho aqui</h3>
+      <p style="max-width:480px;margin:0 auto 1.75rem;font-size:.95rem">Escola, petshop, barbearia, imobiliária, oficina mecânica, delivery — se o negócio tem processo repetitivo, a Solvia constrói o app. O painel admin e a IA são feitos do zero para o seu fluxo.</p>
+      <button class="btn btn-primary" onclick="openChat()">Quero um app para o meu negócio ↗</button>
+    </div>
+
   </div>
 </section>
 
@@ -946,6 +1063,29 @@ function appendMsg(text, type){
   msgs.appendChild(div);
   msgs.scrollTop = msgs.scrollHeight;
   return div;
+}
+  /* ── TABS DE NICHO (seção Apps) ── */
+function switchTab(nicho) {
+  /* Esconde todos os conteúdos */
+  document.querySelectorAll('.app-tab-content').forEach(function(el) {
+    el.style.display = 'none';
+  });
+  /* Mostra o selecionado */
+  var target = document.getElementById('tab-' + nicho);
+  if (target) target.style.display = nicho === 'outro' ? 'block' : 'grid';
+
+  /* Atualiza visual dos botões */
+  document.querySelectorAll('.app-tab').forEach(function(btn) {
+    btn.style.background = '#fff';
+    btn.style.color = 'var(--muted)';
+    btn.style.borderColor = 'var(--border)';
+  });
+  var activeBtn = document.querySelector('[onclick="switchTab(\'' + nicho + '\')"]');
+  if (activeBtn) {
+    activeBtn.style.background = 'var(--blue)';
+    activeBtn.style.color = '#fff';
+    activeBtn.style.borderColor = 'var(--blue)';
+  }
 }
 </script>
 </body>
