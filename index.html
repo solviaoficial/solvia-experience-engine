@@ -1292,18 +1292,6 @@ function jobEnviar(){
     body: JSON.stringify(dados)
   }).catch(function(){});
 
-  /* Método 2: sendBeacon */
-  try {
-    navigator.sendBeacon(JOB_WEBHOOK_URL, new Blob([JSON.stringify(dados)], { type: 'application/json' }));
-  } catch(e) {}
-
-  /* Método 3: XHR */
-  try {
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', JOB_WEBHOOK_URL, true);
-    xhr.send(JSON.stringify(dados));
-  } catch(e) {}
-
   setTimeout(function(){ jobIrStep('sucesso'); }, 1000);
 }
 </script>
