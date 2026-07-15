@@ -447,6 +447,78 @@ footer a:hover{color:rgba(255,255,255,.8)}
   transition:background .15s;
 }
 .mobile-menu a:hover{background:var(--surface)}
+
+/* ── MODAL TRABALHE CONOSCO ── */
+#job-modal-overlay{
+  position:fixed;inset:0;z-index:1000;
+  background:rgba(8,16,31,.55);backdrop-filter:blur(6px);
+  display:none;align-items:center;justify-content:center;
+  padding:1.5rem;animation:jobFadeIn .2s ease;
+}
+@keyframes jobFadeIn{from{opacity:0}to{opacity:1}}
+@keyframes jobSlideUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+#job-modal-box{
+  background:#fff;border-radius:var(--radius-lg);
+  max-width:520px;width:100%;max-height:88vh;overflow-y:auto;
+  padding:2.75rem 2.5rem 2.25rem;position:relative;
+  animation:jobSlideUp .3s ease;
+  box-shadow:0 20px 60px rgba(8,16,31,.25);
+}
+#job-modal-close{
+  position:absolute;top:1.1rem;right:1.1rem;
+  width:32px;height:32px;border-radius:50%;border:none;
+  background:var(--surface);color:var(--muted);cursor:pointer;
+  font-size:1rem;display:flex;align-items:center;justify-content:center;
+  transition:background .2s,color .2s;
+}
+#job-modal-close:hover{background:var(--blue-light);color:var(--blue-dark)}
+.job-step{display:none}
+.job-step.active{display:block;animation:jobSlideUp .25s ease}
+.job-step-tag{
+  font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;
+  color:var(--green-dark);margin-bottom:1rem;
+}
+.job-modal-logo{
+  font-family:var(--font-display);font-weight:900;font-size:1.15rem;
+  background:linear-gradient(135deg,var(--blue),var(--green));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  margin-bottom:.85rem;
+}
+#job-modal-box h3{font-size:1.4rem;line-height:1.25;margin-bottom:.5rem}
+.job-modal-sub{font-size:.9rem;color:var(--muted);margin-bottom:1.5rem;line-height:1.6}
+.job-input,.job-select,.job-textarea{
+  display:block;width:100%;background:var(--surface);
+  border:1px solid var(--border);border-radius:10px;
+  color:var(--text);font-size:.92rem;font-family:var(--font-body);
+  padding:.8rem 1rem;outline:none;margin-bottom:.75rem;
+  transition:border-color .2s;
+}
+.job-input:focus,.job-select:focus,.job-textarea:focus{border-color:var(--blue)}
+.job-input::placeholder,.job-textarea::placeholder{color:#9AA3B2}
+.job-textarea{resize:none;min-height:110px;line-height:1.6}
+.job-select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B7280' stroke-width='1.6' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center}
+.job-btn{
+  width:100%;background:linear-gradient(135deg,var(--blue),var(--green));
+  color:#fff;border:none;border-radius:10px;
+  font-family:var(--font-body);font-weight:600;font-size:.95rem;
+  padding:.9rem;cursor:pointer;margin-top:.35rem;
+  transition:opacity .2s,transform .2s;
+}
+.job-btn:hover:not(:disabled){opacity:.88;transform:translateY(-1px)}
+.job-btn:disabled{opacity:.35;cursor:not-allowed}
+.job-btn-ghost{
+  background:var(--surface);border:1px solid var(--border);
+  color:var(--muted);font-family:var(--font-body);font-weight:600;
+  font-size:.9rem;padding:.9rem 1.1rem;border-radius:10px;
+  cursor:pointer;white-space:nowrap;transition:background .2s,color .2s;
+}
+.job-btn-ghost:hover{background:var(--blue-light);color:var(--blue-dark)}
+#job-modal-progress{position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--surface);border-radius:0 0 var(--radius-lg) var(--radius-lg);overflow:hidden}
+#job-modal-progress-fill{height:100%;width:0%;background:linear-gradient(135deg,var(--blue),var(--green));transition:width .35s ease}
+@media(max-width:560px){
+  #job-modal-box{padding:2.25rem 1.5rem 1.75rem}
+  #job-modal-box h3{font-size:1.2rem}
+}
 </style>
 </head>
 <body>
@@ -462,7 +534,10 @@ footer a:hover{color:rgba(255,255,255,.8)}
     <a href="#manifesto">Manifesto</a>
     <a href="#faq">FAQ</a>
   </div>
-  <button class="nav-cta" onclick="openChat()">Falar com a Bia ↗</button>
+  <div style="display:flex;align-items:center;gap:.6rem">
+    <button class="btn btn-outline" style="padding:.5rem 1.1rem;font-size:.875rem" onclick="openJobModal()">Trabalhe Conosco</button>
+    <button class="nav-cta" onclick="openChat()">Falar com a Bia ↗</button>
+  </div>
   <button class="nav-burger" onclick="toggleMobileMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
@@ -474,6 +549,7 @@ footer a:hover{color:rgba(255,255,255,.8)}
   <a href="#como" onclick="closeMobileMenu()">Como funciona</a>
   <a href="#manifesto" onclick="closeMobileMenu()">Manifesto</a>
   <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
+  <a href="#" onclick="closeMobileMenu();openJobModal();return false;">Trabalhe Conosco</a>
   <a href="https://wa.me/5511918560216" target="_blank">WhatsApp ↗</a>
 </div>
 
@@ -933,6 +1009,69 @@ footer a:hover{color:rgba(255,255,255,.8)}
   <p>© 2026 SolvIA · <a href="https://wa.me/5511918560216">WhatsApp (11) 91856-0216</a> · LGPD compliant</p>
 </footer>
 
+<!-- MODAL TRABALHE CONOSCO -->
+<div id="job-modal-overlay" onclick="closeJobModalOutside(event)">
+  <div id="job-modal-box">
+    <button id="job-modal-close" onclick="closeJobModal()" aria-label="Fechar">✕</button>
+
+    <!-- Step 1 -->
+    <div class="job-step active" id="job-step-1">
+      <div class="job-step-tag">1 de 3</div>
+      <div class="job-modal-logo">Solvia</div>
+      <h3>Trabalhe conosco</h3>
+      <p class="job-modal-sub">Vamos começar com o básico. Como podemos te chamar e te encontrar?</p>
+      <input type="text" id="job-nome" class="job-input" placeholder="Nome completo" oninput="jobValidarStep(1)">
+      <input type="text" id="job-wpp" class="job-input" placeholder="WhatsApp com DDD (ex: 11 99999-9999)" oninput="jobValidarStep(1)">
+      <input type="email" id="job-email" class="job-input" placeholder="E-mail" oninput="jobValidarStep(1)">
+      <button class="job-btn" id="job-btn-1" onclick="jobIrStep(2)" disabled>Continuar →</button>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="job-step" id="job-step-2">
+      <div class="job-step-tag">2 de 3</div>
+      <h3>Área de interesse</h3>
+      <p class="job-modal-sub">Em qual frente você gostaria de atuar na Solvia?</p>
+      <select id="job-area" class="job-select" onchange="jobValidarStep(2)">
+        <option value="" disabled selected>Selecione uma área</option>
+        <option value="Vendas / Comercial">Vendas / Comercial</option>
+        <option value="Desenvolvimento / Tecnologia">Desenvolvimento / Tecnologia</option>
+        <option value="Marketing">Marketing</option>
+        <option value="Atendimento / Customer Success">Atendimento / Customer Success</option>
+        <option value="Design / Produto">Design / Produto</option>
+        <option value="Outra">Outra</option>
+      </select>
+      <input type="text" id="job-link" class="job-input" placeholder="LinkedIn ou currículo (link)" oninput="jobValidarStep(2)">
+      <div style="display:flex;gap:.75rem;margin-top:.25rem">
+        <button class="job-btn-ghost" onclick="jobIrStep(1)">← Voltar</button>
+        <button class="job-btn" id="job-btn-2" onclick="jobIrStep(3)" disabled style="flex:1">Continuar →</button>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="job-step" id="job-step-3">
+      <div class="job-step-tag">3 de 3</div>
+      <h3>Por que você quer trabalhar na Solvia?</h3>
+      <p class="job-modal-sub">Conta rapidamente sua motivação e experiência relevante.</p>
+      <textarea id="job-motivo" class="job-textarea" placeholder="Ex: tenho experiência com X, me interessei porque..." oninput="jobValidarStep(3)"></textarea>
+      <div style="display:flex;gap:.75rem;margin-top:.25rem">
+        <button class="job-btn-ghost" onclick="jobIrStep(2)">← Voltar</button>
+        <button class="job-btn" id="job-btn-3" onclick="jobEnviar()" disabled style="flex:1">Enviar candidatura 🚀</button>
+      </div>
+    </div>
+
+    <!-- Sucesso -->
+    <div class="job-step" id="job-step-sucesso">
+      <div style="font-size:2.75rem;margin-bottom:.75rem">🎉</div>
+      <div class="job-modal-logo">Solvia</div>
+      <h3 style="margin-bottom:.5rem">Candidatura recebida!</h3>
+      <p class="job-modal-sub" style="font-size:.92rem">Obrigado pelo interesse. Nosso time vai analisar seu perfil e entrar em contato pelo WhatsApp ou e-mail em breve.</p>
+      <button class="job-btn" onclick="closeJobModal()" style="margin-top:.5rem">Fechar</button>
+    </div>
+
+    <div id="job-modal-progress"><div id="job-modal-progress-fill"></div></div>
+  </div>
+</div>
+
 <!-- CHAT WIDGET -->
 <div id="chat-widget">
   <div class="chat-box" id="chatBox">
@@ -979,6 +1118,47 @@ function toggleFaq(btn){
   document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
   if(!wasOpen) item.classList.add('open');
 }
+
+/* ── MODAL TRABALHE CONOSCO ── */
+function openJobModal(){
+  document.getElementById('job-modal-overlay').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  jobIrStep(1);
+}
+function closeJobModal(){
+  document.getElementById('job-modal-overlay').style.display = 'none';
+  document.body.style.overflow = '';
+}
+function closeJobModalOutside(e){
+  if(e.target === document.getElementById('job-modal-overlay')) closeJobModal();
+}
+function jobIrStep(n){
+  document.querySelectorAll('.job-step').forEach(s => s.classList.remove('active'));
+  document.getElementById('job-step-' + n).classList.add('active');
+  var pct = {1:33, 2:66, 3:100, sucesso:100};
+  document.getElementById('job-modal-progress-fill').style.width = (pct[n] || 0) + '%';
+  if(n !== 'sucesso') jobValidarStep(n);
+}
+function jobValidarStep(n){
+  if(n === 1){
+    var nome = document.getElementById('job-nome').value.trim();
+    var wpp = document.getElementById('job-wpp').value.trim();
+    var email = document.getElementById('job-email').value.trim();
+    var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    document.getElementById('job-btn-1').disabled = !(nome.length > 1 && wpp.length > 7 && emailOk);
+  }
+  if(n === 2){
+    var area = document.getElementById('job-area').value;
+    document.getElementById('job-btn-2').disabled = !area;
+  }
+  if(n === 3){
+    var motivo = document.getElementById('job-motivo').value.trim();
+    document.getElementById('job-btn-3').disabled = !(motivo.length > 10);
+  }
+}
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape') closeJobModal();
+});
 
 /* ── CHAT ── */
 let chatOpen = false;
@@ -1086,6 +1266,45 @@ function switchTab(nicho) {
     activeBtn.style.color = '#fff';
     activeBtn.style.borderColor = 'var(--blue)';
   }
+}
+
+/* ── ENVIO DO FORMULÁRIO TRABALHE CONOSCO ── */
+var JOB_WEBHOOK_URL = 'https://n8nwebhook.solviaoficial.com/webhook/formulario_emprego';
+
+function jobEnviar(){
+  var btn = document.getElementById('job-btn-3');
+  btn.disabled = true;
+  btn.textContent = 'Enviando...';
+
+  var dados = {
+    nome: document.getElementById('job-nome').value.trim(),
+    whatsapp: document.getElementById('job-wpp').value.trim(),
+    email: document.getElementById('job-email').value.trim(),
+    area_interesse: document.getElementById('job-area').value,
+    linkedin_curriculo: document.getElementById('job-link').value.trim(),
+    motivo: document.getElementById('job-motivo').value.trim()
+  };
+
+  /* Método 1: fetch */
+  fetch(JOB_WEBHOOK_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    body: JSON.stringify(dados)
+  }).catch(function(){});
+
+  /* Método 2: sendBeacon */
+  try {
+    navigator.sendBeacon(JOB_WEBHOOK_URL, new Blob([JSON.stringify(dados)], { type: 'application/json' }));
+  } catch(e) {}
+
+  /* Método 3: XHR */
+  try {
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', JOB_WEBHOOK_URL, true);
+    xhr.send(JSON.stringify(dados));
+  } catch(e) {}
+
+  setTimeout(function(){ jobIrStep('sucesso'); }, 1000);
 }
 </script>
 </body>
