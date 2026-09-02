@@ -21,7 +21,7 @@
   --font-body:'Inter',sans-serif;
 }
 html{scroll-behavior:smooth}
-body{font-family:var(--font-body);color:var(--text);background:#fff;overflow-x:hidden}
+body{font-family:var(--font-body);color:var(--text);background:#fff;overflow-x:clip}
 a{text-decoration:none;color:inherit}
 img{max-width:100%}
 
@@ -141,7 +141,7 @@ p{color:var(--muted);line-height:1.7}
   position:relative;
   height:350vh;
   background:#fff;
-  overflow:hidden;
+  overflow:clip;
 }
 .story-sticky{
   position:sticky;top:0;
@@ -1158,10 +1158,13 @@ footer a:hover{color:rgba(255,255,255,.8)}
 
 <script>
 /* ── SCROLL STORY (traço animado com o scroll) ── */
-(function(){
+document.addEventListener('DOMContentLoaded', function(){
   var section = document.getElementById('scroll-story');
   var path = document.getElementById('storyPath').querySelector('path');
-  if(!section || !path) return;
+  if(!section || !path){
+    console.warn('Scroll story: elementos não encontrados no DOM');
+    return;
+  }
 
   var len = path.getTotalLength();
   path.style.strokeDasharray = len;
@@ -1181,10 +1184,10 @@ footer a:hover{color:rgba(255,255,255,.8)}
     path.style.strokeDashoffset = len * (1 - mapped);
   }
 
-  window.addEventListener('scroll', updateStory, { passive: true });
+    window.addEventListener('scroll', updateStory, { passive: true });
   window.addEventListener('resize', updateStory);
   updateStory();
-})();
+});
 
 /* ── MOBILE MENU ── */
 function toggleMobileMenu(){
