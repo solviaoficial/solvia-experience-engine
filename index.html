@@ -24,6 +24,37 @@ html{scroll-behavior:smooth}
 body{font-family:var(--font-body);color:var(--text);background:#fff;overflow-x:clip}
 a{text-decoration:none;color:inherit}
 img{max-width:100%}
+::selection{background:var(--green);color:var(--dark)}
+
+/* ── EXPERIENCE LAYER ── */
+.site-progress{
+  position:fixed;top:0;right:0;width:5px;height:100vh;z-index:10000;
+  background:rgba(8,16,31,.07);pointer-events:none;
+}
+.site-progress-bar{
+  width:100%;height:0;background:linear-gradient(to bottom,var(--blue),var(--green));
+  box-shadow:0 0 18px rgba(0,219,136,.45);transform-origin:top;
+}
+.cursor-glow{
+  position:fixed;z-index:9998;left:0;top:0;width:240px;height:240px;border-radius:50%;
+  transform:translate(-50%,-50%);pointer-events:none;opacity:0;
+  background:radial-gradient(circle,rgba(0,153,255,.13),rgba(0,219,136,.055) 35%,transparent 70%);
+  transition:opacity .25s ease;mix-blend-mode:multiply;
+}
+.cursor-glow.visible{opacity:1}
+[data-reveal]{
+  opacity:0;transform:translateY(52px);filter:blur(7px);
+  transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1),filter .8s ease;
+}
+[data-reveal].is-visible{opacity:1;transform:none;filter:none}
+.section-index{
+  display:flex;align-items:center;gap:.7rem;margin-bottom:1.3rem;
+  color:var(--muted);font-size:.73rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+}
+.section-index::before{content:'';width:44px;height:1px;background:currentColor;opacity:.55}
+.interactive-hint{font-size:.74rem;color:var(--muted);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+body.motion-ready .story-intro{will-change:transform,opacity}
+body.motion-ready .story-path{will-change:transform}
 
 /* ── NAV ── */
 nav{
@@ -185,49 +216,102 @@ p{color:var(--muted);line-height:1.7}
 .story-outcome-foot p{max-width:480px;color:#AEB9CA;font-size:.92rem}
 .story-outcome-foot a{color:#fff;font-size:.85rem;font-weight:700;border-bottom:1px solid var(--green);padding-bottom:.3rem}
 
-/* ── DOR ── */
-#pain{background:var(--surface)}
-.pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.5rem}
-.pain-card{
-  background:#fff;border:1px solid var(--border);
-  border-radius:var(--radius-lg);padding:1.5rem;
-  border-top:3px solid var(--red);
+/* ── DIAGNÓSTICO INTERATIVO DA DOR ── */
+#pain{background:#F3F6F9;padding:8rem 1.5rem}
+.pain-shell{max-width:1240px;margin:0 auto}
+.pain-head{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.55fr);gap:3rem;align-items:end;margin-bottom:3.5rem}
+.pain-head h2{max-width:820px;font-size:clamp(2.5rem,5.8vw,5.4rem);line-height:.94;letter-spacing:-.06em}
+.pain-head p{font-size:1rem;max-width:430px;padding-bottom:.35rem}
+.pain-lab{display:grid;grid-template-columns:minmax(270px,.72fr) minmax(0,1.5fr);gap:1rem;min-height:650px}
+.pain-options{display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:26px;overflow:hidden}
+.pain-option{
+  position:relative;flex:1;display:grid;grid-template-columns:44px 1fr auto;align-items:center;gap:1rem;
+  width:100%;padding:1.35rem 1.25rem;border:0;border-bottom:1px solid var(--border);background:#fff;
+  color:var(--text);text-align:left;font-family:var(--font-body);cursor:pointer;transition:color .28s,background .28s;
 }
-.pain-icon{
-  width:42px;height:42px;background:var(--red-light);
-  border-radius:10px;display:flex;align-items:center;
-  justify-content:center;margin-bottom:1rem;font-size:1.2rem;
+.pain-option:last-child{border-bottom:0}
+.pain-option::after{content:'↗';font-size:1rem;color:#A6B0C0;transition:transform .28s,color .28s}
+.pain-option:hover::after,.pain-option.active::after{transform:translate(3px,-3px);color:var(--green)}
+.pain-option.active{background:var(--dark);color:#fff}
+.pain-option-num{font-family:var(--font-display);font-size:.78rem;color:#9BA6B5}
+.pain-option strong{font-family:var(--font-display);font-size:.95rem;line-height:1.25}
+.pain-stage{
+  position:relative;overflow:hidden;border-radius:26px;background:var(--dark);color:#fff;
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(290px,.74fr);gap:2rem;padding:clamp(1.5rem,4vw,3.5rem);
+  box-shadow:0 28px 80px rgba(8,16,31,.18);
 }
-.pain-card h3{margin-bottom:.4rem;font-size:.95rem}
-.pain-card p{font-size:.875rem}
-.pain-cta{margin-top:3rem;text-align:center}
-.pain-cta p{margin-bottom:1.25rem;font-size:1rem;color:var(--muted)}
+.pain-stage::before{
+  content:'';position:absolute;width:500px;height:500px;border-radius:50%;right:-210px;top:-210px;
+  background:radial-gradient(circle,rgba(0,219,136,.22),transparent 68%);pointer-events:none;
+}
+.pain-stage-copy{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:space-between}
+.pain-stage-status{display:inline-flex;align-items:center;gap:.55rem;color:#8D9BB0;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.pain-stage-status::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 6px rgba(232,64,64,.13)}
+.pain-stage h3{margin:2rem 0 1rem;color:#fff;font-size:clamp(2rem,3.7vw,3.9rem);line-height:.95;letter-spacing:-.055em}
+.pain-stage-description{max-width:520px;color:#B7C1D0;font-size:1rem}
+.pain-conclusion{margin-top:2rem;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.13);color:#fff;font-size:.94rem;line-height:1.6}
+.pain-conclusion strong{color:var(--green)}
+.lead-phone{
+  position:relative;z-index:2;align-self:center;justify-self:end;width:min(100%,330px);min-height:500px;
+  padding:.8rem;border:1px solid rgba(255,255,255,.16);border-radius:34px;background:#111C2E;
+  box-shadow:0 24px 70px rgba(0,0,0,.35);transform:rotate(2.5deg);transition:transform .5s cubic-bezier(.22,1,.36,1);
+}
+.pain-stage.is-changing .lead-phone{transform:rotate(-2deg) translateY(10px) scale(.98)}
+.phone-screen{height:100%;min-height:480px;border-radius:26px;background:#F5F7FA;overflow:hidden;color:var(--text);display:flex;flex-direction:column}
+.phone-head{padding:1rem;background:#fff;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.7rem}
+.phone-avatar{width:35px;height:35px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),var(--green));color:#fff;font-family:var(--font-display);font-size:.72rem}
+.phone-head strong{display:block;font-size:.82rem}.phone-head span{display:block;color:var(--green-dark);font-size:.67rem;margin-top:.15rem}
+.phone-chat{display:flex;flex:1;flex-direction:column;gap:.7rem;padding:1rem;justify-content:flex-end}
+.phone-time{text-align:center;color:#9AA3B2;font-size:.65rem;font-weight:600}
+.phone-bubble{max-width:88%;padding:.72rem .85rem;border-radius:14px;font-size:.76rem;line-height:1.45;opacity:0;transform:translateY(12px);animation:bubbleIn .42s forwards}
+.phone-bubble.client{align-self:flex-end;background:linear-gradient(135deg,var(--blue),#007CCC);color:#fff;border-bottom-right-radius:4px}
+.phone-bubble.business{align-self:flex-start;background:#fff;border:1px solid var(--border);border-bottom-left-radius:4px}
+.phone-bubble:nth-child(3){animation-delay:.12s}.phone-bubble:nth-child(4){animation-delay:.25s}
+@keyframes bubbleIn{to{opacity:1;transform:none}}
 
-/* ── SOLUÇÕES ── */
-#solucoes{background:#fff}
-.sol-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
-.sol-card{
-  border:1px solid var(--border);border-radius:var(--radius-lg);
-  padding:2rem;transition:border-color .2s,transform .2s;
+/* ── SOLUÇÕES / LIVE DEMO ── */
+#solucoes{background:#fff;padding:8rem 1.5rem}
+.solutions-shell{max-width:1240px;margin:0 auto}
+.solutions-title-row{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:end;margin-bottom:3.5rem}
+.solutions-title-row h2{font-size:clamp(2.5rem,5.5vw,5.1rem);line-height:.94;letter-spacing:-.06em}
+.solutions-title-row p{max-width:470px;justify-self:end}
+.solution-lab{display:grid;grid-template-columns:minmax(260px,.62fr) minmax(0,1.38fr);gap:1rem}
+.solution-selector{display:flex;flex-direction:column;gap:.75rem}
+.solution-option{
+  min-height:134px;padding:1.35rem;border:1px solid var(--border);border-radius:18px;background:#fff;
+  display:grid;grid-template-columns:42px 1fr;gap:.9rem;text-align:left;cursor:pointer;font-family:var(--font-body);
+  transition:transform .3s,border-color .3s,background .3s,color .3s,box-shadow .3s;
 }
-.sol-card:hover{border-color:var(--blue);transform:translateY(-3px)}
-.sol-icon{
-  width:50px;height:50px;
-  background:linear-gradient(135deg,var(--blue),var(--green));
-  border-radius:12px;display:flex;align-items:center;
-  justify-content:center;margin-bottom:1.25rem;font-size:1.4rem;
+.solution-option:hover{transform:translateX(6px);border-color:#B8C6D6}
+.solution-option.active{background:var(--dark);color:#fff;border-color:var(--dark);box-shadow:0 18px 50px rgba(8,16,31,.17)}
+.solution-option span{font-family:var(--font-display);font-size:.78rem;color:#9AA7B8}
+.solution-option strong{display:block;font-family:var(--font-display);font-size:1.02rem;margin-bottom:.45rem}
+.solution-option small{display:block;color:var(--muted);font-size:.77rem;line-height:1.5}
+.solution-option.active small{color:#AEB9C9}
+.solution-stage{
+  position:relative;min-height:500px;border-radius:26px;overflow:hidden;padding:clamp(1.7rem,4vw,3.6rem);
+  background:linear-gradient(145deg,#E9F5FF 0%,#ECFFF7 100%);border:1px solid rgba(0,153,255,.12);
+  display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:2rem;align-items:center;
 }
-.sol-card h3{font-size:1.1rem;margin-bottom:.5rem}
-.sol-card>p{font-size:.9rem;margin-bottom:1.25rem}
-.features{list-style:none;display:flex;flex-direction:column;gap:.45rem}
-.features li{
-  display:flex;align-items:flex-start;gap:.5rem;
-  font-size:.85rem;color:var(--muted);
-}
-.features li::before{
-  content:'✓';color:var(--green-dark);font-weight:700;
-  margin-top:.05rem;flex-shrink:0;
-}
+.solution-stage::after{content:'';position:absolute;inset:auto -120px -180px auto;width:420px;height:420px;border-radius:50%;background:rgba(0,219,136,.16);filter:blur(2px)}
+.solution-copy{position:relative;z-index:2}
+.solution-live{display:inline-flex;align-items:center;gap:.45rem;padding:.35rem .7rem;border-radius:999px;background:#fff;color:var(--green-dark);font-size:.69rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em}
+.solution-live::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--green);animation:livePulse 1.7s infinite}
+@keyframes livePulse{50%{box-shadow:0 0 0 7px rgba(0,219,136,0)}}
+.solution-copy h3{font-size:clamp(2rem,3.6vw,3.6rem);line-height:.98;letter-spacing:-.05em;margin:1.2rem 0 .9rem}
+.solution-copy>p{max-width:520px;color:#4F6074}
+.solution-feature-list{list-style:none;margin-top:1.6rem;display:grid;gap:.65rem}
+.solution-feature-list li{display:flex;gap:.65rem;align-items:flex-start;color:#29384C;font-size:.85rem}
+.solution-feature-list li::before{content:'↗';color:var(--green-dark);font-weight:800}
+.ai-console{position:relative;z-index:2;background:var(--dark);border-radius:24px;padding:1.15rem;color:#fff;box-shadow:0 24px 60px rgba(8,16,31,.2);transform:rotate(-2deg);transition:transform .5s}
+.solution-stage.is-changing .ai-console{transform:rotate(2deg) scale(.97)}
+.console-top{display:flex;justify-content:space-between;align-items:center;padding:.25rem .2rem 1rem;border-bottom:1px solid rgba(255,255,255,.12);font-size:.69rem;color:#8E9BB0;text-transform:uppercase;letter-spacing:.08em}
+.console-dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 14px var(--green)}
+.console-flow{display:grid;gap:.75rem;padding-top:1rem}
+.console-node{padding:.85rem;border-radius:12px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.08);font-size:.75rem;color:#C8D2E1;opacity:0;transform:translateX(12px);animation:nodeIn .4s forwards}
+.console-node:nth-child(2){animation-delay:.1s}.console-node:nth-child(3){animation-delay:.2s}.console-node:nth-child(4){animation-delay:.3s}
+.console-node strong{display:block;color:#fff;font-size:.78rem;margin-bottom:.25rem}
+@keyframes nodeIn{to{opacity:1;transform:none}}
 
 /* ── APPS ── */
 #apps{background:var(--surface)}
@@ -386,6 +470,54 @@ footer strong{color:rgba(255,255,255,.8);font-family:var(--font-display)}
 footer a{color:rgba(255,255,255,.45);transition:color .2s}
 footer a:hover{color:rgba(255,255,255,.8)}
 
+/* ── EDITORIAL MOTION SYSTEM ── */
+nav{transition:height .35s,background .35s,box-shadow .35s}
+nav.nav-scrolled{height:56px;background:rgba(255,255,255,.88);box-shadow:0 12px 36px rgba(8,16,31,.07)}
+#apps{padding:8rem 1.5rem;background:#F3F6F9}
+#appTabs{position:sticky;top:76px;z-index:12;padding:.7rem;border-radius:999px;background:rgba(255,255,255,.76);backdrop-filter:blur(18px);width:fit-content;margin-left:auto;margin-right:auto;box-shadow:0 12px 40px rgba(8,16,31,.07)}
+.app-tab-content{animation:tabReveal .52s cubic-bezier(.22,1,.36,1)}
+@keyframes tabReveal{from{opacity:0;transform:translateY(22px) scale(.985)}to{opacity:1;transform:none}}
+.app-mockup{transition:transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s;transform:perspective(1100px) rotateY(-3deg) rotateX(1deg)}
+.app-grid:hover .app-mockup{transform:perspective(1100px) rotateY(0) rotateX(0) translateY(-6px);box-shadow:0 28px 80px rgba(8,16,31,.14)}
+#cases{padding:8rem 1.5rem;background:var(--dark);color:#fff;overflow:hidden}
+#cases .section-head h2,#cases .case-card h3{color:#fff}
+#cases .section-head p{color:#8E9AAF}
+#cases .eyebrow{background:rgba(0,153,255,.14);color:#82CCFF}
+.cases-grid{gap:1rem}
+.case-card{position:relative;overflow:hidden;background:#101B2C;border-color:rgba(255,255,255,.1);min-height:430px;transition:transform .45s cubic-bezier(.22,1,.36,1),border-color .3s}
+.case-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(0,219,136,.13),transparent 34%);opacity:0;transition:opacity .3s;pointer-events:none}
+.case-card:hover{transform:translateY(-10px);border-color:rgba(0,219,136,.35)}
+.case-card:hover::before{opacity:1}
+.case-card>*{position:relative;z-index:1}
+.case-tag{color:#8290A6}.case-block p{color:#AEB9C9}.case-label.sol{color:#6DCEFF}.result-box{background:rgba(0,153,255,.12);border:1px solid rgba(0,153,255,.18)}.result-box p{color:#8FD2FF}
+#como{padding:9rem 1.5rem;background:#fff}
+.timeline{max-width:980px;position:relative}
+.timeline::before{content:'04';position:sticky;top:120px;float:right;margin-right:-130px;font-family:var(--font-display);font-size:8rem;font-weight:900;color:#EEF2F6;line-height:1;z-index:0}
+.tl-item{min-height:42vh;align-items:flex-start;padding-top:1.5rem}
+.tl-step{position:sticky;top:120px;width:58px;height:58px;font-size:.9rem;box-shadow:0 12px 34px rgba(0,153,255,.23)}
+.tl-body{max-width:660px;padding-bottom:5rem}
+.tl-body h3{font-size:clamp(1.65rem,3vw,2.7rem);letter-spacing:-.04em;margin-bottom:.75rem}
+.tl-body p{font-size:1rem;max-width:560px}
+.tl-item:not(:last-child)::after{left:28px;top:72px;height:calc(100% - 38px)}
+body.motion-ready .tl-item{opacity:.3;transform:translateX(-18px);transition:opacity .55s,transform .55s}
+body.motion-ready .tl-item.is-active{opacity:1;transform:none}
+body.motion-ready .tl-item.is-active .tl-step{box-shadow:0 0 0 10px rgba(0,219,136,.1),0 12px 34px rgba(0,153,255,.23)}
+#faq{padding:8rem 1.5rem}
+.faq-list{max-width:920px;gap:0;border-top:1px solid var(--border)}
+.faq-item{border:0;border-bottom:1px solid var(--border);border-radius:0}
+.faq-q{padding:1.65rem 0;font-family:var(--font-display);font-size:clamp(1rem,1.5vw,1.25rem)}
+.faq-a{padding:0 4rem 1.7rem 0;max-width:760px;font-size:.95rem;animation:faqIn .35s ease}
+@keyframes faqIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+#manifesto{position:relative;overflow:hidden;padding:10rem 1.5rem;background:#06101E}
+#manifesto::before{content:'MORE LIFE.';position:absolute;left:-.04em;top:.12em;font-family:var(--font-display);font-size:clamp(7rem,20vw,20rem);font-weight:900;letter-spacing:-.09em;color:rgba(255,255,255,.025);white-space:nowrap;pointer-events:none}
+.manifesto-inner{position:relative;z-index:1;max-width:860px}
+.manifesto-quote{margin:3rem 0;padding:2rem 2.2rem;border-left-width:5px}
+.manifesto-quote p{font-family:var(--font-display);font-size:clamp(1.25rem,2.4vw,2rem);font-style:normal;letter-spacing:-.03em}
+#cta-final{position:relative;overflow:hidden;padding:8rem 1.5rem}
+#cta-final::before,#cta-final::after{content:'SOLVIA // MENOS REPETIÇÃO // MAIS VIDA // ';position:absolute;left:-5%;width:110%;font-family:var(--font-display);font-size:clamp(2rem,5vw,5rem);font-weight:900;white-space:nowrap;color:rgba(255,255,255,.1);letter-spacing:-.03em;pointer-events:none}
+#cta-final::before{top:1rem;transform:rotate(-2deg)}#cta-final::after{bottom:1rem;transform:rotate(2deg) translateX(-12%)}
+#cta-final .container{position:relative;z-index:1}
+
 /* ── CHAT WIDGET ── */
 #chat-widget{position:fixed;bottom:24px;right:24px;z-index:9999}
 .chat-toggle{
@@ -474,9 +606,16 @@ footer a:hover{color:rgba(255,255,255,.8)}
   .app-mockup{order:-1}
   .story-path{right:-55%;width:125vw}
   .lead-timeline{grid-template-columns:repeat(2,1fr);row-gap:2.5rem}
+  .pain-head,.solutions-title-row{grid-template-columns:1fr;gap:1.25rem}
+  .pain-lab{grid-template-columns:1fr;min-height:0}
+  .pain-options{display:grid;grid-template-columns:1fr 1fr}
+  .pain-option{min-height:110px;border-right:1px solid var(--border)}
+  .pain-stage{min-height:620px}
+  .solution-stage{grid-template-columns:1fr 270px}
 }
 @media(max-width:700px){
   nav .nav-links{display:none}
+  nav>div:last-of-type{display:none!important}
   .nav-burger{display:block}
   .btn-group{flex-direction:column;align-items:stretch}
   .btn-group .btn{justify-content:center}
@@ -494,12 +633,43 @@ footer a:hover{color:rgba(255,255,255,.8)}
   .lead-step{padding:1.25rem .6rem 0 0}
   .lead-step strong{font-size:.88rem}
   .story-outcome-foot{align-items:flex-start;flex-direction:column;gap:1.1rem;margin-top:2rem}
+  .site-progress{width:3px}
+  .cursor-glow{display:none}
+  #pain,#solucoes,#apps,#cases,#como,#faq,#manifesto,#cta-final{padding:5.5rem 1.1rem}
+  .pain-head h2,.solutions-title-row h2{font-size:clamp(2.65rem,13vw,4rem)}
+  .pain-options{grid-template-columns:1fr}
+  .pain-option{min-height:82px;border-right:0}
+  .pain-lab{gap:.75rem}
+  .pain-stage{grid-template-columns:1fr;min-height:760px;padding:1.35rem}
+  .pain-stage h3{font-size:2.45rem;margin-top:1.4rem}
+  .lead-phone{justify-self:center;width:min(100%,315px);min-height:430px;transform:none}
+  .phone-screen{min-height:410px}
+  .solution-lab{grid-template-columns:1fr}
+  .solution-selector{display:grid;grid-template-columns:repeat(3,1fr);gap:.45rem}
+  .solution-option{min-height:110px;display:block;padding:1rem}
+  .solution-option:hover{transform:none}
+  .solution-option span{display:block;margin-bottom:.55rem}
+  .solution-option strong{font-size:.82rem;margin:0}
+  .solution-option small{display:none}
+  .solution-stage{grid-template-columns:1fr;min-height:730px;padding:1.35rem}
+  .solution-copy h3{font-size:2.35rem}
+  .ai-console{width:min(100%,330px);justify-self:center;transform:none}
+  #appTabs{top:64px;border-radius:20px;width:100%;justify-content:flex-start!important;overflow-x:auto;flex-wrap:nowrap!important;margin-bottom:1.5rem!important}
+  #appTabs .app-tab{flex:0 0 auto}
+  .app-mockup,.app-grid:hover .app-mockup{transform:none}
+  .timeline::before{display:none}
+  .tl-item{min-height:42vh;gap:1rem}
+  .tl-step{top:90px;width:48px;height:48px}
+  .tl-item:not(:last-child)::after{left:23px;top:62px}
+  .faq-a{padding-right:0}
   .chat-box{width:calc(100vw - 32px);right:-8px}
   section{padding:4rem 1.25rem}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .story-scroll-cue::after{animation:none}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  [data-reveal]{opacity:1;transform:none;filter:none}
 }
 .mobile-menu{
   display:none;flex-direction:column;gap:0;
@@ -590,6 +760,9 @@ footer a:hover{color:rgba(255,255,255,.8)}
 </head>
 <body>
 
+<div class="site-progress" aria-hidden="true"><div class="site-progress-bar" id="siteProgressBar"></div></div>
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
 <!-- NAV -->
 <nav>
   <div class="nav-logo">Solvia</div>
@@ -669,82 +842,108 @@ footer a:hover{color:rgba(255,255,255,.8)}
 
 <!-- DOR -->
 <section id="pain">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow eyebrow-red">Isso está acontecendo agora</div>
-      <h2>Quanto dinheiro está <span style="color:var(--red)">escapando pelo vão?</span></h2>
-      <p>Cada lead não respondido é uma venda que foi direto pro concorrente.</p>
-    </div>
-    <div class="pain-grid">
-      <div class="pain-card">
-        <div class="pain-icon">📵</div>
-        <h3>Lead entra. Ninguém atende.</h3>
-        <p>Você investe em anúncio, o cliente manda mensagem às 22h — e vai embora pra concorrência que respondeu primeiro.</p>
+  <div class="pain-shell">
+    <div class="pain-head" data-reveal>
+      <div>
+        <div class="section-index">01 — Diagnóstico</div>
+        <h2>Em qual momento seu lead <span style="color:var(--red)">escapa?</span></h2>
       </div>
-      <div class="pain-card">
-        <div class="pain-icon">🙅</div>
-        <h3>Vendedor perde tempo com curioso</h3>
-        <p>Seu time para de vender para responder "quanto custa?" e "vocês atendem minha cidade?". Todo. Dia.</p>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon">💸</div>
-        <h3>Follow-up esquecido = dinheiro perdido</h3>
-        <p>Lead quente fica frio porque ninguém lembrou de ligar. O pipeline vira cemitério de oportunidades.</p>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon">🌙</div>
-        <h3>Atendimento 24/7 custa caro demais</h3>
-        <p>Contratar plantão noturno é inviável. Mas deixar o cliente esperando até segunda-feira também custa.</p>
+      <div>
+        <p>Escolha uma situação real do seu atendimento. A simulação mostra o que o cliente vive enquanto sua equipe não consegue continuar a conversa.</p>
+        <div class="interactive-hint" style="margin-top:1rem">Selecione uma situação ↓</div>
       </div>
     </div>
-    <div class="pain-cta">
-      <p>A Solvia resolve cada um desses pontos com IA que nunca dorme.</p>
-      <button class="btn btn-primary" onclick="openChat()">Quero resolver isso agora ↗</button>
+
+    <div class="pain-lab" data-reveal>
+      <div class="pain-options" role="tablist" aria-label="Situações de perda de lead">
+        <button class="pain-option active" type="button" role="tab" aria-selected="true" onclick="selectPain(0,this)">
+          <span class="pain-option-num">01</span><strong>Mensagem fora do horário</strong>
+        </button>
+        <button class="pain-option" type="button" role="tab" aria-selected="false" onclick="selectPain(1,this)">
+          <span class="pain-option-num">02</span><strong>Equipe ocupada no pico</strong>
+        </button>
+        <button class="pain-option" type="button" role="tab" aria-selected="false" onclick="selectPain(2,this)">
+          <span class="pain-option-num">03</span><strong>Orçamento sem follow-up</strong>
+        </button>
+        <button class="pain-option" type="button" role="tab" aria-selected="false" onclick="selectPain(3,this)">
+          <span class="pain-option-num">04</span><strong>Pós-atendimento esquecido</strong>
+        </button>
+      </div>
+
+      <div class="pain-stage" id="painStage">
+        <div class="pain-stage-copy">
+          <div>
+            <div class="pain-stage-status" id="painStatus">Lead esperando resposta</div>
+            <h3 id="painTitle">A clínica fechou.<br>O interesse não.</h3>
+            <p class="pain-stage-description" id="painDescription">O paciente chama no momento em que decide agir. Uma mensagem automática informa que você está ausente, mas não conduz a conversa.</p>
+          </div>
+          <div class="pain-conclusion" id="painConclusion"><strong>O ponto de virada:</strong> a Solvia continua o atendimento, entende a necessidade e oferece o próximo passo sem deixar o lead parado.</div>
+        </div>
+
+        <div class="lead-phone" aria-live="polite">
+          <div class="phone-screen">
+            <div class="phone-head">
+              <div class="phone-avatar">S</div>
+              <div><strong id="phoneBusiness">Sua clínica</strong><span>WhatsApp Business</span></div>
+            </div>
+            <div class="phone-chat" id="phoneChat">
+              <div class="phone-time">22:47</div>
+              <div class="phone-bubble client">Oi! Ainda tem horário disponível esta semana?</div>
+              <div class="phone-bubble business">Olá! No momento não estamos disponíveis. Retornaremos amanhã.</div>
+              <div class="phone-bubble client">Tudo bem, já consegui em outra clínica.</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- SOLUÇÕES -->
 <section id="solucoes">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow eyebrow-blue">O que entregamos</div>
-      <h2>Três soluções que fecham os <span class="accent">buracos do seu funil</span></h2>
-      <p>Juntas ou separadas, dependendo do que você precisa agora.</p>
+  <div class="solutions-shell">
+    <div class="solutions-title-row" data-reveal>
+      <div>
+        <div class="section-index">02 — Sistema Solvia</div>
+        <h2>Não é uma resposta.<br><span class="accent">É continuidade.</span></h2>
+      </div>
+      <p>A tecnologia acompanha o lead da primeira mensagem até o retorno — e entrega o contexto certo para sua equipe quando uma pessoa precisa entrar.</p>
     </div>
-    <div class="sol-grid">
-      <div class="sol-card">
-        <div class="sol-icon">🤖</div>
-        <h3>Agente de IA 24/7</h3>
-        <p>Responde, qualifica e agenda em segundos. A qualquer hora. Sem folga, sem atestado, sem salário.</p>
-        <ul class="features">
-          <li>Responde em menos de 5 segundos</li>
-          <li>Qualifica e filtra leads automaticamente</li>
-          <li>Agenda reuniões na sua agenda em tempo real</li>
-          <li>Handoff para humano com contexto salvo</li>
-        </ul>
+
+    <div class="solution-lab" data-reveal>
+      <div class="solution-selector" role="tablist" aria-label="Soluções Solvia">
+        <button class="solution-option active" type="button" role="tab" aria-selected="true" onclick="selectSolution(0,this)">
+          <span>01</span><div><strong>Atendimento 24/7</strong><small>Responde, qualifica e direciona.</small></div>
+        </button>
+        <button class="solution-option" type="button" role="tab" aria-selected="false" onclick="selectSolution(1,this)">
+          <span>02</span><div><strong>Conversão contínua</strong><small>Agenda e mantém o follow-up vivo.</small></div>
+        </button>
+        <button class="solution-option" type="button" role="tab" aria-selected="false" onclick="selectSolution(2,this)">
+          <span>03</span><div><strong>Retenção inteligente</strong><small>Confirma, acompanha e reativa.</small></div>
+        </button>
       </div>
-      <div class="sol-card">
-        <div class="sol-icon">🌐</div>
-        <h3>Site que converte, não só aparece</h3>
-        <p>Design rápido, SEO técnico e IA integrada. Seu site vira vendedor ativo, não vitrine parada.</p>
-        <ul class="features">
-          <li>Carregamento abaixo de 2s (Core Web Vitals)</li>
-          <li>SEO que traz leads orgânicos</li>
-          <li>IA integrada para capturar visitante na hora</li>
-          <li>Design exclusivo e responsivo</li>
-        </ul>
-      </div>
-      <div class="sol-card">
-        <div class="sol-icon">⚡</div>
-        <h3>Automações inteligentes</h3>
-        <p>WhatsApp, CRM, agenda e pagamentos conectados. Informação certa, na hora certa, sem intervenção manual.</p>
-        <ul class="features">
-          <li>Zero retrabalho manual</li>
-          <li>Notificações e follow-ups automáticos</li>
-          <li>Integração com ferramentas que você já usa</li>
-          <li>Relatórios automáticos por WhatsApp</li>
-        </ul>
+
+      <div class="solution-stage" id="solutionStage">
+        <div class="solution-copy">
+          <div class="solution-live">Agente ativo</div>
+          <h3 id="solutionTitle">A conversa começa<br>sem esperar.</h3>
+          <p id="solutionDescription">A Bia entende a primeira mensagem, faz as perguntas certas e conduz cada pessoa ao próximo passo.</p>
+          <ul class="solution-feature-list" id="solutionFeatures">
+            <li>Atendimento no WhatsApp, site e Instagram</li>
+            <li>Qualificação com perguntas do seu processo</li>
+            <li>Transferência para humano com contexto completo</li>
+          </ul>
+          <button class="btn btn-primary" onclick="openChat()" style="margin-top:1.8rem">Conversar com a Bia ↗</button>
+        </div>
+        <div class="ai-console" aria-live="polite">
+          <div class="console-top"><span id="consoleLabel">Fluxo de atendimento</span><span class="console-dot"></span></div>
+          <div class="console-flow" id="consoleFlow">
+            <div class="console-node"><strong>01 · Mensagem recebida</strong>Lead identificado em tempo real</div>
+            <div class="console-node"><strong>02 · Necessidade entendida</strong>Perguntas adaptadas ao contexto</div>
+            <div class="console-node"><strong>03 · Próximo passo</strong>Horário oferecido automaticamente</div>
+            <div class="console-node"><strong>04 · Equipe avisada</strong>Resumo e contexto já organizados</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -760,11 +959,11 @@ footer a:hover{color:rgba(255,255,255,.8)}
     </div>
 
     <!-- Tabs de nicho -->
-    <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem" id="appTabs">
-      <button class="app-tab active" onclick="switchTab('restaurante')" style="padding:.5rem 1.25rem;border-radius:999px;border:1.5px solid var(--blue);background:var(--blue);color:#fff;font-weight:600;font-size:.85rem;cursor:pointer;font-family:var(--font-body);transition:all .2s">🍽️ Restaurante</button>
-      <button class="app-tab" onclick="switchTab('academia')" style="padding:.5rem 1.25rem;border-radius:999px;border:1.5px solid var(--border);background:#fff;color:var(--muted);font-weight:600;font-size:.85rem;cursor:pointer;font-family:var(--font-body);transition:all .2s">🏋️ Academia</button>
-      <button class="app-tab" onclick="switchTab('clinica')" style="padding:.5rem 1.25rem;border-radius:999px;border:1.5px solid var(--border);background:#fff;color:var(--muted);font-weight:600;font-size:.85rem;cursor:pointer;font-family:var(--font-body);transition:all .2s">🏥 Clínica</button>
-      <button class="app-tab" onclick="switchTab('outro')" style="padding:.5rem 1.25rem;border-radius:999px;border:1.5px solid var(--border);background:#fff;color:var(--muted);font-weight:600;font-size:.85rem;cursor:pointer;font-family:var(--font-body);transition:all .2s">⚡ Seu nicho</button>
+    <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem" id="appTabs" role="tablist" aria-label="Exemplos de plataformas por nicho">
+      <button class="app-tab active" role="tab" aria-selected="true" onclick="switchTab('restaurante')" style="padding:.5rem 1.25rem;border-radius:999px;border:1.5px solid var(--blue);background:var(--blue);color:#fff;font-weight:600;font-size:.85rem;cursor:pointer;font-family:var(--font-body);transition:all .2s">Restaurante</button>
+      <button class="app-tab" role="tab" aria-selected="false" onclick="switchTab('academia')" style="padding:.5rem 1.25rem;border-radius:999px;border:1.5px solid var(--border);background:#fff;color:var(--muted);font-weight:600;font-size:.85rem;cursor:pointer;font-family:var(--font-body);transition:all .2s">Academia</button>
+      <button class="app-tab" role="tab" aria-selected="false" onclick="switchTab('clinica')" style="padding:.5rem 1.25rem;border-radius:999px;border:1.5px solid var(--border);background:#fff;color:var(--muted);font-weight:600;font-size:.85rem;cursor:pointer;font-family:var(--font-body);transition:all .2s">Clínica</button>
+      <button class="app-tab" role="tab" aria-selected="false" onclick="switchTab('outro')" style="padding:.5rem 1.25rem;border-radius:999px;border:1.5px solid var(--border);background:#fff;color:var(--muted);font-weight:600;font-size:.85rem;cursor:pointer;font-family:var(--font-body);transition:all .2s">Seu nicho</button>
     </div>
 
     <!-- RESTAURANTE -->
@@ -1192,37 +1391,233 @@ footer a:hover{color:rgba(255,255,255,.8)}
 </div>
 
 <script>
-/* ── SCROLL STORY (traço animado com o scroll) ── */
+/* ── EXPERIENCE ENGINE ── */
 document.addEventListener('DOMContentLoaded', function(){
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var section = document.getElementById('scroll-story');
-  var path = document.getElementById('storyPath').querySelector('path');
-  if(!section || !path){
-    console.warn('Scroll story: elementos não encontrados no DOM');
-    return;
-  }
+  var storySvg = document.getElementById('storyPath');
+  var path = storySvg ? storySvg.querySelector('path') : null;
+  var storyIntro = document.querySelector('.story-intro');
+  var outcomeTitle = document.querySelector('.story-outcome h2');
+  var progressBar = document.getElementById('siteProgressBar');
+  var nav = document.querySelector('nav');
+  var len = path ? path.getTotalLength() : 0;
+  var ticking = false;
 
-  var len = path.getTotalLength();
-  path.style.strokeDasharray = len;
-  path.style.strokeDashoffset = len; // começa 100% escondido
+  document.body.classList.add('motion-ready');
+
+  if(path){
+    path.style.strokeDasharray = len;
+    path.style.strokeDashoffset = len * 0.5;
+  }
 
   function clamp(v, min, max){ return Math.max(min, Math.min(max, v)); }
 
-  function updateStory(){
-    var rect = section.getBoundingClientRect();
-    var total = rect.height - window.innerHeight;
-    var scrolled = -rect.top;
-    var progress = total > 0 ? scrolled / total : 0;
-    progress = clamp(progress, 0, 1);
+  function updateExperience(){
+    var pageTotal = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    var pageProgress = clamp(window.scrollY / pageTotal, 0, 1);
+    if(progressBar) progressBar.style.height = (pageProgress * 100) + '%';
+    if(nav) nav.classList.toggle('nav-scrolled', window.scrollY > 24);
 
-    // traço vai de 50% desenhado até 100% desenhado ao longo do scroll da seção
-    var mapped = 0.5 + progress * 0.5;
-    path.style.strokeDashoffset = len * (1 - mapped);
+    if(section && path){
+      var rect = section.getBoundingClientRect();
+      var total = Math.max(1, rect.height - window.innerHeight);
+      var progress = clamp(-rect.top / total, 0, 1);
+      var mapped = 0.5 + progress * 0.5;
+      path.style.strokeDashoffset = len * (1 - mapped);
+
+      if(!reduceMotion){
+        var introProgress = clamp(progress / 0.27, 0, 1);
+        if(storyIntro){
+          storyIntro.style.transform = 'translate3d(0,' + (-introProgress * 18) + 'vh,0) scale(' + (1 - introProgress * 0.07) + ')';
+          storyIntro.style.opacity = String(1 - introProgress * 0.9);
+        }
+        if(storySvg){
+          storySvg.style.transform = 'translate3d(' + (-progress * 3.5) + 'vw,' + (progress * 5) + 'vh,0) rotate(' + (progress * 2.2) + 'deg)';
+        }
+        if(outcomeTitle){
+          var outcomeProgress = clamp((progress - 0.38) / 0.34, 0, 1);
+          outcomeTitle.style.transform = 'translate3d(' + ((1 - outcomeProgress) * 11) + 'vw,0,0)';
+          outcomeTitle.style.opacity = String(0.25 + outcomeProgress * 0.75);
+        }
+      }
+    }
+
+    ticking = false;
   }
 
-    window.addEventListener('scroll', updateStory, { passive: true });
-  window.addEventListener('resize', updateStory);
-  updateStory();
+  function requestUpdate(){
+    if(!ticking){
+      ticking = true;
+      window.requestAnimationFrame(updateExperience);
+    }
+  }
+
+  window.addEventListener('scroll', requestUpdate, {passive:true});
+  window.addEventListener('resize', requestUpdate);
+  updateExperience();
+
+  /* Entradas editoriais por seção */
+  var autoReveal = document.querySelectorAll('.section-head,.app-grid,.cases-grid,.timeline,.faq-list,.manifesto-inner');
+  autoReveal.forEach(function(el){ if(!el.hasAttribute('data-reveal')) el.setAttribute('data-reveal',''); });
+  var revealItems = document.querySelectorAll('[data-reveal]');
+
+  if(reduceMotion || !('IntersectionObserver' in window)){
+    revealItems.forEach(function(el){ el.classList.add('is-visible'); });
+  }else{
+    var revealObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    revealItems.forEach(function(el){ revealObserver.observe(el); });
+  }
+
+  /* Etapas ganham foco conforme atravessam a tela */
+  var timelineItems = document.querySelectorAll('.tl-item');
+  if('IntersectionObserver' in window){
+    var timelineObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){ entry.target.classList.toggle('is-active',entry.isIntersecting); });
+    },{threshold:.55,rootMargin:'-8% 0px -18% 0px'});
+    timelineItems.forEach(function(el){ timelineObserver.observe(el); });
+  }else if(timelineItems[0]) timelineItems[0].classList.add('is-active');
+
+  /* Luz acompanha o cursor; cards respondem à posição real do mouse */
+  var cursorGlow = document.getElementById('cursorGlow');
+  if(cursorGlow && window.matchMedia('(pointer:fine)').matches && !reduceMotion){
+    window.addEventListener('pointermove',function(e){
+      cursorGlow.style.transform = 'translate3d(' + (e.clientX - 120) + 'px,' + (e.clientY - 120) + 'px,0)';
+      cursorGlow.classList.add('visible');
+    },{passive:true});
+    document.documentElement.addEventListener('mouseleave',function(){ cursorGlow.classList.remove('visible'); });
+  }
+
+  document.querySelectorAll('.case-card').forEach(function(card){
+    card.addEventListener('pointermove',function(e){
+      var r = card.getBoundingClientRect();
+      card.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');
+      card.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');
+    });
+  });
 });
+
+/* ── DIAGNÓSTICO INTERATIVO ── */
+var painScenarios = [
+  {
+    status:'Lead esperando resposta',
+    title:'A clínica fechou.<br>O interesse não.',
+    description:'O paciente chama no momento em que decide agir. Uma mensagem automática informa que você está ausente, mas não conduz a conversa.',
+    conclusion:'<strong>O ponto de virada:</strong> a Solvia continua o atendimento, entende a necessidade e oferece o próximo passo sem deixar o lead parado.',
+    time:'22:47',
+    messages:[
+      ['client','Oi! Ainda tem horário disponível esta semana?'],
+      ['business','Olá! No momento não estamos disponíveis. Retornaremos amanhã.'],
+      ['client','Tudo bem, já consegui em outra clínica.']
+    ]
+  },
+  {
+    status:'Fila crescendo no horário de pico',
+    title:'Sua equipe está ocupada.<br>O lead também.',
+    description:'Enquanto a recepção atende quem já chegou, novas conversas acumulam. Quem está no WhatsApp não enxerga a correria — só enxerga a demora.',
+    conclusion:'<strong>O ponto de virada:</strong> a IA responde as dúvidas repetitivas, filtra o interesse e entrega para a equipe apenas o que precisa de atenção humana.',
+    time:'11:38',
+    messages:[
+      ['client','Olá! Queria saber o valor e os horários para avaliação.'],
+      ['business','Oi! Já vamos te atender.'],
+      ['client','Ainda está disponível?'],
+      ['client','Consegui em outro lugar, obrigada.']
+    ]
+  },
+  {
+    status:'Oportunidade esfriando',
+    title:'O orçamento foi enviado.<br>A conversa parou.',
+    description:'O lead demonstrou interesse, recebeu a proposta e pediu um tempo. Sem uma continuidade planejada, o retorno fica dependendo da memória de alguém.',
+    conclusion:'<strong>O ponto de virada:</strong> a Solvia retoma no momento certo, responde novas objeções e mantém a oportunidade viva sem pressionar o cliente.',
+    time:'3 dias depois',
+    messages:[
+      ['business','Pronto! Enviei seu orçamento. Se precisar, estou por aqui.'],
+      ['client','Obrigada, vou pensar e te aviso.'],
+      ['business','Mensagem não enviada · follow-up esquecido']
+    ]
+  },
+  {
+    status:'Relacionamento interrompido',
+    title:'O atendimento terminou.<br>O vínculo não deveria.',
+    description:'Confirmações, orientações, retornos e reativações se perdem quando cada contato depende de uma ação manual da equipe.',
+    conclusion:'<strong>O ponto de virada:</strong> a Solvia acompanha o pós-atendimento, confirma retornos e reativa pacientes de forma organizada e humana.',
+    time:'30 dias depois',
+    messages:[
+      ['client','Oi! Quando preciso fazer meu retorno?'],
+      ['business','Olá! Vamos verificar e te responder.'],
+      ['client','Tudo bem, fico aguardando.']
+    ]
+  }
+];
+
+function selectPain(index,btn){
+  var data = painScenarios[index];
+  var stage = document.getElementById('painStage');
+  if(!data || !stage) return;
+  document.querySelectorAll('.pain-option').forEach(function(el){
+    var active = el === btn;
+    el.classList.toggle('active',active);
+    el.setAttribute('aria-selected',active ? 'true' : 'false');
+  });
+  stage.classList.add('is-changing');
+  window.setTimeout(function(){
+    document.getElementById('painStatus').textContent = data.status;
+    document.getElementById('painTitle').innerHTML = data.title;
+    document.getElementById('painDescription').textContent = data.description;
+    document.getElementById('painConclusion').innerHTML = data.conclusion;
+    document.getElementById('phoneChat').innerHTML = '<div class="phone-time">'+data.time+'</div>'+data.messages.map(function(msg){return '<div class="phone-bubble '+msg[0]+'">'+msg[1]+'</div>';}).join('');
+    stage.classList.remove('is-changing');
+  },180);
+}
+
+/* ── DEMONSTRAÇÃO DAS SOLUÇÕES ── */
+var solutionModes = [
+  {
+    label:'Fluxo de atendimento',title:'A conversa começa<br>sem esperar.',
+    description:'A Bia entende a primeira mensagem, faz as perguntas certas e conduz cada pessoa ao próximo passo.',
+    features:['Atendimento no WhatsApp, site e Instagram','Qualificação com perguntas do seu processo','Transferência para humano com contexto completo'],
+    nodes:[['01 · Mensagem recebida','Lead identificado em tempo real'],['02 · Necessidade entendida','Perguntas adaptadas ao contexto'],['03 · Próximo passo','Horário oferecido automaticamente'],['04 · Equipe avisada','Resumo e contexto já organizados']]
+  },
+  {
+    label:'Fluxo de conversão',title:'Do interesse ao<br>horário marcado.',
+    description:'A automação não para na primeira resposta. Ela agenda, confirma e retoma a conversa quando o lead precisa de tempo.',
+    features:['Agendamento conectado à disponibilidade real','Confirmações e lembretes automáticos','Follow-up sem depender da memória da equipe'],
+    nodes:[['01 · Interesse detectado','Oportunidade entra no fluxo'],['02 · Agenda consultada','Horários livres encontrados'],['03 · Confirmação enviada','Lead escolhe o melhor momento'],['04 · Follow-up programado','Conversa continua se ele pausar']]
+  },
+  {
+    label:'Fluxo de retenção',title:'O relacionamento<br>continua depois.',
+    description:'A Solvia acompanha o pós-atendimento, lembra o retorno e reativa quem deixou de aparecer, sempre com contexto.',
+    features:['Pós-atendimento e orientações automáticas','Lembretes de retorno personalizados','Reativação organizada da base de clientes'],
+    nodes:[['01 · Atendimento concluído','Próxima etapa registrada'],['02 · Pós-atendimento','Orientação enviada no momento certo'],['03 · Retorno lembrado','Cliente recebe confirmação'],['04 · Base reativada','Oportunidades antigas voltam ao fluxo']]
+  }
+];
+
+function selectSolution(index,btn){
+  var data = solutionModes[index];
+  var stage = document.getElementById('solutionStage');
+  if(!data || !stage) return;
+  document.querySelectorAll('.solution-option').forEach(function(el){
+    var active = el === btn;
+    el.classList.toggle('active',active);
+    el.setAttribute('aria-selected',active ? 'true' : 'false');
+  });
+  stage.classList.add('is-changing');
+  window.setTimeout(function(){
+    document.getElementById('consoleLabel').textContent = data.label;
+    document.getElementById('solutionTitle').innerHTML = data.title;
+    document.getElementById('solutionDescription').textContent = data.description;
+    document.getElementById('solutionFeatures').innerHTML = data.features.map(function(item){return '<li>'+item+'</li>';}).join('');
+    document.getElementById('consoleFlow').innerHTML = data.nodes.map(function(node){return '<div class="console-node"><strong>'+node[0]+'</strong>'+node[1]+'</div>';}).join('');
+    stage.classList.remove('is-changing');
+  },180);
+}
 
 /* ── MOBILE MENU ── */
 function toggleMobileMenu(){
@@ -1373,16 +1768,25 @@ function switchTab(nicho) {
   });
   /* Mostra o selecionado */
   var target = document.getElementById('tab-' + nicho);
-  if (target) target.style.display = nicho === 'outro' ? 'block' : 'grid';
+  if (target) {
+    target.style.display = nicho === 'outro' ? 'block' : 'grid';
+    target.style.animation = 'none';
+    void target.offsetWidth;
+    target.style.animation = '';
+  }
 
   /* Atualiza visual dos botões */
   document.querySelectorAll('.app-tab').forEach(function(btn) {
+    btn.classList.remove('active');
+    btn.setAttribute('aria-selected','false');
     btn.style.background = '#fff';
     btn.style.color = 'var(--muted)';
     btn.style.borderColor = 'var(--border)';
   });
   var activeBtn = document.querySelector('[onclick="switchTab(\'' + nicho + '\')"]');
   if (activeBtn) {
+    activeBtn.classList.add('active');
+    activeBtn.setAttribute('aria-selected','true');
     activeBtn.style.background = 'var(--blue)';
     activeBtn.style.color = '#fff';
     activeBtn.style.borderColor = 'var(--blue)';
