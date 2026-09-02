@@ -136,6 +136,31 @@ p{color:var(--muted);line-height:1.7}
 }
 .stat span{font-size:.78rem;color:var(--muted);font-weight:500;display:block;margin-top:.15rem}
 
+/* ── SCROLL STORY (traço animado) ── */
+#scroll-story{
+  position:relative;
+  height:350vh;
+  background:#fff;
+  overflow:hidden;
+}
+.story-sticky{
+  position:sticky;top:0;
+  height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+}
+.story-svg-wrap{
+  position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;
+  z-index:1;pointer-events:none;
+}
+.story-svg-wrap svg{width:min(1100px,90vw);height:auto}
+.story-text{
+  position:relative;z-index:2;text-align:center;max-width:720px;padding:0 1.5rem;
+}
+.story-text h2{margin-bottom:1rem}
+.story-text p{font-size:1.05rem}
+
 /* ── DOR ── */
 #pain{background:var(--surface)}
 .pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.5rem}
@@ -574,6 +599,35 @@ footer a:hover{color:rgba(255,255,255,.8)}
       <div class="stat"><strong>24/7</strong><span>Sem pausas ou atestado</span></div>
       <div class="stat"><strong>+47%</strong><span>Leads qualificados</span></div>
       <div class="stat"><strong>48h</strong><span>Protótipo no ar</span></div>
+    </div>
+  </div>
+</section>
+
+</section>
+
+<!-- SCROLL STORY -->
+<section id="scroll-story">
+  <div class="story-sticky">
+    <div class="story-svg-wrap">
+      <svg id="storyPath" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M100,600 C300,200 500,900 700,500 S1000,150 1150,500"
+          stroke="url(#storyGradient)"
+          stroke-width="10"
+          stroke-linecap="round"
+          fill="none"/>
+        <defs>
+          <linearGradient id="storyGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#0099FF"/>
+            <stop offset="100%" stop-color="#00DB88"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+    <div class="story-text">
+      <div class="eyebrow eyebrow-blue">Enquanto você rola a página</div>
+      <h2>O caminho do seu lead <span class="accent">até virar cliente</span></h2>
+      <p>É exatamente esse trajeto que a Solvia automatiza — do primeiro clique até o agendamento, sem ninguém ficar esperando.</p>
     </div>
   </div>
 </section>
@@ -1103,6 +1157,35 @@ footer a:hover{color:rgba(255,255,255,.8)}
 </div>
 
 <script>
+/* ── SCROLL STORY (traço animado com o scroll) ── */
+(function(){
+  var section = document.getElementById('scroll-story');
+  var path = document.getElementById('storyPath').querySelector('path');
+  if(!section || !path) return;
+
+  var len = path.getTotalLength();
+  path.style.strokeDasharray = len;
+  path.style.strokeDashoffset = len; // começa 100% escondido
+
+  function clamp(v, min, max){ return Math.max(min, Math.min(max, v)); }
+
+  function updateStory(){
+    var rect = section.getBoundingClientRect();
+    var total = rect.height - window.innerHeight;
+    var scrolled = -rect.top;
+    var progress = total > 0 ? scrolled / total : 0;
+    progress = clamp(progress, 0, 1);
+
+    // traço vai de 50% desenhado até 100% desenhado ao longo do scroll da seção
+    var mapped = 0.5 + progress * 0.5;
+    path.style.strokeDashoffset = len * (1 - mapped);
+  }
+
+  window.addEventListener('scroll', updateStory, { passive: true });
+  window.addEventListener('resize', updateStory);
+  updateStory();
+})();
+
 /* ── MOBILE MENU ── */
 function toggleMobileMenu(){
   document.getElementById('mobileMenu').classList.toggle('open');
