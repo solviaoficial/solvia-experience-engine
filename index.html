@@ -1,0 +1,2393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Agentes de IA para WhatsApp que respondem, qualificam, agendam e fazem follow-up 24/7. Automações e apps sob medida para negócios."/>
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"/>
+<meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"/>
+<meta name="theme-color" content="#F7F5F3"/>
+<meta name="application-name" content="Solvia"/>
+<meta name="author" content="Solvia"/>
+<meta name="referrer" content="strict-origin-when-cross-origin"/>
+<title>Solvia | Agentes de IA para WhatsApp, Automação e Apps</title>
+<link rel="canonical" href="https://solviaoficial.com/"/>
+<link rel="alternate" hreflang="pt-BR" href="https://solviaoficial.com/"/>
+<link rel="alternate" hreflang="x-default" href="https://solviaoficial.com/"/>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"/>
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png"/>
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"/>
+<link rel="manifest" href="/site.webmanifest"/>
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="pt_BR"/>
+<meta property="og:site_name" content="Solvia"/>
+<meta property="og:title" content="Solvia | Agentes de IA para WhatsApp, Automação e Apps"/>
+<meta property="og:description" content="Agentes de IA para WhatsApp que respondem, qualificam, agendam e fazem follow-up 24/7. Automações e apps sob medida."/>
+<meta property="og:url" content="https://solviaoficial.com/"/>
+<meta property="og:image" content="https://solviaoficial.com/assets/solvia-og-v1.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="Solvia — agentes de IA, automação e apps sob medida"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Solvia | Agentes de IA para WhatsApp, Automação e Apps"/>
+<meta name="twitter:description" content="Agentes de IA para WhatsApp, automações e apps sob medida para negócios."/>
+<meta name="twitter:image" content="https://solviaoficial.com/assets/solvia-og-v1.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600&family=Instrument+Serif&display=swap" rel="stylesheet"/>
+<!-- Cole aqui as verificações quando gerar os códigos:
+-->
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://solviaoficial.com/#organization","name":"Solvia","url":"https://solviaoficial.com/","logo":{"@type":"ImageObject","url":"https://solviaoficial.com/assets/solvia-logo-512-v1.png","width":512,"height":512},"image":"https://solviaoficial.com/assets/solvia-og-v1.png","description":"A Solvia desenvolve agentes de IA, automações e aplicativos sob medida para negócios, com foco em atendimento, qualificação, agendamento, follow-up e integração de processos.","founder":{"@type":"Person","name":"Kevyn Freo"},"telephone":"+55-11-91856-0216","contactPoint":{"@type":"ContactPoint","telephone":"+55-11-91856-0216","contactType":"sales","availableLanguage":["Portuguese"]}},{"@type":"WebSite","@id":"https://solviaoficial.com/#website","url":"https://solviaoficial.com/","name":"Solvia","publisher":{"@id":"https://solviaoficial.com/#organization"},"inLanguage":"pt-BR"},{"@type":"WebPage","@id":"https://solviaoficial.com/#webpage","url":"https://solviaoficial.com/","name":"Solvia | Agentes de IA para WhatsApp, Automação e Apps","description":"Agentes de IA para WhatsApp que respondem, qualificam, agendam e fazem follow-up 24/7. Automações e apps sob medida para negócios.","isPartOf":{"@id":"https://solviaoficial.com/#website"},"about":{"@id":"https://solviaoficial.com/#organization"},"inLanguage":"pt-BR","dateModified":"2026-09-09"}]}</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --blue:#0099FF;--blue-dark:#0070CC;--blue-light:#E6F4FF;
+  --green:#00DB88;--green-dark:#009960;--green-light:#E0FFF4;
+  --red:#E84040;--red-light:#FEF0F0;
+  --dark:#08101F;--surface:#F7F9FC;
+  --text:#0A0F1E;--muted:#6B7280;--border:#E5E9F0;
+  --radius:12px;--radius-lg:20px;
+  --font-display:'Montserrat',sans-serif;
+  --font-body:'Inter',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--text);background:#fff;overflow-x:clip}
+a{text-decoration:none;color:inherit}
+img{max-width:100%}
+::selection{background:var(--green);color:var(--dark)}
+
+/* ── EXPERIENCE LAYER ── */
+.site-progress{
+  position:fixed;top:0;right:0;width:5px;height:100vh;z-index:10000;
+  background:rgba(8,16,31,.07);pointer-events:none;
+}
+.site-progress-bar{
+  width:100%;height:0;background:linear-gradient(to bottom,var(--blue),var(--green));
+  box-shadow:0 0 18px rgba(0,219,136,.45);transform-origin:top;
+}
+.cursor-glow{
+  position:fixed;z-index:9998;left:0;top:0;width:240px;height:240px;border-radius:50%;
+  transform:translate(-50%,-50%);pointer-events:none;opacity:0;
+  background:radial-gradient(circle,rgba(0,153,255,.13),rgba(0,219,136,.055) 35%,transparent 70%);
+  transition:opacity .25s ease;mix-blend-mode:multiply;
+}
+.cursor-glow.visible{opacity:1}
+[data-reveal]{
+  opacity:0;transform:translateY(52px);filter:blur(7px);
+  transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1),filter .8s ease;
+}
+[data-reveal].is-visible{opacity:1;transform:none;filter:none}
+.section-index{
+  display:flex;align-items:center;gap:.7rem;margin-bottom:1.3rem;
+  color:var(--muted);font-size:.73rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+}
+.section-index::before{content:'';width:44px;height:1px;background:currentColor;opacity:.55}
+.interactive-hint{font-size:.74rem;color:var(--muted);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+body.motion-ready .story-intro{will-change:transform,opacity}
+body.motion-ready .story-path{will-change:transform}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:200;
+  background:rgba(255,255,255,.96);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+  padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;
+}
+.nav-logo{
+  font-family:var(--font-display);font-weight:900;font-size:1.5rem;
+  background:linear-gradient(135deg,var(--blue),var(--green));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.nav-links{display:flex;gap:1.75rem;align-items:center}
+.nav-links a{font-size:.875rem;font-weight:500;color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{
+  background:linear-gradient(135deg,var(--blue),var(--green));
+  color:#fff;border:none;padding:.5rem 1.25rem;
+  border-radius:8px;font-weight:600;font-size:.875rem;
+  cursor:pointer;font-family:var(--font-body);transition:opacity .2s;
+}
+.nav-cta:hover{opacity:.85}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;padding:.25rem}
+.nav-burger span{display:block;width:22px;height:2px;background:var(--text);margin:4px 0;border-radius:2px;transition:all .3s}
+
+/* ── UTILS ── */
+.container{max-width:1100px;margin:0 auto;padding:0 1.5rem}
+section{padding:5.5rem 1.5rem}
+.section-head{max-width:680px;margin:0 auto 3.5rem;text-align:center}
+.section-head p{font-size:1.05rem;color:var(--muted);margin-top:.75rem;line-height:1.7}
+h1,h2,h3{font-family:var(--font-display)}
+h1{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:900;line-height:1.1;letter-spacing:-.03em}
+h2{font-size:clamp(1.7rem,3.5vw,2.6rem);font-weight:800;line-height:1.15;letter-spacing:-.02em}
+h3{font-size:1.05rem;font-weight:700;color:var(--text)}
+p{color:var(--muted);line-height:1.7}
+.accent{background:linear-gradient(135deg,var(--blue),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.text-center{text-align:center}
+
+.eyebrow{
+  display:inline-flex;align-items:center;gap:.4rem;
+  font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;
+  padding:.35rem .9rem;border-radius:999px;margin-bottom:1.25rem;
+}
+.eyebrow-red{background:var(--red-light);color:var(--red)}
+.eyebrow-blue{background:var(--blue-light);color:var(--blue-dark)}
+.eyebrow-green{background:var(--green-light);color:var(--green-dark)}
+.eyebrow-white{background:rgba(255,255,255,.15);color:#fff}
+
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.875rem 1.75rem;border-radius:10px;
+  font-weight:600;font-size:.95rem;cursor:pointer;
+  transition:all .2s;border:none;font-family:var(--font-body);
+  white-space:nowrap;
+}
+.btn-primary{background:linear-gradient(135deg,var(--blue),var(--green));color:#fff}
+.btn-primary:hover{opacity:.88;transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--text);border:1.5px solid var(--border)}
+.btn-outline:hover{border-color:var(--blue);color:var(--blue)}
+.btn-white{background:#fff;color:var(--blue-dark);font-weight:700}
+.btn-white:hover{opacity:.92;transform:translateY(-1px)}
+.btn-outline-white{background:transparent;border:1.5px solid rgba(255,255,255,.45);color:#fff}
+.btn-outline-white:hover{background:rgba(255,255,255,.1)}
+.btn-group{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+
+/* ── HERO / SCROLL STORY ── */
+#scroll-story{
+  position:relative;height:350vh;padding:0;
+  background:#fff;overflow:clip;isolation:isolate;
+}
+#scroll-story::before{
+  content:'';position:absolute;inset:0 0 auto 0;height:115vh;z-index:-2;
+  background:
+    radial-gradient(circle at 12% 18%,rgba(0,153,255,.11),transparent 31%),
+    radial-gradient(circle at 88% 38%,rgba(0,219,136,.10),transparent 29%),
+    #fff;
+}
+.story-intro{
+  position:relative;z-index:3;min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  max-width:1180px;margin:0 auto;padding:5.5rem 1.5rem 8rem;text-align:center;
+}
+.story-kicker{
+  display:inline-flex;align-items:center;gap:.55rem;margin-bottom:1.5rem;
+  padding:.48rem 1rem;border:1px solid rgba(232,64,64,.2);border-radius:999px;
+  background:var(--red-light);color:var(--red);font-size:.78rem;font-weight:700;
+  letter-spacing:.05em;text-transform:uppercase;
+}
+.story-kicker::before{
+  content:'';width:7px;height:7px;border-radius:50%;background:var(--red);
+  box-shadow:0 0 0 6px rgba(232,64,64,.09);
+}
+.story-intro h1{
+  max-width:1080px;font-size:clamp(3.1rem,7.7vw,7.4rem);
+  line-height:.93;letter-spacing:-.072em;text-wrap:balance;
+}
+.story-intro h1 .question-mark{
+  display:inline-block;background:linear-gradient(135deg,var(--blue),var(--green));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.story-intro p{
+  max-width:660px;margin:1.6rem auto 0;font-size:clamp(1rem,1.45vw,1.2rem);
+  color:#4B5563;line-height:1.65;text-wrap:balance;
+}
+.story-actions{display:flex;justify-content:center;gap:.85rem;margin-top:2rem;flex-wrap:wrap}
+.story-scroll-cue{
+  position:absolute;bottom:2.2rem;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:.55rem;
+  color:var(--muted);font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+}
+.story-scroll-cue::after{
+  content:'';width:1px;height:34px;background:linear-gradient(var(--blue),transparent);
+  animation:scrollCue 1.8s ease-in-out infinite;
+}
+@keyframes scrollCue{0%,100%{transform:scaleY(.55);transform-origin:top;opacity:.45}50%{transform:scaleY(1);opacity:1}}
+.story-path{
+  position:absolute;z-index:1;top:0;right:-34%;
+  width:min(1278px,94vw);height:auto;overflow:visible;pointer-events:none;
+  filter:drop-shadow(0 16px 34px rgba(0,153,255,.12));
+}
+.story-path path{stroke-linecap:round;stroke-linejoin:round}
+.story-outcome{
+  position:absolute;z-index:2;top:200vh;left:1rem;right:1rem;height:150vh;
+  overflow:hidden;border-radius:36px 36px 0 0;color:#fff;
+  background:
+    radial-gradient(circle at 82% 18%,rgba(0,219,136,.18),transparent 28%),
+    radial-gradient(circle at 12% 72%,rgba(0,153,255,.2),transparent 34%),
+    var(--dark);
+}
+.story-outcome-inner{
+  position:sticky;top:64px;min-height:calc(100vh - 64px);
+  display:flex;flex-direction:column;justify-content:space-between;
+  max-width:1440px;margin:0 auto;padding:clamp(4.5rem,8vw,8rem) clamp(1.5rem,4vw,4rem) 3rem;
+}
+.story-outcome-label{
+  display:flex;align-items:center;gap:.65rem;color:#90A0B8;
+  font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+}
+.story-outcome-label::before{content:'';width:34px;height:2px;background:linear-gradient(90deg,var(--blue),var(--green))}
+.story-outcome h2{
+  margin:.7rem 0 1.25rem;font-size:clamp(4.4rem,13.4vw,12.5rem);
+  line-height:.82;letter-spacing:-.085em;color:#fff;white-space:nowrap;
+}
+.story-outcome-copy{max-width:690px;font-size:clamp(1.05rem,1.8vw,1.45rem);color:#CFD7E5;line-height:1.55}
+.lead-timeline{
+  display:grid;grid-template-columns:repeat(4,1fr);margin-top:3.5rem;
+  border-top:1px solid rgba(255,255,255,.15);
+}
+.lead-step{position:relative;padding:1.5rem 1.5rem 0 0}
+.lead-step::before{
+  content:'';position:absolute;top:-5px;left:0;width:9px;height:9px;border-radius:50%;
+  background:var(--green);box-shadow:0 0 0 6px rgba(0,219,136,.1);
+}
+.lead-step:last-child::before{background:var(--red);box-shadow:0 0 0 6px rgba(232,64,64,.1)}
+.lead-step span{display:block;color:#7F8DA3;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.lead-step strong{display:block;margin-top:.45rem;color:#fff;font-family:var(--font-display);font-size:clamp(.9rem,1.35vw,1.1rem);line-height:1.3}
+.story-outcome-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin-top:3rem}
+.story-outcome-foot p{max-width:480px;color:#AEB9CA;font-size:.92rem}
+.story-outcome-foot a{color:#fff;font-size:.85rem;font-weight:700;border-bottom:1px solid var(--green);padding-bottom:.3rem}
+
+/* ── DIAGNÓSTICO INTERATIVO DA DOR ── */
+#pain{background:#F3F6F9;padding:8rem 1.5rem}
+.pain-shell{max-width:1240px;margin:0 auto}
+.pain-head{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.55fr);gap:3rem;align-items:end;margin-bottom:3.5rem}
+.pain-head h2{max-width:820px;font-size:clamp(2.5rem,5.8vw,5.4rem);line-height:.94;letter-spacing:-.06em}
+.pain-head p{font-size:1rem;max-width:430px;padding-bottom:.35rem}
+.pain-lab{display:grid;grid-template-columns:minmax(270px,.72fr) minmax(0,1.5fr);gap:1rem;min-height:650px}
+.pain-options{display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:26px;overflow:hidden}
+.pain-option{
+  position:relative;flex:1;display:grid;grid-template-columns:44px 1fr auto;align-items:center;gap:1rem;
+  width:100%;padding:1.35rem 1.25rem;border:0;border-bottom:1px solid var(--border);background:#fff;
+  color:var(--text);text-align:left;font-family:var(--font-body);cursor:pointer;transition:color .28s,background .28s;
+}
+.pain-option:last-child{border-bottom:0}
+.pain-option::after{content:'↗';font-size:1rem;color:#A6B0C0;transition:transform .28s,color .28s}
+.pain-option:hover::after,.pain-option.active::after{transform:translate(3px,-3px);color:var(--green)}
+.pain-option.active{background:var(--dark);color:#fff}
+.pain-option-num{font-family:var(--font-display);font-size:.78rem;color:#9BA6B5}
+.pain-option strong{font-family:var(--font-display);font-size:.95rem;line-height:1.25}
+.pain-stage{
+  position:relative;overflow:hidden;border-radius:26px;background:var(--dark);color:#fff;
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(290px,.74fr);gap:2rem;padding:clamp(1.5rem,4vw,3.5rem);
+  box-shadow:0 28px 80px rgba(8,16,31,.18);
+}
+.pain-stage::before{
+  content:'';position:absolute;width:500px;height:500px;border-radius:50%;right:-210px;top:-210px;
+  background:radial-gradient(circle,rgba(0,219,136,.22),transparent 68%);pointer-events:none;
+}
+.pain-stage-copy{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:space-between}
+.pain-stage-status{display:inline-flex;align-items:center;gap:.55rem;color:#8D9BB0;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.pain-stage-status::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 6px rgba(232,64,64,.13)}
+.pain-stage h3{margin:2rem 0 1rem;color:#fff;font-size:clamp(2rem,3.7vw,3.9rem);line-height:.95;letter-spacing:-.055em}
+.pain-stage-description{max-width:520px;color:#B7C1D0;font-size:1rem}
+.pain-conclusion{margin-top:2rem;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.13);color:#fff;font-size:.94rem;line-height:1.6}
+.pain-conclusion strong{color:var(--green)}
+.lead-phone{
+  position:relative;z-index:2;align-self:center;justify-self:end;width:min(100%,330px);min-height:500px;
+  padding:.8rem;border:1px solid rgba(255,255,255,.16);border-radius:34px;background:#111C2E;
+  box-shadow:0 24px 70px rgba(0,0,0,.35);transform:rotate(2.5deg);transition:transform .5s cubic-bezier(.22,1,.36,1);
+}
+.pain-stage.is-changing .lead-phone{transform:rotate(-2deg) translateY(10px) scale(.98)}
+.phone-screen{height:100%;min-height:480px;border-radius:26px;background:#F5F7FA;overflow:hidden;color:var(--text);display:flex;flex-direction:column}
+.phone-head{padding:1rem;background:#fff;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.7rem}
+.phone-avatar{width:35px;height:35px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),var(--green));color:#fff;font-family:var(--font-display);font-size:.72rem}
+.phone-head strong{display:block;font-size:.82rem}.phone-head span{display:block;color:var(--green-dark);font-size:.67rem;margin-top:.15rem}
+.phone-chat{display:flex;flex:1;flex-direction:column;gap:.7rem;padding:1rem;justify-content:flex-end}
+.phone-time{text-align:center;color:#9AA3B2;font-size:.65rem;font-weight:600}
+.phone-bubble{max-width:88%;padding:.72rem .85rem;border-radius:14px;font-size:.76rem;line-height:1.45;opacity:0;transform:translateY(12px);animation:bubbleIn .42s forwards}
+.phone-bubble.client{align-self:flex-end;background:linear-gradient(135deg,var(--blue),#007CCC);color:#fff;border-bottom-right-radius:4px}
+.phone-bubble.business{align-self:flex-start;background:#fff;border:1px solid var(--border);border-bottom-left-radius:4px}
+.phone-bubble:nth-child(3){animation-delay:.12s}.phone-bubble:nth-child(4){animation-delay:.25s}
+@keyframes bubbleIn{to{opacity:1;transform:none}}
+
+/* ── SOLUÇÕES / LIVE DEMO ── */
+#solucoes{background:#fff;padding:8rem 1.5rem}
+.solutions-shell{max-width:1240px;margin:0 auto}
+.solutions-title-row{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:end;margin-bottom:3.5rem}
+.solutions-title-row h2{font-size:clamp(2.5rem,5.5vw,5.1rem);line-height:.94;letter-spacing:-.06em}
+.solutions-title-row p{max-width:470px;justify-self:end}
+.solution-lab{display:grid;grid-template-columns:minmax(260px,.62fr) minmax(0,1.38fr);gap:1rem}
+.solution-selector{display:flex;flex-direction:column;gap:.75rem}
+.solution-option{
+  min-height:134px;padding:1.35rem;border:1px solid var(--border);border-radius:18px;background:#fff;
+  display:grid;grid-template-columns:42px 1fr;gap:.9rem;text-align:left;cursor:pointer;font-family:var(--font-body);
+  transition:transform .3s,border-color .3s,background .3s,color .3s,box-shadow .3s;
+}
+.solution-option:hover{transform:translateX(6px);border-color:#B8C6D6}
+.solution-option.active{background:var(--dark);color:#fff;border-color:var(--dark);box-shadow:0 18px 50px rgba(8,16,31,.17)}
+.solution-option span{font-family:var(--font-display);font-size:.78rem;color:#9AA7B8}
+.solution-option strong{display:block;font-family:var(--font-display);font-size:1.02rem;margin-bottom:.45rem}
+.solution-option small{display:block;color:var(--muted);font-size:.77rem;line-height:1.5}
+.solution-option.active small{color:#AEB9C9}
+.solution-stage{
+  position:relative;min-height:500px;border-radius:26px;overflow:hidden;padding:clamp(1.7rem,4vw,3.6rem);
+  background:linear-gradient(145deg,#E9F5FF 0%,#ECFFF7 100%);border:1px solid rgba(0,153,255,.12);
+  display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:2rem;align-items:center;
+}
+.solution-stage::after{content:'';position:absolute;inset:auto -120px -180px auto;width:420px;height:420px;border-radius:50%;background:rgba(0,219,136,.16);filter:blur(2px)}
+.solution-copy{position:relative;z-index:2}
+.solution-live{display:inline-flex;align-items:center;gap:.45rem;padding:.35rem .7rem;border-radius:999px;background:#fff;color:var(--green-dark);font-size:.69rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em}
+.solution-live::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--green);animation:livePulse 1.7s infinite}
+@keyframes livePulse{50%{box-shadow:0 0 0 7px rgba(0,219,136,0)}}
+.solution-copy h3{font-size:clamp(2rem,3.6vw,3.6rem);line-height:.98;letter-spacing:-.05em;margin:1.2rem 0 .9rem}
+.solution-copy>p{max-width:520px;color:#4F6074}
+.solution-feature-list{list-style:none;margin-top:1.6rem;display:grid;gap:.65rem}
+.solution-feature-list li{display:flex;gap:.65rem;align-items:flex-start;color:#29384C;font-size:.85rem}
+.solution-feature-list li::before{content:'↗';color:var(--green-dark);font-weight:800}
+.ai-console{position:relative;z-index:2;background:var(--dark);border-radius:24px;padding:1.15rem;color:#fff;box-shadow:0 24px 60px rgba(8,16,31,.2);transform:rotate(-2deg);transition:transform .5s}
+.solution-stage.is-changing .ai-console{transform:rotate(2deg) scale(.97)}
+.console-top{display:flex;justify-content:space-between;align-items:center;padding:.25rem .2rem 1rem;border-bottom:1px solid rgba(255,255,255,.12);font-size:.69rem;color:#8E9BB0;text-transform:uppercase;letter-spacing:.08em}
+.console-dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 14px var(--green)}
+.console-flow{display:grid;gap:.75rem;padding-top:1rem}
+.console-node{padding:.85rem;border-radius:12px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.08);font-size:.75rem;color:#C8D2E1;opacity:0;transform:translateX(12px);animation:nodeIn .4s forwards}
+.console-node:nth-child(2){animation-delay:.1s}.console-node:nth-child(3){animation-delay:.2s}.console-node:nth-child(4){animation-delay:.3s}
+.console-node strong{display:block;color:#fff;font-size:.78rem;margin-bottom:.25rem}
+@keyframes nodeIn{to{opacity:1;transform:none}}
+
+/* ── APPS ── */
+#apps{background:var(--surface)}
+.app-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.app-list{display:flex;flex-direction:column;gap:1.5rem}
+.app-item{display:flex;gap:1rem;align-items:flex-start}
+.app-bullet{
+  width:38px;height:38px;flex-shrink:0;
+  background:linear-gradient(135deg,var(--blue),var(--green));
+  border-radius:9px;display:flex;align-items:center;
+  justify-content:center;font-size:1rem;margin-top:.1rem;
+}
+.app-item h4{font-size:.95rem;font-weight:600;color:var(--text);margin-bottom:.25rem}
+.app-item p{font-size:.85rem}
+.app-mockup{
+  background:#fff;border:1px solid var(--border);
+  border-radius:var(--radius-lg);padding:1.5rem;
+  box-shadow:0 4px 24px rgba(0,0,0,.06);
+}
+.mockup-header{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:1rem;padding-bottom:.75rem;border-bottom:1px solid var(--border);
+}
+.mockup-header strong{font-size:.95rem;color:var(--text);font-weight:700}
+.badge-live{
+  background:var(--green-light);color:var(--green-dark);
+  font-size:.68rem;font-weight:700;padding:.2rem .6rem;border-radius:999px;
+}
+.mockup-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:.5rem 0;border-bottom:1px solid var(--border);font-size:.85rem;
+}
+.mockup-row:last-of-type{border-bottom:none}
+.mockup-label{color:var(--muted)}
+.mockup-val{font-weight:600;color:var(--text)}
+.mockup-val.up{color:var(--green-dark)}
+.mockup-val.warn{color:var(--red)}
+.mockup-ai{
+  margin-top:1rem;padding:.75rem 1rem;
+  background:var(--blue-light);border-radius:8px;
+  font-size:.8rem;color:var(--blue-dark);line-height:1.5;
+}
+
+/* ── CASES ── */
+#cases{background:#fff}
+.cases-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
+.case-card{
+  border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:2rem;background:var(--surface);
+}
+.case-tag{
+  font-size:.72rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:.05em;color:var(--muted);margin-bottom:.6rem;
+}
+.case-card h3{font-size:1rem;color:var(--text);margin-bottom:1.25rem;line-height:1.4}
+.case-block{margin-bottom:.85rem}
+.case-label{
+  font-size:.72rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:.05em;display:flex;align-items:center;gap:.35rem;margin-bottom:.3rem;
+}
+.case-label.bad{color:var(--red)}
+.case-label.sol{color:var(--blue-dark)}
+.case-block p{font-size:.875rem}
+.result-box{
+  background:var(--blue-light);border-radius:8px;
+  padding:.75rem 1rem;margin-top:1rem;
+}
+.result-box p{color:var(--blue-dark);font-weight:600;font-size:.85rem}
+
+/* ── COMO FUNCIONA ── */
+#como{background:var(--surface)}
+.timeline{max-width:660px;margin:0 auto;display:flex;flex-direction:column}
+.tl-item{display:flex;gap:1.5rem;position:relative}
+.tl-item:not(:last-child)::after{
+  content:'';position:absolute;left:21px;top:50px;
+  width:2px;height:calc(100% - 24px);
+  background:linear-gradient(to bottom,var(--blue),var(--green));opacity:.25;
+}
+.tl-step{
+  width:44px;height:44px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,var(--blue),var(--green));
+  color:#fff;font-family:var(--font-display);font-weight:800;font-size:.82rem;
+  display:flex;align-items:center;justify-content:center;position:relative;z-index:1;
+}
+.tl-body{padding-bottom:2.75rem}
+.tl-body h3{margin-bottom:.35rem}
+.tl-body p{font-size:.9rem}
+
+/* ── FAQ ── */
+#faq{background:#fff}
+.faq-list{max-width:700px;margin:0 auto;display:flex;flex-direction:column;gap:1rem}
+.faq-item{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.faq-q{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:1.2rem 1.5rem;cursor:pointer;
+  font-weight:600;font-size:.92rem;color:var(--text);
+  background:#fff;transition:background .15s;gap:1rem;
+  border:none;width:100%;text-align:left;font-family:var(--font-body);
+}
+.faq-q:hover{background:var(--surface)}
+.faq-icon{
+  width:26px;height:26px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:50%;background:var(--blue-light);
+  color:var(--blue);font-size:1.1rem;font-weight:700;
+  transition:transform .25s;line-height:1;
+}
+.faq-a{
+  display:none;padding:0 1.5rem 1.2rem;
+  font-size:.875rem;line-height:1.7;color:var(--muted);
+}
+.faq-item.open .faq-a{display:block}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+
+/* ── MANIFESTO ── */
+#manifesto{background:var(--dark);color:#fff;padding:6rem 1.5rem}
+.manifesto-inner{max-width:700px;margin:0 auto}
+.manifesto-inner>p{color:rgba(255,255,255,.72);font-size:1rem;line-height:1.8;margin-bottom:1.25rem}
+.manifesto-quote{
+  border-left:3px solid var(--green);padding:1.25rem 1.5rem;
+  margin:2rem 0;background:rgba(0,219,136,.07);border-radius:0 12px 12px 0;
+}
+.manifesto-quote p{color:#fff;font-size:1.1rem;font-style:italic;line-height:1.65}
+.manifesto-beliefs{list-style:none;display:flex;flex-direction:column;gap:.75rem;margin:1.25rem 0}
+.manifesto-beliefs li{
+  display:flex;gap:.75rem;align-items:flex-start;
+  color:rgba(255,255,255,.72);font-size:.95rem;line-height:1.6;
+}
+.manifesto-beliefs li::before{
+  content:'·';color:var(--blue);font-size:1.5rem;
+  line-height:1.1;flex-shrink:0;
+}
+.manifesto-lema{
+  color:#fff;font-family:var(--font-display);
+  font-size:1.1rem;font-weight:700;margin-top:1.75rem;line-height:1.5;
+}
+.manifesto-author{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.1)}
+.manifesto-author strong{color:rgba(255,255,255,.9);display:block;font-size:.95rem}
+.manifesto-author span{color:rgba(255,255,255,.4);font-size:.85rem}
+
+/* ── CTA FINAL ── */
+#cta-final{
+  background:linear-gradient(135deg,var(--blue),var(--green));
+  color:#fff;padding:5.5rem 1.5rem;text-align:center;
+}
+#cta-final h2{color:#fff;margin-bottom:.75rem}
+#cta-final>div>p{color:rgba(255,255,255,.85);font-size:1.05rem;margin-bottom:2rem}
+.cta-micro{font-size:.78rem;color:rgba(255,255,255,.55);margin-top:1.25rem}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--dark);color:rgba(255,255,255,.45);
+  text-align:center;padding:2rem 1.5rem;font-size:.82rem;line-height:1.8;
+}
+footer strong{color:rgba(255,255,255,.8);font-family:var(--font-display)}
+footer a{color:rgba(255,255,255,.45);transition:color .2s}
+footer a:hover{color:rgba(255,255,255,.8)}
+
+/* ── EDITORIAL MOTION SYSTEM ── */
+nav{transition:height .35s,background .35s,box-shadow .35s}
+nav.nav-scrolled{height:56px;background:rgba(255,255,255,.88);box-shadow:0 12px 36px rgba(8,16,31,.07)}
+#apps{padding:8rem 1.5rem;background:#F3F6F9}
+#appTabs{position:sticky;top:76px;z-index:12;padding:.7rem;border-radius:999px;background:rgba(255,255,255,.76);backdrop-filter:blur(18px);width:fit-content;margin-left:auto;margin-right:auto;box-shadow:0 12px 40px rgba(8,16,31,.07)}
+.app-tab-content{animation:tabReveal .52s cubic-bezier(.22,1,.36,1)}
+@keyframes tabReveal{from{opacity:0;transform:translateY(22px) scale(.985)}to{opacity:1;transform:none}}
+.app-mockup{transition:transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s;transform:perspective(1100px) rotateY(-3deg) rotateX(1deg)}
+.app-grid:hover .app-mockup{transform:perspective(1100px) rotateY(0) rotateX(0) translateY(-6px);box-shadow:0 28px 80px rgba(8,16,31,.14)}
+#cases{padding:8rem 1.5rem;background:var(--dark);color:#fff;overflow:hidden}
+#cases .section-head h2,#cases .case-card h3{color:#fff}
+#cases .section-head p{color:#8E9AAF}
+#cases .eyebrow{background:rgba(0,153,255,.14);color:#82CCFF}
+.cases-grid{gap:1rem}
+.case-card{position:relative;overflow:hidden;background:#101B2C;border-color:rgba(255,255,255,.1);min-height:430px;transition:transform .45s cubic-bezier(.22,1,.36,1),border-color .3s}
+.case-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(0,219,136,.13),transparent 34%);opacity:0;transition:opacity .3s;pointer-events:none}
+.case-card:hover{transform:translateY(-10px);border-color:rgba(0,219,136,.35)}
+.case-card:hover::before{opacity:1}
+.case-card>*{position:relative;z-index:1}
+.case-tag{color:#8290A6}.case-block p{color:#AEB9C9}.case-label.sol{color:#6DCEFF}.result-box{background:rgba(0,153,255,.12);border:1px solid rgba(0,153,255,.18)}.result-box p{color:#8FD2FF}
+#como{padding:9rem 1.5rem;background:#fff}
+.timeline{max-width:980px;position:relative}
+.timeline::before{content:'04';position:sticky;top:120px;float:right;margin-right:-130px;font-family:var(--font-display);font-size:8rem;font-weight:900;color:#EEF2F6;line-height:1;z-index:0}
+.tl-item{min-height:42vh;align-items:flex-start;padding-top:1.5rem}
+.tl-step{position:sticky;top:120px;width:58px;height:58px;font-size:.9rem;box-shadow:0 12px 34px rgba(0,153,255,.23)}
+.tl-body{max-width:660px;padding-bottom:5rem}
+.tl-body h3{font-size:clamp(1.65rem,3vw,2.7rem);letter-spacing:-.04em;margin-bottom:.75rem}
+.tl-body p{font-size:1rem;max-width:560px}
+.tl-item:not(:last-child)::after{left:28px;top:72px;height:calc(100% - 38px)}
+body.motion-ready .tl-item{opacity:.3;transform:translateX(-18px);transition:opacity .55s,transform .55s}
+body.motion-ready .tl-item.is-active{opacity:1;transform:none}
+body.motion-ready .tl-item.is-active .tl-step{box-shadow:0 0 0 10px rgba(0,219,136,.1),0 12px 34px rgba(0,153,255,.23)}
+#faq{padding:8rem 1.5rem}
+.faq-list{max-width:920px;gap:0;border-top:1px solid var(--border)}
+.faq-item{border:0;border-bottom:1px solid var(--border);border-radius:0}
+.faq-q{padding:1.65rem 0;font-family:var(--font-display);font-size:clamp(1rem,1.5vw,1.25rem)}
+.faq-a{padding:0 4rem 1.7rem 0;max-width:760px;font-size:.95rem;animation:faqIn .35s ease}
+@keyframes faqIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+#manifesto{position:relative;overflow:hidden;padding:10rem 1.5rem;background:#06101E}
+#manifesto::before{content:'MORE LIFE.';position:absolute;left:-.04em;top:.12em;font-family:var(--font-display);font-size:clamp(7rem,20vw,20rem);font-weight:900;letter-spacing:-.09em;color:rgba(255,255,255,.025);white-space:nowrap;pointer-events:none}
+.manifesto-inner{position:relative;z-index:1;max-width:860px}
+.manifesto-quote{margin:3rem 0;padding:2rem 2.2rem;border-left-width:5px}
+.manifesto-quote p{font-family:var(--font-display);font-size:clamp(1.25rem,2.4vw,2rem);font-style:normal;letter-spacing:-.03em}
+#cta-final{position:relative;overflow:hidden;padding:8rem 1.5rem}
+#cta-final::before,#cta-final::after{content:'SOLVIA // MENOS REPETIÇÃO // MAIS VIDA // ';position:absolute;left:-5%;width:110%;font-family:var(--font-display);font-size:clamp(2rem,5vw,5rem);font-weight:900;white-space:nowrap;color:rgba(255,255,255,.1);letter-spacing:-.03em;pointer-events:none}
+#cta-final::before{top:1rem;transform:rotate(-2deg)}#cta-final::after{bottom:1rem;transform:rotate(2deg) translateX(-12%)}
+#cta-final .container{position:relative;z-index:1}
+
+/* ── CHAT WIDGET ── */
+#chat-widget{position:fixed;bottom:24px;right:24px;z-index:9999}
+.chat-toggle{
+  width:58px;height:58px;border-radius:50%;
+  background:linear-gradient(135deg,var(--blue),var(--green));
+  border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(0,153,255,.4);transition:transform .2s;
+}
+.chat-toggle:hover{transform:scale(1.08)}
+.chat-toggle svg{width:26px;height:26px;fill:#fff}
+.chat-badge{
+  position:absolute;top:-3px;right:-3px;
+  width:18px;height:18px;background:var(--red);color:#fff;
+  border-radius:50%;font-size:.62rem;font-weight:700;
+  display:none;align-items:center;justify-content:center;
+  border:2px solid #fff;
+}
+.chat-box{
+  position:absolute;bottom:70px;right:0;width:360px;
+  background:#fff;border-radius:var(--radius-lg);
+  box-shadow:0 8px 48px rgba(0,0,0,.15);
+  border:1px solid var(--border);
+  display:none;flex-direction:column;overflow:hidden;
+  max-height:520px;
+}
+.chat-box.open{display:flex}
+.chat-header{
+  padding:.9rem 1.25rem;
+  background:linear-gradient(135deg,var(--blue),var(--green));
+  color:#fff;display:flex;justify-content:space-between;align-items:center;
+  flex-shrink:0;
+}
+.chat-header-info{display:flex;align-items:center;gap:.75rem}
+.chat-avatar{
+  width:36px;height:36px;border-radius:50%;
+  background:rgba(255,255,255,.25);
+  display:flex;align-items:center;justify-content:center;font-size:1.1rem;
+}
+.chat-header-info div strong{display:block;font-size:.9rem;font-weight:700}
+.chat-header-info div span{font-size:.72rem;opacity:.85}
+.chat-close{
+  background:none;border:none;color:#fff;cursor:pointer;
+  font-size:1.4rem;line-height:1;opacity:.75;padding:.25rem;
+}
+.chat-close:hover{opacity:1}
+.chat-msgs{
+  flex:1;overflow-y:auto;padding:1rem;
+  display:flex;flex-direction:column;gap:.65rem;min-height:260px;
+}
+.msg{
+  max-width:87%;padding:.6rem .9rem;border-radius:14px;
+  font-size:.85rem;line-height:1.55;
+}
+.msg.bot{
+  background:var(--surface);color:var(--text);
+  border-bottom-left-radius:4px;align-self:flex-start;
+}
+.msg.user{
+  background:linear-gradient(135deg,var(--blue),var(--green));color:#fff;
+  border-bottom-right-radius:4px;align-self:flex-end;
+}
+.msg.typing{background:var(--surface);color:var(--muted);font-style:italic;align-self:flex-start}
+.chat-input-row{
+  display:flex;gap:.5rem;padding:.75rem 1rem;
+  border-top:1px solid var(--border);flex-shrink:0;
+}
+.chat-input-row input{
+  flex:1;border:1px solid var(--border);border-radius:8px;
+  padding:.5rem .75rem;font-size:.85rem;font-family:var(--font-body);
+  outline:none;transition:border-color .2s;
+}
+.chat-input-row input:focus{border-color:var(--blue)}
+.chat-send{
+  background:linear-gradient(135deg,var(--blue),var(--green));
+  color:#fff;border:none;border-radius:8px;
+  width:36px;height:36px;cursor:pointer;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+}
+.chat-send:hover{opacity:.88}
+.chat-send svg{width:15px;height:15px;fill:#fff}
+
+/* ── MOBILE ── */
+@media(max-width:900px){
+  .app-grid{grid-template-columns:1fr}
+  .app-mockup{order:-1}
+  .story-path{right:-55%;width:125vw}
+  .lead-timeline{grid-template-columns:repeat(2,1fr);row-gap:2.5rem}
+  .pain-head,.solutions-title-row{grid-template-columns:1fr;gap:1.25rem}
+  .pain-lab{grid-template-columns:1fr;min-height:0}
+  .pain-options{display:grid;grid-template-columns:1fr 1fr}
+  .pain-option{min-height:110px;border-right:1px solid var(--border)}
+  .pain-stage{min-height:620px}
+  .solution-stage{grid-template-columns:1fr 270px}
+}
+@media(max-width:700px){
+  nav .nav-links{display:none}
+  nav>div:last-of-type{display:none!important}
+  .nav-burger{display:block}
+  .btn-group{flex-direction:column;align-items:stretch}
+  .btn-group .btn{justify-content:center}
+  .story-intro{justify-content:flex-start;padding:7rem 1.2rem 6rem}
+  .story-intro h1{font-size:clamp(3rem,15.2vw,5.1rem);line-height:.94;letter-spacing:-.065em}
+  .story-intro p{font-size:1rem;max-width:36rem}
+  .story-actions{width:100%;max-width:360px;flex-direction:column}
+  .story-actions .btn{justify-content:center;width:100%}
+  .story-path{top:12vh;right:-100%;width:190vw;opacity:.82}
+  .story-outcome{left:.5rem;right:.5rem;border-radius:24px 24px 0 0}
+  .story-outcome-inner{top:64px;padding:4.5rem 1.25rem 2rem}
+  .story-outcome h2{font-size:clamp(4rem,23vw,7rem);line-height:.86;white-space:normal;max-width:6ch}
+  .story-outcome-copy{font-size:1.02rem}
+  .lead-timeline{grid-template-columns:1fr 1fr;margin-top:2.5rem;gap:1.75rem .8rem}
+  .lead-step{padding:1.25rem .6rem 0 0}
+  .lead-step strong{font-size:.88rem}
+  .story-outcome-foot{align-items:flex-start;flex-direction:column;gap:1.1rem;margin-top:2rem}
+  .site-progress{width:3px}
+  .cursor-glow{display:none}
+  #pain,#solucoes,#apps,#cases,#como,#faq,#manifesto,#cta-final{padding:5.5rem 1.1rem}
+  .pain-head h2,.solutions-title-row h2{font-size:clamp(2.65rem,13vw,4rem)}
+  .pain-options{grid-template-columns:1fr}
+  .pain-option{min-height:82px;border-right:0}
+  .pain-lab{gap:.75rem}
+  .pain-stage{grid-template-columns:1fr;min-height:760px;padding:1.35rem}
+  .pain-stage h3{font-size:2.45rem;margin-top:1.4rem}
+  .lead-phone{justify-self:center;width:min(100%,315px);min-height:430px;transform:none}
+  .phone-screen{min-height:410px}
+  .solution-lab{grid-template-columns:1fr}
+  .solution-selector{display:grid;grid-template-columns:repeat(3,1fr);gap:.45rem}
+  .solution-option{min-height:110px;display:block;padding:1rem}
+  .solution-option:hover{transform:none}
+  .solution-option span{display:block;margin-bottom:.55rem}
+  .solution-option strong{font-size:.82rem;margin:0}
+  .solution-option small{display:none}
+  .solution-stage{grid-template-columns:1fr;min-height:730px;padding:1.35rem}
+  .solution-copy h3{font-size:2.35rem}
+  .ai-console{width:min(100%,330px);justify-self:center;transform:none}
+  #appTabs{top:64px;border-radius:20px;width:100%;justify-content:flex-start!important;overflow-x:auto;flex-wrap:nowrap!important;margin-bottom:1.5rem!important}
+  #appTabs .app-tab{flex:0 0 auto}
+  .app-mockup,.app-grid:hover .app-mockup{transform:none}
+  .timeline::before{display:none}
+  .tl-item{min-height:42vh;gap:1rem}
+  .tl-step{top:90px;width:48px;height:48px}
+  .tl-item:not(:last-child)::after{left:23px;top:62px}
+  .faq-a{padding-right:0}
+  .chat-box{width:calc(100vw - 32px);right:-8px}
+  section{padding:4rem 1.25rem}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .story-scroll-cue::after{animation:none}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  [data-reveal]{opacity:1;transform:none;filter:none}
+}
+.mobile-menu{
+  display:none;flex-direction:column;gap:0;
+  position:absolute;top:64px;left:0;right:0;
+  background:#fff;border-bottom:1px solid var(--border);
+  box-shadow:0 8px 24px rgba(0,0,0,.08);z-index:199;
+}
+.mobile-menu.open{display:flex}
+.mobile-menu a{
+  padding:1rem 1.5rem;font-size:.95rem;font-weight:500;
+  color:var(--text);border-bottom:1px solid var(--border);
+  transition:background .15s;
+}
+.mobile-menu a:hover{background:var(--surface)}
+
+/* ── MODAL TRABALHE CONOSCO ── */
+#job-modal-overlay{
+  position:fixed;inset:0;z-index:1000;
+  background:rgba(8,16,31,.55);backdrop-filter:blur(6px);
+  display:none;align-items:center;justify-content:center;
+  padding:1.5rem;animation:jobFadeIn .2s ease;
+}
+@keyframes jobFadeIn{from{opacity:0}to{opacity:1}}
+@keyframes jobSlideUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+#job-modal-box{
+  background:#fff;border-radius:var(--radius-lg);
+  max-width:520px;width:100%;max-height:88vh;overflow-y:auto;
+  padding:2.75rem 2.5rem 2.25rem;position:relative;
+  animation:jobSlideUp .3s ease;
+  box-shadow:0 20px 60px rgba(8,16,31,.25);
+}
+#job-modal-close{
+  position:absolute;top:1.1rem;right:1.1rem;
+  width:32px;height:32px;border-radius:50%;border:none;
+  background:var(--surface);color:var(--muted);cursor:pointer;
+  font-size:1rem;display:flex;align-items:center;justify-content:center;
+  transition:background .2s,color .2s;
+}
+#job-modal-close:hover{background:var(--blue-light);color:var(--blue-dark)}
+.job-step{display:none}
+.job-step.active{display:block;animation:jobSlideUp .25s ease}
+.job-step-tag{
+  font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;
+  color:var(--green-dark);margin-bottom:1rem;
+}
+.job-modal-logo{
+  font-family:var(--font-display);font-weight:900;font-size:1.15rem;
+  background:linear-gradient(135deg,var(--blue),var(--green));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  margin-bottom:.85rem;
+}
+#job-modal-box h3{font-size:1.4rem;line-height:1.25;margin-bottom:.5rem}
+.job-modal-sub{font-size:.9rem;color:var(--muted);margin-bottom:1.5rem;line-height:1.6}
+.job-input,.job-select,.job-textarea{
+  display:block;width:100%;background:var(--surface);
+  border:1px solid var(--border);border-radius:10px;
+  color:var(--text);font-size:.92rem;font-family:var(--font-body);
+  padding:.8rem 1rem;outline:none;margin-bottom:.75rem;
+  transition:border-color .2s;
+}
+.job-input:focus,.job-select:focus,.job-textarea:focus{border-color:var(--blue)}
+.job-input::placeholder,.job-textarea::placeholder{color:#9AA3B2}
+.job-textarea{resize:none;min-height:110px;line-height:1.6}
+.job-select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B7280' stroke-width='1.6' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center}
+.job-btn{
+  width:100%;background:linear-gradient(135deg,var(--blue),var(--green));
+  color:#fff;border:none;border-radius:10px;
+  font-family:var(--font-body);font-weight:600;font-size:.95rem;
+  padding:.9rem;cursor:pointer;margin-top:.35rem;
+  transition:opacity .2s,transform .2s;
+}
+.job-btn:hover:not(:disabled){opacity:.88;transform:translateY(-1px)}
+.job-btn:disabled{opacity:.35;cursor:not-allowed}
+.job-btn-ghost{
+  background:var(--surface);border:1px solid var(--border);
+  color:var(--muted);font-family:var(--font-body);font-weight:600;
+  font-size:.9rem;padding:.9rem 1.1rem;border-radius:10px;
+  cursor:pointer;white-space:nowrap;transition:background .2s,color .2s;
+}
+.job-btn-ghost:hover{background:var(--blue-light);color:var(--blue-dark)}
+#job-modal-progress{position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--surface);border-radius:0 0 var(--radius-lg) var(--radius-lg);overflow:hidden}
+#job-modal-progress-fill{height:100%;width:0%;background:linear-gradient(135deg,var(--blue),var(--green));transition:width .35s ease}
+@media(max-width:560px){
+  #job-modal-box{padding:2.25rem 1.5rem 1.75rem}
+  #job-modal-box h3{font-size:1.2rem}
+}
+
+/* ─────────────────────────────────────────────────────────────
+   SOLVIA EDITORIAL ORBIT HERO
+   Mantém o copy original e transforma a primeira dobra em uma
+   composição editorial com micro-interfaces orbitando o título.
+────────────────────────────────────────────────────────────── */
+#scroll-story::before{
+  height:100vh;
+  background:#F7F5F3;
+}
+.story-intro{
+  position:relative;
+  z-index:3;
+  min-height:100vh;
+  max-width:none;
+  margin:0;
+  padding:clamp(6.5rem,10vh,8.5rem) 1.5rem 7rem;
+  overflow:hidden;
+  isolation:isolate;
+}
+.story-intro::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  z-index:-3;
+  pointer-events:none;
+  opacity:.28;
+  background-image:radial-gradient(rgba(13,13,13,.16) .45px,transparent .45px);
+  background-size:7px 7px;
+  -webkit-mask-image:linear-gradient(to bottom,#000,transparent 88%);
+  mask-image:linear-gradient(to bottom,#000,transparent 88%);
+}
+.story-copy{
+  position:relative;
+  z-index:5;
+  width:min(100%,1040px);
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+.story-kicker{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  gap:.6rem;
+  margin:0 0 1.35rem;
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  color:#0D0D0D;
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+.story-kicker::before{
+  content:'';
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--red);
+  box-shadow:0 0 0 5px rgba(232,64,64,.08);
+}
+.story-intro h1{
+  max-width:1000px;
+  margin:0;
+  font-family:'Instrument Serif',Georgia,serif;
+  font-size:clamp(4.1rem,7.5vw,7.6rem);
+  font-weight:400;
+  line-height:.86;
+  letter-spacing:-.055em;
+  text-wrap:balance;
+  color:#0D0D0D;
+}
+.story-intro h1 .question-mark{
+  display:inline-block;
+  margin-left:.015em;
+  background:linear-gradient(135deg,var(--blue),var(--green));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  transform:translateY(-.03em);
+}
+.story-intro .story-copy>p{
+  max-width:610px;
+  margin:1.7rem auto 0;
+  color:#5F5B59;
+  font-size:clamp(.96rem,1.15vw,1.08rem);
+  line-height:1.65;
+}
+.story-actions{
+  margin-top:1.9rem;
+  gap:.7rem;
+}
+.story-actions .btn{
+  min-height:52px;
+  padding:.8rem 1.35rem;
+  border-radius:16px;
+  font-size:.9rem;
+  transition:transform .28s cubic-bezier(.22,1,.36,1),background .28s,color .28s,border-color .28s,box-shadow .28s;
+}
+.story-actions .btn-primary{
+  background:#0D0D0D;
+  color:#fff;
+  box-shadow:none;
+}
+.story-actions .btn-primary:hover{
+  opacity:1;
+  transform:translateY(-3px);
+  background:#131F30;
+}
+.story-actions .btn-outline{
+  background:rgba(255,255,255,.72);
+  color:#0D0D0D;
+  border:1px solid rgba(13,13,13,.13);
+  backdrop-filter:blur(12px);
+}
+.story-actions .btn-outline:hover{
+  color:#0D0D0D;
+  border-color:rgba(13,13,13,.28);
+  transform:translateY(-3px);
+}
+.story-scroll-cue{
+  bottom:1.8rem;
+  z-index:8;
+  color:#716D6A;
+  font-size:.68rem;
+}
+.story-scroll-cue::after{
+  height:40px;
+  background:linear-gradient(#0D0D0D,transparent);
+  opacity:.42;
+}
+
+/* A linha original nasce só quando o usuário começa a sair da primeira dobra. */
+.story-path{
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0,transparent 27rem,#000 49rem,#000 100%);
+  mask-image:linear-gradient(to bottom,transparent 0,transparent 27rem,#000 49rem,#000 100%);
+  filter:drop-shadow(0 14px 30px rgba(0,153,255,.08));
+}
+
+/* Camada orbital */
+.hero-orbit-layer{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  transform:translate3d(0,0,0);
+  transition:transform .9s cubic-bezier(.22,1,.36,1);
+  will-change:transform;
+}
+.hero-orbit-ring{
+  position:absolute;
+  left:50%;
+  top:50%;
+  border:1px solid rgba(13,13,13,.07);
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+}
+.hero-orbit-ring::after{
+  content:'';
+  position:absolute;
+  left:50%;
+  top:-4px;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#0D0D0D;
+  box-shadow:0 0 0 5px rgba(13,13,13,.035);
+}
+.hero-orbit-ring-a{
+  width:min(84vw,1160px);
+  height:min(84vw,1160px);
+  animation:ringTurn 46s linear infinite;
+}
+.hero-orbit-ring-b{
+  width:min(68vw,910px);
+  height:min(68vw,910px);
+  border-style:dashed;
+  opacity:.56;
+  animation:ringTurnReverse 58s linear infinite;
+}
+@keyframes ringTurn{
+  from{transform:translate(-50%,-50%) rotate(-8deg)}
+  to{transform:translate(-50%,-50%) rotate(352deg)}
+}
+@keyframes ringTurnReverse{
+  from{transform:translate(-50%,-50%) rotate(11deg)}
+  to{transform:translate(-50%,-50%) rotate(-349deg)}
+}
+
+.orbit-satellite{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:1px;
+  height:1px;
+  animation:solviaOrbit var(--speed) linear infinite;
+  will-change:transform;
+}
+.orbit-arm{transform:translateX(var(--radius))}
+.orbit-face{
+  animation:solviaCounterOrbit var(--speed) linear infinite;
+  will-change:transform;
+}
+@keyframes solviaOrbit{
+  from{transform:rotate(var(--start))}
+  to{transform:rotate(calc(var(--start) + 360deg))}
+}
+@keyframes solviaCounterOrbit{
+  from{transform:rotate(var(--counter))}
+  to{transform:rotate(calc(var(--counter) - 360deg))}
+}
+
+.orbit-card{
+  position:absolute;
+  left:0;
+  top:0;
+  transform:translate(-50%,-50%);
+  color:#0D0D0D;
+  background:rgba(255,255,255,.93);
+  border:1px solid rgba(13,13,13,.09);
+  border-radius:16px;
+  box-shadow:0 16px 42px rgba(13,13,13,.07);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  font-family:var(--font-body);
+}
+.orbit-label{
+  display:block;
+  color:#8D8986;
+  font-size:.58rem;
+  line-height:1;
+  font-weight:700;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+.orbit-card small{color:#8D8986}
+
+/* Lead / conversa */
+.orbit-card-chat{
+  width:210px;
+  padding:.8rem;
+}
+.orbit-card-top{
+  display:grid;
+  grid-template-columns:34px 1fr 8px;
+  gap:.55rem;
+  align-items:center;
+}
+.orbit-avatar{
+  width:34px;height:34px;border-radius:50%;
+  display:grid;place-items:center;
+  background:#0D0D0D;color:#fff;
+  font-family:var(--font-display);font-size:.72rem;font-weight:800;
+}
+.orbit-card-top b{display:block;font-size:.72rem;line-height:1.15}
+.orbit-card-top small{display:block;font-size:.58rem;margin-top:.12rem}
+.orbit-card-top>i{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 5px rgba(0,219,136,.1)}
+.orbit-bubble{
+  margin-top:.68rem;
+  padding:.64rem .7rem;
+  border-radius:11px 11px 3px 11px;
+  background:#EAF6FF;
+  color:#18334B;
+  font-size:.68rem;
+  line-height:1.35;
+}
+
+/* Métrica */
+.orbit-card-metric{
+  width:172px;
+  padding:1rem;
+}
+.orbit-card-metric strong{
+  display:block;
+  margin:.42rem 0 .55rem;
+  font-family:'Instrument Serif',Georgia,serif;
+  font-size:2.5rem;
+  line-height:.85;
+  font-weight:400;
+  letter-spacing:-.05em;
+}
+.orbit-card-metric strong span{font-family:var(--font-body);font-size:.78rem;margin-left:.15rem;color:#6E6A69}
+.orbit-meter{height:4px;background:#EEF0F2;border-radius:999px;overflow:hidden}
+.orbit-meter i{display:block;width:78%;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--blue),var(--green))}
+
+/* Bia */
+.orbit-card-agent{
+  width:205px;
+  padding:.9rem 1rem;
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+}
+.agent-orb{
+  width:42px;height:42px;border-radius:50%;
+  display:grid;place-items:center;
+  background:#0D0D0D;
+}
+.agent-orb span{
+  width:16px;height:16px;border-radius:50%;
+  background:linear-gradient(135deg,var(--blue),var(--green));
+  box-shadow:0 0 18px rgba(0,219,136,.5);
+  animation:agentPulse 2.2s ease-in-out infinite;
+}
+@keyframes agentPulse{50%{transform:scale(.72);opacity:.72}}
+.orbit-card-agent strong{display:block;font-size:.76rem;margin:.28rem 0 .14rem}
+.orbit-card-agent small{display:block;font-size:.6rem}
+
+/* Agenda */
+.orbit-card-calendar{
+  width:205px;
+  padding:.75rem;
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+}
+.calendar-day{
+  width:54px;height:54px;border-radius:12px;
+  display:grid;place-items:center;
+  background:#F1F7FB;
+  color:#0D0D0D;
+  font-family:'Instrument Serif',Georgia,serif;
+  font-size:1.7rem;
+}
+.orbit-card-calendar strong{display:block;font-size:.84rem;margin:.27rem 0 .14rem}
+.orbit-card-calendar small{font-size:.6rem}
+.orbit-card-calendar small i{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green);margin-right:.22rem}
+
+/* Fluxo */
+.orbit-card-flow{width:230px;padding:.9rem 1rem}
+.mini-flow{display:grid;grid-template-columns:auto 1fr auto 1fr auto;gap:.38rem;align-items:center;margin-top:.65rem}
+.mini-flow span{
+  display:block;padding:.38rem .48rem;border-radius:8px;
+  background:#F4F4F2;font-size:.58rem;font-weight:700;
+}
+.mini-flow i{height:1px;background:linear-gradient(90deg,#BFC2C4,var(--blue));position:relative}
+.mini-flow i::after{
+  content:'';position:absolute;right:-1px;top:50%;width:4px;height:4px;
+  border-top:1px solid var(--blue);border-right:1px solid var(--blue);
+  transform:translateY(-50%) rotate(45deg);
+}
+
+/* Áudio */
+.orbit-card-audio{
+  width:220px;
+  padding:.72rem .78rem;
+  display:grid;
+  grid-template-columns:34px 1fr auto;
+  gap:.65rem;
+  align-items:center;
+}
+.orbit-card-audio button{
+  width:34px;height:34px;border:0;border-radius:50%;background:#0D0D0D;color:#fff;
+  font-size:.58rem;display:grid;place-items:center;
+}
+.orbit-card-audio small{font-size:.58rem}
+.wave{height:18px;display:flex;align-items:center;gap:2px;margin-top:.35rem}
+.wave i{display:block;width:2px;border-radius:10px;background:linear-gradient(var(--blue),var(--green));animation:waveMove 1.1s ease-in-out infinite alternate}
+.wave i:nth-child(1),.wave i:nth-child(9){height:5px}.wave i:nth-child(2),.wave i:nth-child(8){height:9px}.wave i:nth-child(3),.wave i:nth-child(7){height:14px}.wave i:nth-child(4),.wave i:nth-child(6){height:8px}.wave i:nth-child(5){height:17px}
+.wave i:nth-child(2n){animation-delay:-.35s}.wave i:nth-child(3n){animation-delay:-.7s}
+@keyframes waveMove{to{transform:scaleY(.48);opacity:.65}}
+
+/* Pequenas diferenças de profundidade */
+.orbit-speed .orbit-card{box-shadow:0 20px 54px rgba(0,153,255,.07)}
+.orbit-bia .orbit-card{box-shadow:0 20px 54px rgba(0,219,136,.08)}
+.orbit-flow .orbit-card{box-shadow:0 18px 48px rgba(8,16,31,.06)}
+
+@media(max-width:1050px){
+  .story-intro h1{font-size:clamp(4rem,8.8vw,6.6rem);max-width:850px}
+  .orbit-card{transform:translate(-50%,-50%) scale(.86)}
+  .hero-orbit-ring-a{width:96vw;height:96vw}
+  .hero-orbit-ring-b{width:78vw;height:78vw}
+}
+@media(max-width:700px){
+  #scroll-story::before{height:100vh}
+  .story-intro{
+    justify-content:center;
+    min-height:calc(100svh - 0px);
+    padding:6rem 1rem 6.5rem;
+  }
+  .story-copy{width:100%}
+  .story-intro h1{
+    max-width:7.4ch;
+    font-size:clamp(3.45rem,16vw,5.25rem);
+    line-height:.86;
+    letter-spacing:-.052em;
+  }
+  .story-intro .story-copy>p{
+    max-width:30rem;
+    margin-top:1.35rem;
+    padding:0 .45rem;
+    font-size:.92rem;
+  }
+  .story-kicker{
+    margin-bottom:1.05rem;
+    font-size:.62rem;
+    letter-spacing:.105em;
+  }
+  .story-actions{
+    width:min(100%,345px);
+    margin-top:1.5rem;
+    flex-direction:column;
+  }
+  .story-actions .btn{width:100%;justify-content:center;min-height:49px}
+  .hero-orbit-ring-a{width:142vw;height:142vw;opacity:.72}
+  .hero-orbit-ring-b{width:106vw;height:106vw;opacity:.34}
+  .orbit-card{transform:translate(-50%,-50%) scale(.66)}
+  .orbit-lead{--radius:58vw!important}
+  .orbit-speed{--radius:50vw!important}
+  .orbit-bia{--radius:59vw!important}
+  .orbit-calendar{--radius:54vw!important}
+  .orbit-flow{--radius:61vw!important}
+  .orbit-audio{--radius:53vw!important}
+  .story-path{
+    -webkit-mask-image:linear-gradient(to bottom,transparent 0,transparent 34rem,#000 47rem,#000 100%);
+    mask-image:linear-gradient(to bottom,transparent 0,transparent 34rem,#000 47rem,#000 100%);
+  }
+}
+@media(max-width:430px){
+  .story-intro h1{font-size:clamp(3.25rem,15.2vw,4.35rem)}
+  .orbit-card{transform:translate(-50%,-50%) scale(.57)}
+  .orbit-flow,.orbit-audio{display:none}
+  .orbit-lead{--radius:60vw!important}
+  .orbit-speed{--radius:49vw!important}
+  .orbit-bia{--radius:61vw!important}
+  .orbit-calendar{--radius:52vw!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .orbit-satellite,.orbit-face,.hero-orbit-ring,.agent-orb span,.wave i{animation:none!important}
+  .hero-orbit-layer{transform:none!important;transition:none!important}
+}
+
+
+/* ── SEO / PERFORMANCE / ACCESSIBILITY ── */
+.skip-link{position:fixed;left:12px;top:12px;z-index:20000;transform:translateY(-160%);background:#08101F;color:#fff;padding:.7rem 1rem;border-radius:10px;font-weight:700;transition:transform .2s}.skip-link:focus{transform:none}
+:focus-visible{outline:3px solid #0099FF;outline-offset:3px}
+#pain,#solucoes,#apps,#cases,#como,#faq,#manifesto,#cta-final,#explore-solvia{content-visibility:auto}
+#pain{contain-intrinsic-size:auto 1000px}#solucoes{contain-intrinsic-size:auto 900px}#apps{contain-intrinsic-size:auto 1700px}#cases{contain-intrinsic-size:auto 800px}#como{contain-intrinsic-size:auto 1500px}#faq{contain-intrinsic-size:auto 850px}#manifesto{contain-intrinsic-size:auto 850px}#cta-final{contain-intrinsic-size:auto 550px}#explore-solvia{contain-intrinsic-size:auto 700px}
+#explore-solvia{background:#F7F5F3;padding:6rem 1.5rem}
+.explore-shell{max-width:1180px;margin:0 auto}.explore-head{display:grid;grid-template-columns:1.1fr .8fr;gap:2rem;align-items:end;margin-bottom:2rem}.explore-head h2{font-size:clamp(2.4rem,5vw,4.9rem);line-height:.95;letter-spacing:-.055em}.explore-head p{max-width:470px;justify-self:end}.explore-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem}.explore-card{min-height:250px;background:#fff;border:1px solid rgba(8,16,31,.08);border-radius:20px;padding:1.5rem;display:flex;flex-direction:column;justify-content:space-between;transition:transform .28s,border-color .28s}.explore-card:hover{transform:translateY(-5px);border-color:rgba(0,153,255,.35)}.explore-card span{font-size:.7rem;font-weight:800;letter-spacing:.1em;color:#8B95A5;text-transform:uppercase}.explore-card h3{font-size:1.35rem;line-height:1.08;margin:.7rem 0}.explore-card p{font-size:.86rem}.explore-card b{font-size:.8rem;margin-top:1rem;color:#0070CC}
+footer{background:#08101F;color:#AEB9CA;text-align:left;padding:4rem 1.5rem 2rem;font-size:.86rem;line-height:1.65}.footer-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:2.4rem}.footer-brand strong{display:block;color:#fff;font-family:var(--font-display);font-size:1.45rem;margin-bottom:.6rem}.footer-brand p{max-width:360px;color:#8E9AAF}.footer-col strong{display:block;color:#fff;font-size:.78rem;text-transform:uppercase;letter-spacing:.09em;margin-bottom:.8rem}.footer-col a{display:block;color:#AEB9CA;margin:.42rem 0}.footer-col a:hover{color:#fff}.footer-bottom{max-width:1180px;margin:2.6rem auto 0;padding-top:1.3rem;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;color:#78869A}.footer-bottom a{color:#AEB9CA}
+@media(max-width:900px){.explore-grid{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1.4fr 1fr 1fr}.footer-col:last-child{grid-column:2/4}}
+@media(max-width:700px){.explore-head{grid-template-columns:1fr}.explore-head p{justify-self:start}.explore-grid{grid-template-columns:1fr}.explore-card{min-height:190px}.footer-grid{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}.footer-col:last-child{grid-column:auto}.footer-bottom{flex-direction:column}}
+
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+
+<div class="site-progress" aria-hidden="true"><div class="site-progress-bar" id="siteProgressBar"></div></div>
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+<!-- NAV -->
+<nav aria-label="Navegação principal">
+  <a class="nav-logo" href="/" aria-label="Solvia — página inicial">Solvia</a>
+  <div class="nav-links">
+    <a href="#solucoes">Soluções</a>
+    <a href="#apps">Apps com IA</a>
+    <a href="#cases">Cases</a>
+    <a href="#como">Como funciona</a>
+    <a href="#manifesto">Manifesto</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:.6rem">
+    <button class="btn btn-outline" style="padding:.5rem 1.1rem;font-size:.875rem" onclick="openJobModal()">Trabalhe Conosco</button>
+    <button class="nav-cta" onclick="openChat()">Falar com a Bia ↗</button>
+  </div>
+  <button class="nav-burger" onclick="toggleMobileMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#solucoes" onclick="closeMobileMenu()">Soluções</a>
+  <a href="#apps" onclick="closeMobileMenu()">Apps com IA</a>
+  <a href="#cases" onclick="closeMobileMenu()">Cases</a>
+  <a href="#como" onclick="closeMobileMenu()">Como funciona</a>
+  <a href="#manifesto" onclick="closeMobileMenu()">Manifesto</a>
+  <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
+  <a href="#" onclick="closeMobileMenu();openJobModal();return false;">Trabalhe Conosco</a>
+  <a href="https://wa.me/5511918560216" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
+</div>
+
+<main id="main-content">
+<!-- HERO / SCROLL STORY -->
+<section id="scroll-story">
+  <div class="story-intro">
+    <div class="hero-orbit-layer" id="heroOrbitLayer" aria-hidden="true">
+      <div class="hero-orbit-ring hero-orbit-ring-a"></div>
+      <div class="hero-orbit-ring hero-orbit-ring-b"></div>
+
+      <div class="orbit-satellite orbit-lead" style="--start:-154deg;--counter:154deg;--radius:min(42vw,560px);--speed:42s;">
+        <div class="orbit-arm"><div class="orbit-face"><div class="orbit-card orbit-card-chat">
+          <div class="orbit-card-top"><span class="orbit-avatar">L</span><span><b>Novo lead</b><small>agora</small></span><i></i></div>
+          <div class="orbit-bubble">Oi! Ainda tem horário hoje?</div>
+        </div></div></div>
+      </div>
+
+      <div class="orbit-satellite orbit-speed" style="--start:-92deg;--counter:92deg;--radius:min(38vw,500px);--speed:36s;">
+        <div class="orbit-arm"><div class="orbit-face"><div class="orbit-card orbit-card-metric">
+          <span class="orbit-label">TEMPO DE RESPOSTA</span>
+          <strong>2,8<span>s</span></strong>
+          <div class="orbit-meter"><i></i></div>
+        </div></div></div>
+      </div>
+
+      <div class="orbit-satellite orbit-bia" style="--start:-35deg;--counter:35deg;--radius:min(43vw,575px);--speed:48s;">
+        <div class="orbit-arm"><div class="orbit-face"><div class="orbit-card orbit-card-agent">
+          <div class="agent-orb"><span></span></div>
+          <div><span class="orbit-label">AGENTE ATIVO</span><strong>Bia está online</strong><small>Atendendo 24/7</small></div>
+        </div></div></div>
+      </div>
+
+      <div class="orbit-satellite orbit-calendar" style="--start:24deg;--counter:-24deg;--radius:min(40vw,530px);--speed:39s;">
+        <div class="orbit-arm"><div class="orbit-face"><div class="orbit-card orbit-card-calendar">
+          <span class="calendar-day">09</span>
+          <div><span class="orbit-label">AGENDAMENTO</span><strong>14:30</strong><small><i></i> confirmado</small></div>
+        </div></div></div>
+      </div>
+
+      <div class="orbit-satellite orbit-flow" style="--start:88deg;--counter:-88deg;--radius:min(44vw,590px);--speed:52s;">
+        <div class="orbit-arm"><div class="orbit-face"><div class="orbit-card orbit-card-flow">
+          <span class="orbit-label">FLUXO AUTOMÁTICO</span>
+          <div class="mini-flow"><span>Lead</span><i></i><span>IA</span><i></i><span>Agenda</span></div>
+        </div></div></div>
+      </div>
+
+      <div class="orbit-satellite orbit-audio" style="--start:146deg;--counter:-146deg;--radius:min(39vw,520px);--speed:45s;">
+        <div class="orbit-arm"><div class="orbit-face"><div class="orbit-card orbit-card-audio">
+          <button tabindex="-1">▶</button>
+          <div class="audio-copy"><span class="orbit-label">ÁUDIO ENTENDIDO</span><div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+          <small>0:18</small>
+        </div></div></div>
+      </div>
+    </div>
+
+    <div class="story-copy">
+      <div class="story-kicker">Uma venda pode escapar em minutos</div>
+      <h1 id="story-title">Quanto tempo seu lead espera antes de chamar o concorrente<span class="question-mark">?</span></h1>
+      <p>Acompanhe a linha. É o caminho silencioso que uma oportunidade faz quando ninguém responde.</p>
+      <div class="story-actions">
+        <button class="btn btn-primary" onclick="openChat()">Testar a Bia agora ↗</button>
+        <a href="#story-outcome" class="btn btn-outline">Ver onde o lead se perde</a>
+      </div>
+    </div>
+
+    <div class="story-scroll-cue" aria-hidden="true">Siga o caminho</div>
+  </div>
+
+  <svg id="storyPath" class="story-path" width="1278" height="2319" viewBox="0 0 1278 2319" fill="none" overflow="visible" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <linearGradient id="storyGradient" x1="180" y1="100" x2="1150" y2="2200" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#0099FF"/>
+        <stop offset=".52" stop-color="#00B7F0"/>
+        <stop offset="1" stop-color="#00DB88"/>
+      </linearGradient>
+    </defs>
+    <path
+      d="M876.605 394.131C788.982 335.917 696.198 358.139 691.836 416.303C685.453 501.424 853.722 498.43 941.95 409.714C1016.1 335.156 1008.64 186.907 906.167 142.846C807.014 100.212 712.699 198.494 789.049 245.127C889.053 306.207 986.062 116.979 840.548 43.3233C743.932 -5.58141 678.027 57.1682 672.279 112.188C666.53 167.208 712.538 172.943 736.353 163.088C760.167 153.234 764.14 120.924 746.651 93.3868C717.461 47.4252 638.894 77.8642 601.018 116.979C568.164 150.908 557 201.079 576.467 246.924C593.342 286.664 630.24 310.55 671.68 302.614C756.114 286.446 729.747 206.546 681.86 186.442C630.54 164.898 492 209.318 495.026 287.644C496.837 334.494 518.402 366.466 582.455 367.287C680.013 368.538 771.538 299.456 898.634 292.434C1007.02 286.446 1192.67 309.384 1242.36 382.258C1266.99 418.39 1273.65 443.108 1247.75 474.477C1217.32 511.33 1149.4 511.259 1096.84 466.093C1044.29 420.928 1029.14 380.576 1033.97 324.172C1038.31 273.428 1069.55 228.986 1117.2 216.384C1152.2 207.128 1188.29 213.629 1194.45 245.127C1201.49 281.062 1132.22 280.104 1100.44 272.673C1065.32 264.464 1044.22 234.837 1032.77 201.413C1019.29 162.061 1029.71 131.126 1056.44 100.965C1086.19 67.4032 1143.96 54.5526 1175.78 86.1513C1207.02 117.17 1186.81 143.379 1156.22 166.691C1112.57 199.959 1052.57 186.238 999.784 155.164C957.312 130.164 899.171 63.7054 931.284 26.3214C952.068 2.12513 996.288 3.87363 1007.22 43.58C1018.15 83.2749 1003.56 122.644 975.969 163.376C948.377 204.107 907.272 255.122 913.558 321.045C919.727 385.734 990.968 497.068 1063.84 503.35C1111.46 507.456 1166.79 511.984 1175.68 464.527C1191.52 379.956 1101.26 334.985 1030.29 377.017C971.109 412.064 956.297 483.647 953.797 561.655C947.587 755.413 1197.56 941.828 936.039 1140.66C745.771 1285.32 321.926 950.737 134.536 1202.19C-6.68295 1391.68 -53.4837 1655.38 131.935 1760.5C478.381 1956.91 1124.19 1515 1201.28 1997.83C1273.66 2451.23 100.805 1864.7 303.794 2668.89"
+      stroke="url(#storyGradient)" stroke-width="20" fill="none"/>
+  </svg>
+
+  <div class="story-outcome" id="story-outcome">
+    <div class="story-outcome-inner">
+      <div>
+        <div class="story-outcome-label">Enquanto ninguém responde</div>
+        <h2>FOI EMBORA.</h2>
+        <p class="story-outcome-copy">Você pagou pelo anúncio. O lead chegou com interesse. Mas a demora entregou essa oportunidade para quem respondeu primeiro.</p>
+        <div class="lead-timeline" aria-label="Exemplo da jornada de um lead sem resposta">
+          <div class="lead-step"><span>22h47</span><strong>O lead chama</strong></div>
+          <div class="lead-step"><span>+ 5 minutos</span><strong>Continua esperando</strong></div>
+          <div class="lead-step"><span>+ 12 minutos</span><strong>Abre o concorrente</strong></div>
+          <div class="lead-step"><span>Sem aviso</span><strong>Venda perdida</strong></div>
+        </div>
+      </div>
+      <div class="story-outcome-foot">
+        <p>A pior parte? Isso acontece em silêncio. Você só vê o anúncio gasto — não o cliente que desistiu.</p>
+        <a href="#pain">Veja onde seu atendimento perde dinheiro ↓</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOR -->
+<section id="pain">
+  <div class="pain-shell">
+    <div class="pain-head" data-reveal>
+      <div>
+        <div class="section-index">01 — Diagnóstico</div>
+        <h2>Em qual momento seu lead <span style="color:var(--red)">escapa?</span></h2>
+      </div>
+      <div>
+        <p>Escolha uma situação real do seu atendimento. A simulação mostra o que o cliente vive enquanto sua equipe não consegue continuar a conversa.</p>
+        <div class="interactive-hint" style="margin-top:1rem">Selecione uma situação ↓</div>
+      </div>
+    </div>
+
+    <div class="pain-lab" data-reveal>
+      <div class="pain-options" role="tablist" aria-label="Situações de perda de lead">
+        <button class="pain-option active" type="button" role="tab" aria-selected="true" onclick="selectPain(0,this)">
+          <span class="pain-option-num">01</span><strong>Mensagem fora do horário</strong>
+        </button>
+        <button class="pain-option" type="button" role="tab" aria-selected="false" onclick="selectPain(1,this)">
+          <span class="pain-option-num">02</span><strong>Equipe ocupada no pico</strong>
+        </button>
+        <button class="pain-option" type="button" role="tab" aria-selected="false" onclick="selectPain(2,this)">
+          <span class="pain-option-num">03</span><strong>Orçamento sem follow-up</strong>
+        </button>
+        <button class="pain-option" type="button" role="tab" aria-selected="false" onclick="selectPain(3,this)">
+          <span class="pain-option-num">04</span><strong>Pós-atendimento esquecido</strong>
+        </button>
+      </div>
+
+      <div class="pain-stage" id="painStage">
+        <div class="pain-stage-copy">
+          <div>
+            <div class="pain-stage-status" id="painStatus">Lead esperando resposta</div>
+            <h3 id="painTitle">A clínica fechou.<br>O interesse não.</h3>
+            <p class="pain-stage-description" id="painDescription">O paciente chama no momento em que decide agir. Uma mensagem automática informa que você está ausente, mas não conduz a conversa.</p>
+          </div>
+          <div class="pain-conclusion" id="painConclusion"><strong>O ponto de virada:</strong> a Solvia continua o atendimento, entende a necessidade e oferece o próximo passo sem deixar o lead parado.</div>
+        </div>
+
+        <div class="lead-phone" aria-live="polite">
+          <div class="phone-screen">
+            <div class="phone-head">
+              <div class="phone-avatar">S</div>
+              <div><strong id="phoneBusiness">Sua clínica</strong><span>WhatsApp Business</span></div>
+            </div>
+            <div class="phone-chat" id="phoneChat">
+              <div class="phone-time">22:47</div>
+              <div class="phone-bubble client">Oi! Ainda tem horário disponível esta semana?</div>
+              <div class="phone-bubble business">Olá! No momento não estamos disponíveis. Retornaremos amanhã.</div>
+              <div class="phone-bubble client">Tudo bem, já consegui em outra clínica.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUÇÕES -->
+<section id="solucoes">
+  <div class="solutions-shell">
+    <div class="solutions-title-row" data-reveal>
+      <div>
+        <div class="section-index">02 — Sistema Solvia</div>
+        <h2>Não é uma resposta.<br><span class="accent">É continuidade.</span></h2>
+      </div>
+      <p>A tecnologia acompanha o lead da primeira mensagem até o retorno — e entrega o contexto certo para sua equipe quando uma pessoa precisa entrar.</p>
+    </div>
+
+    <div class="solution-lab" data-reveal>
+      <div class="solution-selector" role="tablist" aria-label="Soluções Solvia">
+        <button class="solution-option active" type="button" role="tab" aria-selected="true" onclick="selectSolution(0,this)">
+          <span>01</span><div><strong>Atendimento 24/7</strong><small>Responde, qualifica e direciona.</small></div>
+        </button>
+        <button class="solution-option" type="button" role="tab" aria-selected="false" onclick="selectSolution(1,this)">
+          <span>02</span><div><strong>Conversão contínua</strong><small>Agenda e mantém o follow-up vivo.</small></div>
+        </button>
+        <button class="solution-option" type="button" role="tab" aria-selected="false" onclick="selectSolution(2,this)">
+          <span>03</span><div><strong>Retenção inteligente</strong><small>Confirma, acompanha e reativa.</small></div>
+        </button>
+      </div>
+
+      <div class="solution-stage" id="solutionStage">
+        <div class="solution-copy">
+          <div class="solution-live">Agente ativo</div>
+          <h3 id="solutionTitle">A conversa começa<br>sem esperar.</h3>
+          <p id="solutionDescription">A Bia entende a primeira mensagem, faz as perguntas certas e conduz cada pessoa ao próximo passo.</p>
+          <ul class="solution-feature-list" id="solutionFeatures">
+            <li>Atendimento no WhatsApp, site e Instagram</li>
+            <li>Qualificação com perguntas do seu processo</li>
+            <li>Transferência para humano com contexto completo</li>
+          </ul>
+          <button class="btn btn-primary" onclick="openChat()" style="margin-top:1.8rem">Conversar com a Bia ↗</button>
+        </div>
+        <div class="ai-console" aria-live="polite">
+          <div class="console-top"><span id="consoleLabel">Fluxo de atendimento</span><span class="console-dot"></span></div>
+          <div class="console-flow" id="consoleFlow">
+            <div class="console-node"><strong>01 · Mensagem recebida</strong>Lead identificado em tempo real</div>
+            <div class="console-node"><strong>02 · Necessidade entendida</strong>Perguntas adaptadas ao contexto</div>
+            <div class="console-node"><strong>03 · Próximo passo</strong>Horário oferecido automaticamente</div>
+            <div class="console-node"><strong>04 · Equipe avisada</strong>Resumo e contexto já organizados</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPS COM IA -->
+<section id="apps">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow eyebrow-green">Plataformas sob medida</div>
+      <h2>Um app completo <span class="accent">para cada nicho</span></h2>
+      <p>Não é template. É uma plataforma construída do zero para o seu segmento — com painel admin, IA integrada e tudo que o seu cliente precisa no dia a dia.</p>
+    </div>
+
+    <!-- Tabs de nicho -->
+    <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem" id="appTabs" role="tablist" aria-label="Exemplos de plataformas por nicho">
+      <button class="app-tab active" role="tab" aria-selected="true" onclick="switchTab('restaurante')" style="padding:.5rem 1.25rem;border-radius:999px;border:1.5px solid var(--blue);background:var(--blue);color:#fff;font-weight:600;font-size:.85rem;cursor:pointer;font-family:var(--font-body);transition:all .2s">Restaurante</button>
+      <button class="app-tab" role="tab" aria-selected="false" onclick="switchTab('academia')" style="padding:.5rem 1.25rem;border-radius:999px;border:1.5px solid var(--border);background:#fff;color:var(--muted);font-weight:600;font-size:.85rem;cursor:pointer;font-family:var(--font-body);transition:all .2s">Academia</button>
+      <button class="app-tab" role="tab" aria-selected="false" onclick="switchTab('clinica')" style="padding:.5rem 1.25rem;border-radius:999px;border:1.5px solid var(--border);background:#fff;color:var(--muted);font-weight:600;font-size:.85rem;cursor:pointer;font-family:var(--font-body);transition:all .2s">Clínica</button>
+      <button class="app-tab" role="tab" aria-selected="false" onclick="switchTab('outro')" style="padding:.5rem 1.25rem;border-radius:999px;border:1.5px solid var(--border);background:#fff;color:var(--muted);font-weight:600;font-size:.85rem;cursor:pointer;font-family:var(--font-body);transition:all .2s">Seu nicho</button>
+    </div>
+
+    <!-- RESTAURANTE -->
+    <div class="app-grid app-tab-content" id="tab-restaurante">
+      <div class="app-list">
+        <div class="app-item">
+          <div class="app-bullet">🍕</div>
+          <div>
+            <h4>Cardápio digital + pedidos pelo app</h4>
+            <p>Cliente escaneia QR, monta o pedido e paga na tela. Pedido cai direto na cozinha sem garçom no meio.</p>
+          </div>
+        </div>
+        <div class="app-item">
+          <div class="app-bullet">📊</div>
+          <div>
+            <h4>Painel admin com visão completa do dia</h4>
+            <p>Faturamento em tempo real, pratos mais vendidos, mesas abertas, tempo médio de entrega — tudo numa tela só.</p>
+          </div>
+        </div>
+        <div class="app-item">
+          <div class="app-bullet">📦</div>
+          <div>
+            <h4>Estoque e CMV automático</h4>
+            <p>Cada prato vendido desconta os insumos do estoque. A IA alerta quando está acabando e calcula o custo por prato.</p>
+          </div>
+        </div>
+        <div class="app-item">
+          <div class="app-bullet">💬</div>
+          <div>
+            <h4>Relatório diário no WhatsApp do dono</h4>
+            <p>Todo dia às 23h você recebe: faturamento, ticket médio, pratos campeões e o que precisa de atenção amanhã.</p>
+          </div>
+        </div>
+      </div>
+      <div class="app-mockup">
+        <div class="mockup-header">
+          <strong>🍽️ Admin — Restaurante</strong>
+          <span class="badge-live">● Ao vivo</span>
+        </div>
+        <div class="mockup-row"><span class="mockup-label">Faturamento hoje</span><span class="mockup-val up">R$ 3.240</span></div>
+        <div class="mockup-row"><span class="mockup-label">Pedidos abertos</span><span class="mockup-val">8 mesas</span></div>
+        <div class="mockup-row"><span class="mockup-label">Prato #1</span><span class="mockup-val">Picanha 300g</span></div>
+        <div class="mockup-row"><span class="mockup-label">Tempo médio</span><span class="mockup-val">18 min</span></div>
+        <div class="mockup-row"><span class="mockup-label">Estoque crítico</span><span class="mockup-val warn">⚠ Alcatra</span></div>
+        <div class="mockup-row"><span class="mockup-label">CMV do dia</span><span class="mockup-val up">28% ✓</span></div>
+        <div class="mockup-ai">
+          <strong>IA:</strong> Alcatra para menos de 2 porções. Com base na sexta passada, sugiro pedir 5kg hoje.
+        </div>
+      </div>
+    </div>
+
+    <!-- ACADEMIA -->
+    <div class="app-grid app-tab-content" id="tab-academia" style="display:none">
+      <div class="app-list">
+        <div class="app-item">
+          <div class="app-bullet">🏋️</div>
+          <div>
+            <h4>Controle de alunos e mensalidades</h4>
+            <p>Cadastro, plano, vencimento e histórico de pagamento de cada aluno — sem planilha, sem post-it.</p>
+          </div>
+        </div>
+        <div class="app-item">
+          <div class="app-bullet">📅</div>
+          <div>
+            <h4>Agendamento de aulas e personal</h4>
+            <p>Aluno agenda a aula pelo app, professor vê a turma, dono vê a ocupação — tudo sincronizado.</p>
+          </div>
+        </div>
+        <div class="app-item">
+          <div class="app-bullet">📊</div>
+          <div>
+            <h4>Painel de inadimplência e churn</h4>
+            <p>A IA lista quem está para cancelar, quem atrasou e manda cobrança automática pelo WhatsApp antes de virar problema.</p>
+          </div>
+        </div>
+        <div class="app-item">
+          <div class="app-bullet">🎯</div>
+          <div>
+            <h4>Plano de treino digital por aluno</h4>
+            <p>Professor monta o treino no sistema e o aluno acessa pelo celular. IA sugere progressão com base na evolução.</p>
+          </div>
+        </div>
+      </div>
+      <div class="app-mockup">
+        <div class="mockup-header">
+          <strong>🏋️ Admin — Academia</strong>
+          <span class="badge-live">● Ao vivo</span>
+        </div>
+        <div class="mockup-row"><span class="mockup-label">Alunos ativos</span><span class="mockup-val up">214</span></div>
+        <div class="mockup-row"><span class="mockup-label">Aulas hoje</span><span class="mockup-val">9 turmas</span></div>
+        <div class="mockup-row"><span class="mockup-label">Mensalidades em dia</span><span class="mockup-val up">91% ✓</span></div>
+        <div class="mockup-row"><span class="mockup-label">Inadimplentes</span><span class="mockup-val warn">⚠ 19 alunos</span></div>
+        <div class="mockup-row"><span class="mockup-label">Cancelamentos/mês</span><span class="mockup-val">3</span></div>
+        <div class="mockup-row"><span class="mockup-label">Receita mensal</span><span class="mockup-val up">R$ 32.100</span></div>
+        <div class="mockup-ai">
+          <strong>IA:</strong> 7 alunos sem check-in há 10+ dias. Cobrança de reengajamento enviada automaticamente.
+        </div>
+      </div>
+    </div>
+
+    <!-- CLÍNICA -->
+    <div class="app-grid app-tab-content" id="tab-clinica" style="display:none">
+      <div class="app-list">
+        <div class="app-item">
+          <div class="app-bullet">📋</div>
+          <div>
+            <h4>Prontuário digital por paciente</h4>
+            <p>Histórico, exames, prescrições e evolução em um único lugar — acessível pelo médico na hora da consulta.</p>
+          </div>
+        </div>
+        <div class="app-item">
+          <div class="app-bullet">📅</div>
+          <div>
+            <h4>Agendamento online com confirmação automática</h4>
+            <p>Paciente agenda pelo site ou WhatsApp. Sistema confirma, manda lembrete 24h antes e cancela automaticamente se não confirmar.</p>
+          </div>
+        </div>
+        <div class="app-item">
+          <div class="app-bullet">💰</div>
+          <div>
+            <h4>Gestão financeira e repasse de convênios</h4>
+            <p>Controle de particulares e convênios separados. Relatório de produção por médico e repasse calculado automaticamente.</p>
+          </div>
+        </div>
+        <div class="app-item">
+          <div class="app-bullet">📊</div>
+          <div>
+            <h4>Painel da recepção em tempo real</h4>
+            <p>Fila de espera, status de cada consultório e tempo médio de atendimento — sem papel, sem confusão.</p>
+          </div>
+        </div>
+      </div>
+      <div class="app-mockup">
+        <div class="mockup-header">
+          <strong>🏥 Admin — Clínica</strong>
+          <span class="badge-live">● Ao vivo</span>
+        </div>
+        <div class="mockup-row"><span class="mockup-label">Consultas hoje</span><span class="mockup-val">23 / 26</span></div>
+        <div class="mockup-row"><span class="mockup-label">Em espera</span><span class="mockup-val warn">⚠ 4 pacientes</span></div>
+        <div class="mockup-row"><span class="mockup-label">Confirmados amanhã</span><span class="mockup-val up">18 ✓</span></div>
+        <div class="mockup-row"><span class="mockup-label">Faturamento/mês</span><span class="mockup-val up">R$ 58.400</span></div>
+        <div class="mockup-row"><span class="mockup-label">Taxa de no-show</span><span class="mockup-val up">4% ✓</span></div>
+        <div class="mockup-row"><span class="mockup-label">NPS pacientes</span><span class="mockup-val up">9.2 ✓</span></div>
+        <div class="mockup-ai">
+          <strong>IA:</strong> 3 pacientes sem retorno há 90 dias. Mensagem de reativação enviada via WhatsApp.
+        </div>
+      </div>
+    </div>
+
+    <!-- SEU NICHO -->
+    <div class="app-tab-content" id="tab-outro" style="display:none;text-align:center;padding:3rem 1.5rem;background:var(--surface);border-radius:var(--radius-lg);border:2px dashed var(--border)">
+      <div style="font-size:3rem;margin-bottom:1rem">⚡</div>
+      <h3 style="font-size:1.3rem;margin-bottom:.75rem">Seu nicho aqui</h3>
+      <p style="max-width:480px;margin:0 auto 1.75rem;font-size:.95rem">Escola, petshop, barbearia, imobiliária, oficina mecânica, delivery — se o negócio tem processo repetitivo, a Solvia constrói o app. O painel admin e a IA são feitos do zero para o seu fluxo.</p>
+      <button class="btn btn-primary" onclick="openChat()">Quero um app para o meu negócio ↗</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTEÚDO EXPLORÁVEL / LINKS INTERNOS -->
+<section id="explore-solvia" aria-labelledby="explore-title">
+  <div class="explore-shell">
+    <div class="explore-head">
+      <div><div class="section-index">03 — Aprofunde</div><h2 id="explore-title">Entenda o sistema<br><span class="accent">por dentro.</span></h2></div>
+      <p>Guias e páginas específicas para entender como a Solvia aplica IA, automação e software nos pontos que mais travam uma operação.</p>
+    </div>
+    <div class="explore-grid">
+      <a class="explore-card" href="/agente-de-ia-whatsapp/"><div><span>Agentes de IA</span><h3>IA no WhatsApp, da primeira mensagem ao próximo passo.</h3><p>Atendimento, qualificação, agendamento, follow-up e handoff humano com contexto.</p></div><b>Ver como funciona ↗</b></a>
+      <a class="explore-card" href="/automacao-whatsapp-clinicas/"><div><span>Clínicas</span><h3>Automação para não perder pacientes entre mensagens e agenda.</h3><p>Uma arquitetura pensada para recepção, confirmação, retorno e reativação.</p></div><b>Explorar solução ↗</b></a>
+      <a class="explore-card" href="/apps-sob-medida/"><div><span>Software</span><h3>Apps sob medida para operações que não cabem em planilhas.</h3><p>Painel administrativo, processos, dados e IA integrados ao fluxo real do negócio.</p></div><b>Conhecer apps ↗</b></a>
+      <a class="explore-card" href="/recursos/"><div><span>Recursos</span><h3>Conteúdo técnico sem enrolação sobre IA e automação.</h3><p>Guias diretos para entender arquitetura, limitações, integrações e casos de uso.</p></div><b>Abrir biblioteca ↗</b></a>
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section id="cases">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow eyebrow-blue">Resultados reais</div>
+      <h2>Antes e depois <span class="accent">com a Solvia</span></h2>
+      <p>Clientes que pararam de perder leads e começaram a fechar mais.</p>
+    </div>
+    <div class="cases-grid">
+      <div class="case-card">
+        <div class="case-tag">E-commerce Fashion</div>
+        <h3>Lead entrava, mas sumia fora do horário comercial</h3>
+        <div class="case-block">
+          <div class="case-label bad">✕ Antes</div>
+          <p>Sem resposta após as 18h. Cliente ia embora e comprava do concorrente que atendia 24h.</p>
+        </div>
+        <div class="case-block">
+          <div class="case-label sol">→ Solução</div>
+          <p>Agente de IA atendendo 24/7 com qualificação automática e handoff para o vendedor de manhã.</p>
+        </div>
+        <div class="result-box"><p>+47% leads qualificados · Resposta: de horas para 5 segundos</p></div>
+      </div>
+      <div class="case-card">
+        <div class="case-tag">Clínica Médica</div>
+        <h3>Agenda cheia de "talvez" e site que espantava pacientes</h3>
+        <div class="case-block">
+          <div class="case-label bad">✕ Antes</div>
+          <p>Site lento (LCP 6s), sem agendamento online, recepcionista perdendo horas abrindo agenda manualmente.</p>
+        </div>
+        <div class="case-block">
+          <div class="case-label sol">→ Solução</div>
+          <p>Novo site com IA integrada e agendamento automático com confirmação via WhatsApp.</p>
+        </div>
+        <div class="result-box"><p>LCP 1.9s · +38% agendamentos · Recepcionista libera 3h/dia</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section id="como">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow eyebrow-green">Do zero ao ar</div>
+      <h2>Você vê funcionando <span class="accent">antes de pagar</span></h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-step">01</div>
+        <div class="tl-body">
+          <h3>Diagnóstico do funil</h3>
+          <p>Mapeamos onde seus leads somem e quanto isso custa por mês em receita não capturada.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-step">02</div>
+        <div class="tl-body">
+          <h3>Protótipo em 48h</h3>
+          <p>Você vê o agente funcionando — respondendo de verdade — antes de assinar qualquer coisa.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-step">03</div>
+        <div class="tl-body">
+          <h3>Integração & testes</h3>
+          <p>Conectamos com seu CRM, WhatsApp e agenda. LGPD em dia, tudo testado antes do go-live.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-step">04</div>
+        <div class="tl-body">
+          <h3>Go live + evolução contínua</h3>
+          <p>Agente no ar e melhorando com cada conversa. Você acompanha tudo num painel simples.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-head">
+      <h2>Dúvidas frequentes</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Meu negócio é pequeno. Vale a pena?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Especialmente para pequenos negócios — porque cada lead perdido dói mais. Um agente custa menos que um atendente part-time e trabalha sem parar. A maioria dos clientes paga o investimento com os leads que antes simplesmente sumiam.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Quanto tempo até estar no ar?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Agentes simples de atendimento entram no ar em 3 a 5 dias úteis. O protótipo você vê em 48h. Projetos completos com site + integrações levam de 2 a 4 semanas.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          E se o cliente perguntar algo que o agente não sabe?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">O agente reconhece o limite e faz o handoff para um humano — com todo o contexto da conversa já salvo. Sem constrangimento, sem cliente repetindo tudo de novo.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Funciona no WhatsApp e no site ao mesmo tempo?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Sim. Podemos integrar WhatsApp Business API, chat no site, Instagram e Messenger — tudo centralizado. Você escolhe os canais onde seu cliente já está.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          E a LGPD?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Todos os projetos são LGPD-ready desde o início. Implementamos políticas de privacidade, consentimento e segurança de dados desde o primeiro dia — não é checklist, é parte do processo.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<section id="manifesto">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow eyebrow-white">Manifesto</div>
+      <h2 style="color:#fff">O tempo é a única moeda<br>que <span style="color:var(--green)">não se multiplica</span></h2>
+    </div>
+    <div class="manifesto-inner">
+      <p>Tudo o que fazemos — trabalhar, aprender, criar, lutar — se resume a como gastamos os instantes que nunca mais voltarão. A vida não deve ser vivida em processos, mas em experiências.</p>
+      <div class="manifesto-quote">
+        <p>A Solvia nasceu com um propósito maior que a tecnologia: libertar pessoas do peso do repetitivo, para que possam viver o essencial.</p>
+      </div>
+      <p>Cada agente criado, cada automação entregue, não é apenas um sistema funcionando. É um pedaço de vida devolvido. É tempo que retorna para ser vivido com a família, com os sonhos, com a paz de ser humano.</p>
+      <h3 style="color:#fff;margin:1.75rem 0 .75rem">A Solvia acredita que:</h3>
+      <ul class="manifesto-beliefs">
+        <li>A vida não se mede em tarefas concluídas, mas em instantes vividos.</li>
+        <li>A tecnologia deve ser invisível e libertadora, nunca uma prisão.</li>
+        <li>Cada pessoa merece mais do que sobreviver em processos — merece existir em plenitude.</li>
+      </ul>
+      <p class="manifesto-lema">👉 Devolver o tempo, para que cada pessoa viva o que realmente importa.</p>
+      <div class="manifesto-author">
+        <strong>Kevyn Freo</strong>
+        <span>Fundador — Solvia</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="cta-final">
+  <div class="container">
+    <div class="eyebrow eyebrow-white">Cada dia sem isso é dinheiro perdido</div>
+    <h2>Quanto vale um lead que não some mais?</h2>
+    <p>Converse com a Bia agora e veja ao vivo o que ela faz pelo seu negócio.</p>
+    <div class="btn-group" style="justify-content:center">
+      <button class="btn btn-white" onclick="openChat()">Testar a Bia agora — grátis</button>
+      <a href="https://wa.me/5511918560216" target="_blank" rel="noopener noreferrer" class="btn btn-outline-white">Falar pelo WhatsApp ↗</a>
+    </div>
+    <p class="cta-micro">Protótipo em 48h · Sem contrato de fidelidade · LGPD compliant</p>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer aria-label="Rodapé">
+  <div class="footer-grid">
+    <div class="footer-brand"><strong>Solvia</strong><p>Agentes de IA, automações e apps sob medida para negócios que querem responder melhor, operar com menos repetição e transformar processos em experiências.</p></div>
+    <div class="footer-col"><strong>Soluções</strong><a href="/agente-de-ia-whatsapp/">Agente de IA para WhatsApp</a><a href="/automacao-whatsapp-clinicas/">Automação para clínicas</a><a href="/apps-sob-medida/">Apps sob medida</a><a href="/integracoes-whatsapp-crm-agenda/">Integrações</a></div>
+    <div class="footer-col"><strong>Solvia</strong><a href="/sobre/">Sobre</a><a href="/cases/">Cases</a><a href="/recursos/">Recursos</a><a href="/contato/">Contato</a></div>
+    <div class="footer-col"><strong>Contato e legal</strong><a href="https://wa.me/5511918560216" target="_blank" rel="noopener noreferrer">WhatsApp (11) 91856-0216 ↗</a><a href="/privacidade/">Privacidade</a><a href="/termos/">Termos de uso</a><a href="/sitemap.xml">Sitemap XML</a></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Solvia. Todos os direitos reservados.</span><span>IA aplicada a atendimento, automação e software sob medida.</span></div>
+</footer>
+
+<!-- MODAL TRABALHE CONOSCO -->
+<div id="job-modal-overlay" onclick="closeJobModalOutside(event)">
+  <div id="job-modal-box">
+    <button id="job-modal-close" onclick="closeJobModal()" aria-label="Fechar">✕</button>
+
+    <!-- Step 1 -->
+    <div class="job-step active" id="job-step-1">
+      <div class="job-step-tag">1 de 3</div>
+      <div class="job-modal-logo">Solvia</div>
+      <h3>Trabalhe conosco</h3>
+      <p class="job-modal-sub">Vamos começar com o básico. Como podemos te chamar e te encontrar?</p>
+      <input type="text" id="job-nome" class="job-input" placeholder="Nome completo" oninput="jobValidarStep(1)">
+      <input type="text" id="job-wpp" class="job-input" placeholder="WhatsApp com DDD (ex: 11 99999-9999)" oninput="jobValidarStep(1)">
+      <input type="email" id="job-email" class="job-input" placeholder="E-mail" oninput="jobValidarStep(1)">
+      <button class="job-btn" id="job-btn-1" onclick="jobIrStep(2)" disabled>Continuar →</button>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="job-step" id="job-step-2">
+      <div class="job-step-tag">2 de 3</div>
+      <h3>Área de interesse</h3>
+      <p class="job-modal-sub">Em qual frente você gostaria de atuar na Solvia?</p>
+      <select id="job-area" class="job-select" onchange="jobValidarStep(2)">
+        <option value="" disabled selected>Selecione uma área</option>
+        <option value="Vendas / Comercial">Vendas / Comercial</option>
+        <option value="Desenvolvimento / Tecnologia">Desenvolvimento / Tecnologia</option>
+        <option value="Marketing">Marketing</option>
+        <option value="Atendimento / Customer Success">Atendimento / Customer Success</option>
+        <option value="Design / Produto">Design / Produto</option>
+        <option value="Outra">Outra</option>
+      </select>
+      <input type="text" id="job-link" class="job-input" placeholder="LinkedIn ou currículo (link)" oninput="jobValidarStep(2)">
+      <div style="display:flex;gap:.75rem;margin-top:.25rem">
+        <button class="job-btn-ghost" onclick="jobIrStep(1)">← Voltar</button>
+        <button class="job-btn" id="job-btn-2" onclick="jobIrStep(3)" disabled style="flex:1">Continuar →</button>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="job-step" id="job-step-3">
+      <div class="job-step-tag">3 de 3</div>
+      <h3>Por que você quer trabalhar na Solvia?</h3>
+      <p class="job-modal-sub">Conta rapidamente sua motivação e experiência relevante.</p>
+      <textarea id="job-motivo" class="job-textarea" placeholder="Ex: tenho experiência com X, me interessei porque..." oninput="jobValidarStep(3)"></textarea>
+      <div style="display:flex;gap:.75rem;margin-top:.25rem">
+        <button class="job-btn-ghost" onclick="jobIrStep(2)">← Voltar</button>
+        <button class="job-btn" id="job-btn-3" onclick="jobEnviar()" disabled style="flex:1">Enviar candidatura 🚀</button>
+      </div>
+    </div>
+
+    <!-- Sucesso -->
+    <div class="job-step" id="job-step-sucesso">
+      <div style="font-size:2.75rem;margin-bottom:.75rem">🎉</div>
+      <div class="job-modal-logo">Solvia</div>
+      <h3 style="margin-bottom:.5rem">Candidatura recebida!</h3>
+      <p class="job-modal-sub" style="font-size:.92rem">Obrigado pelo interesse. Nosso time vai analisar seu perfil e entrar em contato pelo WhatsApp ou e-mail em breve.</p>
+      <button class="job-btn" onclick="closeJobModal()" style="margin-top:.5rem">Fechar</button>
+    </div>
+
+    <div id="job-modal-progress"><div id="job-modal-progress-fill"></div></div>
+  </div>
+</div>
+
+<!-- CHAT WIDGET -->
+<div id="chat-widget">
+  <div class="chat-box" id="chatBox">
+    <div class="chat-header">
+      <div class="chat-header-info">
+        <div class="chat-avatar" style="overflow:hidden;padding:0;background:none;"><img src="https://zlrevcbvlhvcsmpvavus.supabase.co/storage/v1/object/public/images/bia.png" alt="Bia, agente de IA da Solvia" width="36" height="36" loading="lazy" decoding="async" fetchpriority="low" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;"></div>
+        <div>
+          <strong>Bia — Agente Solvia</strong>
+          <span>IA · Responde em segundos</span>
+        </div>
+      </div>
+      <button class="chat-close" onclick="closeChat()" aria-label="Fechar">×</button>
+    </div>
+    <div class="chat-msgs" id="chatMsgs">
+      <div class="msg bot">Oi! Sou a Bia, agente de IA da Solvia 👋<br><br>Posso te mostrar como parar de perder leads agora mesmo. Qual é o maior problema do seu atendimento hoje?</div>
+    </div>
+    <div class="chat-input-row">
+      <input type="text" id="chatInput" placeholder="Digite sua dúvida..." autocomplete="off"
+        onkeydown="if(event.key==='Enter')sendChat()"/>
+      <button class="chat-send" onclick="sendChat()" aria-label="Enviar">
+        <svg viewBox="0 0 24 24"><path d="M2 12L22 2L14 22L11 13L2 12Z"/></svg>
+      </button>
+    </div>
+  </div>
+  <button class="chat-toggle" onclick="toggleChat()" aria-label="Abrir chat">
+    <svg viewBox="0 0 24 24"><path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H5.17L4 17.17V4H20V16Z"/></svg>
+  </button>
+  <div class="chat-badge" id="chatBadge">1</div>
+</div>
+
+<script>
+/* ── EXPERIENCE ENGINE ── */
+document.addEventListener('DOMContentLoaded', function(){
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var section = document.getElementById('scroll-story');
+  var storySvg = document.getElementById('storyPath');
+  var path = storySvg ? storySvg.querySelector('path') : null;
+  var storyIntro = document.querySelector('.story-intro');
+  var outcomeTitle = document.querySelector('.story-outcome h2');
+  var progressBar = document.getElementById('siteProgressBar');
+  var nav = document.querySelector('nav');
+  var len = path ? path.getTotalLength() : 0;
+  var ticking = false;
+
+  document.body.classList.add('motion-ready');
+
+  if(path){
+    path.style.strokeDasharray = len;
+    path.style.strokeDashoffset = len * 0.5;
+  }
+
+  function clamp(v, min, max){ return Math.max(min, Math.min(max, v)); }
+
+  function updateExperience(){
+    var pageTotal = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    var pageProgress = clamp(window.scrollY / pageTotal, 0, 1);
+    if(progressBar) progressBar.style.height = (pageProgress * 100) + '%';
+    if(nav) nav.classList.toggle('nav-scrolled', window.scrollY > 24);
+
+    if(section && path){
+      var rect = section.getBoundingClientRect();
+      var total = Math.max(1, rect.height - window.innerHeight);
+      var progress = clamp(-rect.top / total, 0, 1);
+      var mapped = 0.5 + progress * 0.5;
+      path.style.strokeDashoffset = len * (1 - mapped);
+
+      if(!reduceMotion){
+        var introProgress = clamp(progress / 0.27, 0, 1);
+        if(storyIntro){
+          storyIntro.style.transform = 'translate3d(0,' + (-introProgress * 18) + 'vh,0) scale(' + (1 - introProgress * 0.07) + ')';
+          storyIntro.style.opacity = String(1 - introProgress * 0.9);
+        }
+        if(storySvg){
+          storySvg.style.transform = 'translate3d(' + (-progress * 3.5) + 'vw,' + (progress * 5) + 'vh,0) rotate(' + (progress * 2.2) + 'deg)';
+        }
+        if(outcomeTitle){
+          var outcomeProgress = clamp((progress - 0.38) / 0.34, 0, 1);
+          outcomeTitle.style.transform = 'translate3d(' + ((1 - outcomeProgress) * 11) + 'vw,0,0)';
+          outcomeTitle.style.opacity = String(0.25 + outcomeProgress * 0.75);
+        }
+      }
+    }
+
+    ticking = false;
+  }
+
+  function requestUpdate(){
+    if(!ticking){
+      ticking = true;
+      window.requestAnimationFrame(updateExperience);
+    }
+  }
+
+  window.addEventListener('scroll', requestUpdate, {passive:true});
+  window.addEventListener('resize', requestUpdate);
+  updateExperience();
+
+  /* Entradas editoriais por seção */
+  var autoReveal = document.querySelectorAll('.section-head,.app-grid,.cases-grid,.timeline,.faq-list,.manifesto-inner');
+  autoReveal.forEach(function(el){ if(!el.hasAttribute('data-reveal')) el.setAttribute('data-reveal',''); });
+  var revealItems = document.querySelectorAll('[data-reveal]');
+
+  if(reduceMotion || !('IntersectionObserver' in window)){
+    revealItems.forEach(function(el){ el.classList.add('is-visible'); });
+  }else{
+    var revealObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    revealItems.forEach(function(el){ revealObserver.observe(el); });
+  }
+
+  /* Etapas ganham foco conforme atravessam a tela */
+  var timelineItems = document.querySelectorAll('.tl-item');
+  if('IntersectionObserver' in window){
+    var timelineObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){ entry.target.classList.toggle('is-active',entry.isIntersecting); });
+    },{threshold:.55,rootMargin:'-8% 0px -18% 0px'});
+    timelineItems.forEach(function(el){ timelineObserver.observe(el); });
+  }else if(timelineItems[0]) timelineItems[0].classList.add('is-active');
+
+  /* Luz acompanha o cursor; cards respondem à posição real do mouse */
+  var cursorGlow = document.getElementById('cursorGlow');
+  if(cursorGlow && window.matchMedia('(pointer:fine)').matches && !reduceMotion){
+    window.addEventListener('pointermove',function(e){
+      cursorGlow.style.transform = 'translate3d(' + (e.clientX - 120) + 'px,' + (e.clientY - 120) + 'px,0)';
+      cursorGlow.classList.add('visible');
+    },{passive:true});
+    document.documentElement.addEventListener('mouseleave',function(){ cursorGlow.classList.remove('visible'); });
+  }
+
+  document.querySelectorAll('.case-card').forEach(function(card){
+    card.addEventListener('pointermove',function(e){
+      var r = card.getBoundingClientRect();
+      card.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');
+      card.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');
+    });
+  });
+
+  /* Parallax sutil do sistema orbital do hero — não interfere no transform do story-intro. */
+  var heroOrbitLayer = document.getElementById('heroOrbitLayer');
+  if(storyIntro && heroOrbitLayer && window.matchMedia('(pointer:fine)').matches && !reduceMotion){
+    storyIntro.addEventListener('pointermove',function(e){
+      var r = storyIntro.getBoundingClientRect();
+      var dx = (e.clientX - (r.left + r.width/2)) / r.width;
+      var dy = (e.clientY - (r.top + r.height/2)) / r.height;
+      heroOrbitLayer.style.transform = 'translate3d(' + (dx * 22) + 'px,' + (dy * 18) + 'px,0)';
+    },{passive:true});
+    storyIntro.addEventListener('pointerleave',function(){
+      heroOrbitLayer.style.transform = 'translate3d(0,0,0)';
+    });
+  }
+});
+
+/* ── DIAGNÓSTICO INTERATIVO ── */
+var painScenarios = [
+  {
+    status:'Lead esperando resposta',
+    title:'A clínica fechou.<br>O interesse não.',
+    description:'O paciente chama no momento em que decide agir. Uma mensagem automática informa que você está ausente, mas não conduz a conversa.',
+    conclusion:'<strong>O ponto de virada:</strong> a Solvia continua o atendimento, entende a necessidade e oferece o próximo passo sem deixar o lead parado.',
+    time:'22:47',
+    messages:[
+      ['client','Oi! Ainda tem horário disponível esta semana?'],
+      ['business','Olá! No momento não estamos disponíveis. Retornaremos amanhã.'],
+      ['client','Tudo bem, já consegui em outra clínica.']
+    ]
+  },
+  {
+    status:'Fila crescendo no horário de pico',
+    title:'Sua equipe está ocupada.<br>O lead também.',
+    description:'Enquanto a recepção atende quem já chegou, novas conversas acumulam. Quem está no WhatsApp não enxerga a correria — só enxerga a demora.',
+    conclusion:'<strong>O ponto de virada:</strong> a IA responde as dúvidas repetitivas, filtra o interesse e entrega para a equipe apenas o que precisa de atenção humana.',
+    time:'11:38',
+    messages:[
+      ['client','Olá! Queria saber o valor e os horários para avaliação.'],
+      ['business','Oi! Já vamos te atender.'],
+      ['client','Ainda está disponível?'],
+      ['client','Consegui em outro lugar, obrigada.']
+    ]
+  },
+  {
+    status:'Oportunidade esfriando',
+    title:'O orçamento foi enviado.<br>A conversa parou.',
+    description:'O lead demonstrou interesse, recebeu a proposta e pediu um tempo. Sem uma continuidade planejada, o retorno fica dependendo da memória de alguém.',
+    conclusion:'<strong>O ponto de virada:</strong> a Solvia retoma no momento certo, responde novas objeções e mantém a oportunidade viva sem pressionar o cliente.',
+    time:'3 dias depois',
+    messages:[
+      ['business','Pronto! Enviei seu orçamento. Se precisar, estou por aqui.'],
+      ['client','Obrigada, vou pensar e te aviso.'],
+      ['business','Mensagem não enviada · follow-up esquecido']
+    ]
+  },
+  {
+    status:'Relacionamento interrompido',
+    title:'O atendimento terminou.<br>O vínculo não deveria.',
+    description:'Confirmações, orientações, retornos e reativações se perdem quando cada contato depende de uma ação manual da equipe.',
+    conclusion:'<strong>O ponto de virada:</strong> a Solvia acompanha o pós-atendimento, confirma retornos e reativa pacientes de forma organizada e humana.',
+    time:'30 dias depois',
+    messages:[
+      ['client','Oi! Quando preciso fazer meu retorno?'],
+      ['business','Olá! Vamos verificar e te responder.'],
+      ['client','Tudo bem, fico aguardando.']
+    ]
+  }
+];
+
+function selectPain(index,btn){
+  var data = painScenarios[index];
+  var stage = document.getElementById('painStage');
+  if(!data || !stage) return;
+  document.querySelectorAll('.pain-option').forEach(function(el){
+    var active = el === btn;
+    el.classList.toggle('active',active);
+    el.setAttribute('aria-selected',active ? 'true' : 'false');
+  });
+  stage.classList.add('is-changing');
+  window.setTimeout(function(){
+    document.getElementById('painStatus').textContent = data.status;
+    document.getElementById('painTitle').innerHTML = data.title;
+    document.getElementById('painDescription').textContent = data.description;
+    document.getElementById('painConclusion').innerHTML = data.conclusion;
+    document.getElementById('phoneChat').innerHTML = '<div class="phone-time">'+data.time+'</div>'+data.messages.map(function(msg){return '<div class="phone-bubble '+msg[0]+'">'+msg[1]+'</div>';}).join('');
+    stage.classList.remove('is-changing');
+  },180);
+}
+
+/* ── DEMONSTRAÇÃO DAS SOLUÇÕES ── */
+var solutionModes = [
+  {
+    label:'Fluxo de atendimento',title:'A conversa começa<br>sem esperar.',
+    description:'A Bia entende a primeira mensagem, faz as perguntas certas e conduz cada pessoa ao próximo passo.',
+    features:['Atendimento no WhatsApp, site e Instagram','Qualificação com perguntas do seu processo','Transferência para humano com contexto completo'],
+    nodes:[['01 · Mensagem recebida','Lead identificado em tempo real'],['02 · Necessidade entendida','Perguntas adaptadas ao contexto'],['03 · Próximo passo','Horário oferecido automaticamente'],['04 · Equipe avisada','Resumo e contexto já organizados']]
+  },
+  {
+    label:'Fluxo de conversão',title:'Do interesse ao<br>horário marcado.',
+    description:'A automação não para na primeira resposta. Ela agenda, confirma e retoma a conversa quando o lead precisa de tempo.',
+    features:['Agendamento conectado à disponibilidade real','Confirmações e lembretes automáticos','Follow-up sem depender da memória da equipe'],
+    nodes:[['01 · Interesse detectado','Oportunidade entra no fluxo'],['02 · Agenda consultada','Horários livres encontrados'],['03 · Confirmação enviada','Lead escolhe o melhor momento'],['04 · Follow-up programado','Conversa continua se ele pausar']]
+  },
+  {
+    label:'Fluxo de retenção',title:'O relacionamento<br>continua depois.',
+    description:'A Solvia acompanha o pós-atendimento, lembra o retorno e reativa quem deixou de aparecer, sempre com contexto.',
+    features:['Pós-atendimento e orientações automáticas','Lembretes de retorno personalizados','Reativação organizada da base de clientes'],
+    nodes:[['01 · Atendimento concluído','Próxima etapa registrada'],['02 · Pós-atendimento','Orientação enviada no momento certo'],['03 · Retorno lembrado','Cliente recebe confirmação'],['04 · Base reativada','Oportunidades antigas voltam ao fluxo']]
+  }
+];
+
+function selectSolution(index,btn){
+  var data = solutionModes[index];
+  var stage = document.getElementById('solutionStage');
+  if(!data || !stage) return;
+  document.querySelectorAll('.solution-option').forEach(function(el){
+    var active = el === btn;
+    el.classList.toggle('active',active);
+    el.setAttribute('aria-selected',active ? 'true' : 'false');
+  });
+  stage.classList.add('is-changing');
+  window.setTimeout(function(){
+    document.getElementById('consoleLabel').textContent = data.label;
+    document.getElementById('solutionTitle').innerHTML = data.title;
+    document.getElementById('solutionDescription').textContent = data.description;
+    document.getElementById('solutionFeatures').innerHTML = data.features.map(function(item){return '<li>'+item+'</li>';}).join('');
+    document.getElementById('consoleFlow').innerHTML = data.nodes.map(function(node){return '<div class="console-node"><strong>'+node[0]+'</strong>'+node[1]+'</div>';}).join('');
+    stage.classList.remove('is-changing');
+  },180);
+}
+
+/* ── MOBILE MENU ── */
+function toggleMobileMenu(){
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+function closeMobileMenu(){
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+
+/* ── FAQ ── */
+function toggleFaq(btn){
+  const item = btn.closest('.faq-item');
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if(!wasOpen) item.classList.add('open');
+}
+
+/* ── MODAL TRABALHE CONOSCO ── */
+function openJobModal(){
+  document.getElementById('job-modal-overlay').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  jobIrStep(1);
+}
+function closeJobModal(){
+  document.getElementById('job-modal-overlay').style.display = 'none';
+  document.body.style.overflow = '';
+}
+function closeJobModalOutside(e){
+  if(e.target === document.getElementById('job-modal-overlay')) closeJobModal();
+}
+function jobIrStep(n){
+  document.querySelectorAll('.job-step').forEach(s => s.classList.remove('active'));
+  document.getElementById('job-step-' + n).classList.add('active');
+  var pct = {1:33, 2:66, 3:100, sucesso:100};
+  document.getElementById('job-modal-progress-fill').style.width = (pct[n] || 0) + '%';
+  if(n !== 'sucesso') jobValidarStep(n);
+}
+function jobValidarStep(n){
+  if(n === 1){
+    var nome = document.getElementById('job-nome').value.trim();
+    var wpp = document.getElementById('job-wpp').value.trim();
+    var email = document.getElementById('job-email').value.trim();
+    var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    document.getElementById('job-btn-1').disabled = !(nome.length > 1 && wpp.length > 7 && emailOk);
+  }
+  if(n === 2){
+    var area = document.getElementById('job-area').value;
+    document.getElementById('job-btn-2').disabled = !area;
+  }
+  if(n === 3){
+    var motivo = document.getElementById('job-motivo').value.trim();
+    document.getElementById('job-btn-3').disabled = !(motivo.length > 10);
+  }
+}
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape') closeJobModal();
+});
+
+/* ── CHAT ── */
+let chatOpen = false;
+
+function openChat(){
+  chatOpen = true;
+  document.getElementById('chatBox').classList.add('open');
+  document.getElementById('chatBadge').style.display = 'none';
+  document.getElementById('chatInput').focus();
+}
+function closeChat(){
+  chatOpen = false;
+  document.getElementById('chatBox').classList.remove('open');
+}
+function toggleChat(){ chatOpen ? closeChat() : openChat(); }
+
+/* Mostra badge após 4s */
+setTimeout(function(){
+  if(!chatOpen){
+    var b = document.getElementById('chatBadge');
+    b.style.display = 'flex';
+  }
+}, 4000);
+
+/* ──────────────────────────────────────────────────────────────
+   WEBHOOK N8N
+   Substitua a URL abaixo pela URL real do seu webhook n8n
+   quando o agente da Bia estiver pronto.
+
+   O site envia um POST com:
+     { "message": "texto do usuário", "sessionId": "id-da-sessão" }
+
+   E espera receber de volta:
+     { "reply": "resposta do agente" }
+   ou
+     { "output": "resposta do agente" }
+   ou qualquer campo de texto que o n8n devolver.
+────────────────────────────────────────────────────────────── */
+var N8N_WEBHOOK_URL = 'https://n8nwebhook.solviaoficial.com/webhook/bia';
+
+/* Gera um sessionId único por visita para manter contexto no n8n */
+var SESSION_ID = 'sess_' + Math.random().toString(36).substr(2, 9) + '_' + Date.now();
+
+async function sendChat(){
+  var input = document.getElementById('chatInput');
+  var text = input.value.trim();
+  if(!text) return;
+  input.value = '';
+
+  appendMsg(text, 'user');
+
+  var typing = appendMsg('Digitando...', 'typing');
+
+  try {
+    var res = await fetch(N8N_WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: text, sessionId: SESSION_ID })
+    });
+
+    var data = await res.json();
+
+    /* Aceita qualquer campo que o n8n devolver com a resposta */
+    var reply = data.reply || data.output || data.text || data.message ||
+                data.response || (Array.isArray(data) && data[0] && (data[0].reply || data[0].output || data[0].text)) ||
+                'Desculpa, tive um problema técnico. Pode tentar de novo?';
+
+    typing.remove();
+    appendMsg(reply, 'bot');
+
+  } catch(e) {
+    typing.remove();
+    appendMsg('Ops, erro de conexão. Tenta de novo em instantes!', 'bot');
+  }
+}
+
+function appendMsg(text, type){
+  var msgs = document.getElementById('chatMsgs');
+  var div = document.createElement('div');
+  div.className = 'msg ' + type;
+  div.innerHTML = String(text).replace(/\n/g, '<br>');
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+  return div;
+}
+  /* ── TABS DE NICHO (seção Apps) ── */
+function switchTab(nicho) {
+  /* Esconde todos os conteúdos */
+  document.querySelectorAll('.app-tab-content').forEach(function(el) {
+    el.style.display = 'none';
+  });
+  /* Mostra o selecionado */
+  var target = document.getElementById('tab-' + nicho);
+  if (target) {
+    target.style.display = nicho === 'outro' ? 'block' : 'grid';
+    target.style.animation = 'none';
+    void target.offsetWidth;
+    target.style.animation = '';
+  }
+
+  /* Atualiza visual dos botões */
+  document.querySelectorAll('.app-tab').forEach(function(btn) {
+    btn.classList.remove('active');
+    btn.setAttribute('aria-selected','false');
+    btn.style.background = '#fff';
+    btn.style.color = 'var(--muted)';
+    btn.style.borderColor = 'var(--border)';
+  });
+  var activeBtn = document.querySelector('[onclick="switchTab(\'' + nicho + '\')"]');
+  if (activeBtn) {
+    activeBtn.classList.add('active');
+    activeBtn.setAttribute('aria-selected','true');
+    activeBtn.style.background = 'var(--blue)';
+    activeBtn.style.color = '#fff';
+    activeBtn.style.borderColor = 'var(--blue)';
+  }
+}
+
+/* ── ENVIO DO FORMULÁRIO TRABALHE CONOSCO ── */
+var JOB_WEBHOOK_URL = 'https://n8nwebhook.solviaoficial.com/webhook/formulario_emprego';
+
+function jobEnviar(){
+  var btn = document.getElementById('job-btn-3');
+  btn.disabled = true;
+  btn.textContent = 'Enviando...';
+
+  var dados = {
+    nome: document.getElementById('job-nome').value.trim(),
+    whatsapp: document.getElementById('job-wpp').value.trim(),
+    email: document.getElementById('job-email').value.trim(),
+    area_interesse: document.getElementById('job-area').value,
+    linkedin_curriculo: document.getElementById('job-link').value.trim(),
+    motivo: document.getElementById('job-motivo').value.trim()
+  };
+
+  /* Método 1: fetch */
+  fetch(JOB_WEBHOOK_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    body: JSON.stringify(dados)
+  }).catch(function(){});
+
+  setTimeout(function(){ jobIrStep('sucesso'); }, 1000);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+# Solvia
+
+> A Solvia desenvolve agentes de IA, automações, integrações e apps sob medida para negócios.
+
+## Canonical
+- https://solviaoficial.com/
+
+## Core pages
+- https://solviaoficial.com/agente-de-ia-whatsapp/ — agentes de IA para atendimento, qualificação, agenda, follow-up e handoff humano
+- https://solviaoficial.com/automacao-whatsapp-clinicas/ — automação de atendimento e agenda para clínicas
+- https://solviaoficial.com/apps-sob-medida/ — apps e painéis administrativos sob medida
+- https://solviaoficial.com/integracoes-whatsapp-crm-agenda/ — integrações entre WhatsApp, CRM, agenda e dados
+- https://solviaoficial.com/cases/ — resultados publicados pela Solvia
+- https://solviaoficial.com/recursos/ — guias técnicos e ferramentas
+- https://solviaoficial.com/sobre/ — identidade e propósito da Solvia
+
+## Contact
+- WhatsApp: +55 11 91856-0216
