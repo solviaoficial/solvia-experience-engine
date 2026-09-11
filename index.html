@@ -1234,6 +1234,50 @@ footer{background:#08101F;color:#AEB9CA;text-align:left;padding:4rem 1.5rem 2rem
 @media(max-width:900px){.explore-grid{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1.4fr 1fr 1fr}.footer-col:last-child{grid-column:2/4}}
 @media(max-width:700px){.explore-head{grid-template-columns:1fr}.explore-head p{justify-self:start}.explore-grid{grid-template-columns:1fr}.explore-card{min-height:190px}.footer-grid{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}.footer-col:last-child{grid-column:auto}.footer-bottom{flex-direction:column}}
 
+/* ── MOBILE HARDENING ── */
+@media (max-width:700px){
+  html,body{max-width:100%;overflow-x:clip}
+  nav{height:60px;padding:0 1rem}
+  .nav-logo{font-size:1.3rem}
+  .nav-burger{min-width:44px;min-height:44px;display:grid;place-content:center}
+  .mobile-menu{position:fixed;top:60px;max-height:calc(100dvh - 60px);overflow-y:auto;padding-bottom:env(safe-area-inset-bottom)}
+  .mobile-menu a{padding:1rem 1.25rem}
+  .container{padding-left:1.1rem;padding-right:1.1rem}
+  section,#explore-solvia,#pain,#solucoes,#apps,#cases,#como,#faq,#manifesto,#cta-final{padding-left:1.1rem;padding-right:1.1rem}
+  .section-head{margin-bottom:2.25rem}
+  .section-head p{font-size:1rem}
+  .btn{min-height:48px;white-space:normal;text-align:center}
+  .btn-group,.story-actions{gap:.7rem}
+  .story-outcome-inner{top:60px;min-height:calc(100dvh - 60px)}
+  .lead-timeline{gap:1.5rem .55rem}
+  .lead-step{min-width:0}
+  .pain-option{grid-template-columns:36px minmax(0,1fr) auto;gap:.65rem;padding:1rem}
+  .pain-option strong,.pain-option small,.solution-option strong{overflow-wrap:anywhere}
+  .pain-stage,.solution-stage{border-radius:20px}
+  .pain-stage h3,.solution-copy h3{font-size:clamp(2rem,10vw,2.45rem);overflow-wrap:anywhere}
+  .phone-screen{min-height:390px}
+  .solution-selector{overflow-x:auto;padding-bottom:.25rem}
+  .solution-option{min-width:0}
+  .cases-grid{grid-template-columns:minmax(0,1fr);gap:1rem}
+  .case-card{min-height:360px}
+  .tl-item{grid-template-columns:48px minmax(0,1fr)}
+  .faq-q{padding:1.1rem 1rem;gap:.75rem}
+  .faq-q span{overflow-wrap:anywhere}
+  .chat-box{right:16px;bottom:82px;width:calc(100vw - 32px);max-height:min(600px,calc(100dvh - 112px))}
+  .chat-fab{right:16px;bottom:16px}
+  #job-modal-overlay{padding:1rem}
+  #job-modal-box{padding:2rem 1.25rem 1.5rem;max-height:calc(100dvh - 2rem)}
+  .job-form-row{grid-template-columns:1fr!important}
+}
+@media (max-width:380px){
+  .story-intro{padding-left:.9rem;padding-right:.9rem}
+  .story-intro h1{font-size:clamp(2.85rem,15vw,3.7rem)}
+  .story-outcome h2{font-size:clamp(3.3rem,21vw,5rem)}
+  .lead-timeline{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-brand{grid-column:auto}
+}
+
 </style>
 </head>
 <body>
